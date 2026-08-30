@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Zyad Togonou | GIS & Environmental Analyst</title>
+
+    <meta name="description"
+        content="Portfolio professionnel de Zyad Togonou, spécialisé en géomatique, SIG, analyse environnementale et changement climatique.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f6f8f7;
+            color: #1f2933;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1b4332;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1b4332;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 25px 80px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #f4f8f5 0%,
+                    #ffffff 50%,
+                    #e8f1ec 100%
+                );
+        }
+
+        .hero-container {
+            max-width: 1150px;
+            margin: auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: #d8f3dc;
+            color: #1b4332;
+            padding: 7px 15px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #14281d;
+        }
+
+        h1 span {
+            color: #2d6a4f;
+        }
+
+        .hero-text {
+            font-size: 19px;
+            color: #5b6470;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #1b4332;
+            color: white;
+            padding: 13px 22px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #2d6a4f;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid #1b4332;
+            color: #1b4332;
+            padding: 13px 22px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #e8f1ec;
+        }
+
+        /* HERO CARD */
+
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            border: 1px solid #e5e7eb;
+        }
+
+        .profile-initials {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #1b4332, #40916c);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .profile-card h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .profile-card p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .profile-info {
+            margin-top: 25px;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 20px;
+        }
+
+        .profile-info div {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 25px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 15px;
+            color: #14281d;
+        }
+
+        .section-subtitle {
+            color: #6b7280;
+            max-width: 700px;
+            margin-bottom: 50px;
+            font-size: 17px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #4b5563;
+            font-size: 16px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .stat-card h3 {
+            color: #2d6a4f;
+            font-size: 30px;
+        }
+
+        .stat-card p {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            background: #ffffff;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            padding: 25px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            transition: 0.3s;
+            background: #fafcfb;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.07);
+        }
+
+        .skill-icon {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .project-image {
+            height: 170px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #1b4332,
+                    #40916c
+                );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 12px;
+            font-size: 19px;
+        }
+
+        .project-content p {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #edf5ef;
+            color: #2d6a4f;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        /* EXPERIENCE */
+
+        .timeline {
+            max-width: 850px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 0 0 45px 35px;
+            border-left: 2px solid #95d5b2;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: #2d6a4f;
+            border-radius: 50%;
+            left: -8px;
+            top: 5px;
+        }
+
+        .timeline-date {
+            color: #2d6a4f;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .timeline-item h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-company {
+            color: #6b7280;
+            margin-bottom: 12px;
+        }
+
+        .timeline-item p {
+            color: #4b5563;
+            font-size: 15px;
+        }
+
+        /* EDUCATION */
+
+        .education {
+            background: #1b4332;
+            color: white;
+        }
+
+        .education .section-title {
+            color: white;
+        }
+
+        .education .section-subtitle {
+            color: #d8f3dc;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .education-card {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 30px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .education-card .year {
+            color: #95d5b2;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .education-card h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .education-card p {
+            color: #d8f3dc;
+            font-size: 14px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 50px;
+            border-radius: 18px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .contact-box p {
+            color: #6b7280;
+            margin: 20px 0 30px;
+            font-size: 17px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #14281d;
+            color: #b7c8bc;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .hero-container,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 45px;
+            }
+
+            .profile-card {
+                max-width: 500px;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .skills-grid,
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="nav-container">
+
+        <a href="#" class="logo">
+            ZT.
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#experience">Expérience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+        <div>
+
+            <div class="hero-tag">
+                GIS • ENVIRONMENT • CLIMATE
+            </div>
+
+            <h1>
+                Zyad <span>Togonou</span>
+            </h1>
+
+            <p class="hero-text">
+
+                Géomaticien et analyste environnemental, spécialisé dans
+                l'analyse spatiale, les systèmes d'information géographique
+                et l'étude des interactions entre environnement,
+                territoires et changement climatique.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn-primary">
+                    Voir mes projets
+                </a>
+
+                <a href="#contact" class="btn-secondary">
+                    Me contacter
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-card">
+
+            <div class="profile-initials">
+                ZT
+            </div>
+
+            <h3>Zyad Togonou</h3>
+
+            <p>
+                GIS & Environmental Analyst
+            </p>
+
+            <div class="profile-info">
+
+                <div>
+                    📍 Grenoble, France
+                </div>
+
+                <div>
+                    🎓 Géographie & Environnement
+                </div>
+
+                <div>
+                    🌍 SIG • Géomatique • Climat
+                </div>
+
+                <div>
+                    📊 Analyse spatiale & données
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            À propos
+        </h2>
+
+        <p class="section-subtitle">
+
+            Un parcours pluridisciplinaire à l'intersection des sciences
+            environnementales, de la géographie et de l'analyse spatiale.
+
+        </p>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+
+                    Mon parcours s'inscrit dans une approche interdisciplinaire
+                    des problématiques environnementales. Formé initialement
+                    en sciences agronomiques et en gestion des ressources
+                    naturelles, je me spécialise aujourd'hui dans l'analyse
+                    territoriale et environnementale.
+
+                </p>
+
+                <p>
+
+                    Mes centres d'intérêt portent particulièrement sur
+                    les systèmes d'information géographique, la télédétection,
+                    l'analyse de données environnementales et l'étude des
+                    impacts du changement climatique sur les territoires
+                    et les écosystèmes.
+
+                </p>
+
+                <p>
+
+                    À travers mes projets académiques et professionnels,
+                    je cherche à mobiliser les données spatiales et les
+                    outils numériques pour produire des analyses utiles
+                    à la compréhension et à la prise de décision
+                    environnementale.
+
+                </p>
+
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <h3>SIG</h3>
+
+                    <p>
+                        Analyse et représentation des données spatiales
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>Climat</h3>
+
+                    <p>
+                        Analyse de données climatiques et environnementales
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>Data</h3>
+
+                    <p>
+                        Python, R, SQL et analyse statistique
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>Recherche</h3>
+
+                    <p>
+                        Études environnementales et gestion durable
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section class="skills" id="skills">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Compétences
+        </h2>
+
+        <p class="section-subtitle">
+
+            Un ensemble de compétences techniques mobilisées dans
+            l'analyse environnementale et spatiale.
+
+        </p>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🗺️</div>
+
+                <h3>GIS & Cartographie</h3>
+
+                <p>
+                    QGIS, ArcGIS, analyse spatiale, production cartographique
+                    et gestion de données géographiques.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">📡</div>
+
+                <h3>Télédétection</h3>
+
+                <p>
+                    Exploitation des données spatiales pour l'analyse
+                    des territoires et des dynamiques environnementales.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🐍</div>
+
+                <h3>Programmation</h3>
+
+                <p>
+                    Python, R, SQL et automatisation des traitements
+                    de données.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">📊</div>
+
+                <h3>Analyse de données</h3>
+
+                <p>
+                    Analyse statistique, traitement de données
+                    environnementales et visualisation.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🌍</div>
+
+                <h3>Changement climatique</h3>
+
+                <p>
+                    Analyse des risques climatiques, vulnérabilité
+                    et adaptation des territoires.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🌱</div>
+
+                <h3>Environnement</h3>
+
+                <p>
+                    Gestion durable des ressources naturelles
+                    et analyse des écosystèmes.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🗄️</div>
+
+                <h3>Bases de données</h3>
+
+                <p>
+                    SQL, PostGIS et gestion de données spatiales.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-icon">🔬</div>
+
+                <h3>Recherche scientifique</h3>
+
+                <p>
+                    Collecte, traitement, analyse et interprétation
+                    de données scientifiques.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Projets
+        </h2>
+
+        <p class="section-subtitle">
+
+            Une sélection de projets liés à l'environnement,
+            au climat et à l'analyse spatiale.
+
+        </p>
+
+
+        <div class="projects-grid">
+
+
+            <div class="project-card">
+
+                <div class="project-image">
+                    🌍
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Analyse climatique
+                    </h3>
+
+                    <p>
+
+                        Analyse de données climatiques afin d'étudier
+                        les tendances, la variabilité et les évolutions
+                        des paramètres climatiques.
+
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">R</span>
+                        <span class="tag">Climate Data</span>
+                        <span class="tag">Statistics</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-image">
+                    🗺️
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Analyse spatiale environnementale
+                    </h3>
+
+                    <p>
+
+                        Mobilisation des SIG pour analyser
+                        la distribution spatiale des phénomènes
+                        environnementaux et territoriaux.
+
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">QGIS</span>
+                        <span class="tag">ArcGIS</span>
+                        <span class="tag">GIS</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-image">
+                    🌱
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Gestion des ressources naturelles
+                    </h3>
+
+                    <p>
+
+                        Étude des interactions entre activités humaines,
+                        territoires et ressources naturelles dans une
+                        perspective de gestion durable.
+
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">Environment</span>
+                        <span class="tag">Sustainability</span>
+                        <span class="tag">Research</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-image">
+                    📊
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Analyse de données environnementales
+                    </h3>
+
+                    <p>
+
+                        Traitement et analyse de données environnementales
+                        pour produire des indicateurs et soutenir
+                        l'interprétation scientifique.
+
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">Python</span>
+                        <span class="tag">Data Analysis</span>
+                        <span class="tag">SQL</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-image">
+                    📡
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Observation des territoires
+                    </h3>
+
+                    <p>
+
+                        Utilisation des données géographiques et
+                        satellitaires pour mieux comprendre les
+                        dynamiques territoriales.
+
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">Remote Sensing</span>
+                        <span class="tag">GIS</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-image">
+                    🧭
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Analyse territoriale
+                    </h3>
+
+                    <p>
+
+                        Approche spatiale des territoires pour identifier
+                        les enjeux environnementaux et accompagner
+                        la prise de décision.
+
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">Geography</span>
+                        <span class="tag">Spatial Analysis</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Expérience professionnelle
+        </h2>
+
+        <p class="section-subtitle">
+
+            Expériences à l'intersection de la recherche,
+            de l'environnement et des technologies numériques.
+
+        </p>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    2023 — Aujourd'hui
+                </div>
+
+                <h3>
+                    Assistant de recherche
+                </h3>
+
+                <div class="timeline-company">
+                    Laboratoire d'Écologie Appliquée — Université d'Abomey-Calavi
+                </div>
+
+                <p>
+
+                    Participation à des travaux de recherche portant sur
+                    le changement climatique, la gestion durable des ressources
+                    naturelles et l'analyse de données environnementales.
+
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    2024 — 2025
+                </div>
+
+                <h3>
+                    Support technique & Support client
+                </h3>
+
+                <div class="timeline-company">
+                    DigitSolution
+                </div>
+
+                <p>
+
+                    Accompagnement technique des clients, résolution de problèmes
+                    liés aux outils numériques et gestion du support opérationnel.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section class="education">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Formation
+        </h2>
+
+        <p class="section-subtitle">
+
+            Un parcours académique orienté vers l'environnement,
+            les territoires et l'analyse spatiale.
+
+        </p>
+
+
+        <div class="education-grid">
+
+
+            <div class="education-card">
+
+                <div class="year">
+                    2025 — Aujourd'hui
+                </div>
+
+                <h3>
+                    Licence Géographie & Aménagement
+                </h3>
+
+                <p>
+
+                    Parcours Environnement — Institut d'Urbanisme
+                    et de Géographie Alpine (IUGA),
+                    Université Grenoble Alpes.
+
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <div class="year">
+                    2023
+                </div>
+
+                <h3>
+                    Licence Professionnelle en Sciences Agronomiques
+                </h3>
+
+                <p>
+
+                    Spécialisation en Aménagement et Gestion
+                    des Ressources Naturelles — Faculté des Sciences
+                    Agronomiques, Université d'Abomey-Calavi.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h2 class="section-title">
+                Travaillons ensemble
+            </h2>
+
+            <p>
+
+                Vous souhaitez échanger autour d'un projet en géomatique,
+                analyse spatiale, environnement ou changement climatique ?
+                N'hésitez pas à me contacter.
+
+            </p>
+
+
+            <div class="contact-links">
+
+                <a href="mailto:VOTRE_EMAIL_ICI"
+                   class="btn-primary">
+
+                    Email
+
+                </a>
+
+
+                <a href="https://www.linkedin.com/"
+                   target="_blank"
+                   class="btn-secondary">
+
+                    LinkedIn
+
+                </a>
+
+
+                <a href="https://github.com/zyadtogonou"
+                   target="_blank"
+                   class="btn-secondary">
+
+                    GitHub
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Zyad Togonou — GIS & Environmental Portfolio
+
+</footer>
+
+
+</body>
+</html>
