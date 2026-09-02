@@ -57,7 +57,7 @@
         }
 
         .nav-container {
-            height: 72px;
+            min-height: 72px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -213,7 +213,80 @@
             margin-bottom: 4px;
         }
 
-        /* COMPÉTENCES */
+        /* FORMATION */
+
+        .formation-list {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .formation-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 35px;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .formation-item:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .formation-date {
+            color: var(--green);
+            font-weight: 800;
+            font-size: 0.95rem;
+        }
+
+        .formation-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+
+        .formation-content .school {
+            color: var(--green-dark);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .formation-content p {
+            color: var(--muted);
+        }
+
+        .certifications {
+            margin-top: 60px;
+        }
+
+        .certifications h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .cert-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .cert-card h4 {
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+
+        .cert-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        /* COMPETENCES */
 
         .skills-grid {
             display: grid;
@@ -338,6 +411,30 @@
             color: var(--muted);
         }
 
+        /* LANGUES */
+
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .language-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .language-card h3 {
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+
+        .language-card p {
+            color: var(--muted);
+        }
+
         /* CONTACT */
 
         .contact {
@@ -406,10 +503,13 @@
 
             .about-grid,
             .skills-grid,
-            .project-grid {
+            .project-grid,
+            .cert-grid,
+            .languages-grid {
                 grid-template-columns: 1fr;
             }
 
+            .formation-item,
             .experience-item {
                 grid-template-columns: 1fr;
                 gap: 8px;
@@ -452,15 +552,18 @@
 
 <nav>
     <div class="container nav-container">
+
         <a href="#accueil" class="logo">ZT.</a>
 
         <ul class="nav-links">
             <li><a href="#apropos">À propos</a></li>
+            <li><a href="#formation">Formation</a></li>
             <li><a href="#competences">Compétences</a></li>
             <li><a href="#projets">Projets</a></li>
             <li><a href="#experience">Expérience</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+
     </div>
 </nav>
 
@@ -468,7 +571,9 @@
 <!-- HERO -->
 
 <header class="hero" id="accueil">
+
     <div class="container">
+
         <div class="hero-content">
 
             <div class="hero-label">
@@ -494,23 +599,31 @@
             </div>
 
         </div>
+
     </div>
+
 </header>
 
 
 <!-- À PROPOS -->
 
 <section id="apropos">
+
     <div class="container">
 
         <div class="section-header">
+
             <div class="section-number">01 - Profil</div>
+
             <h2>À propos</h2>
+
             <p>
                 Un profil à l'interface entre données spatiales,
                 environnement et analyse territoriale.
             </p>
+
         </div>
+
 
         <div class="about-grid">
 
@@ -541,13 +654,14 @@
 
             </div>
 
+
             <div class="profile-card">
 
                 <h3>Profil professionnel</h3>
 
                 <div class="profile-item">
-                    <small>Formation</small>
-                    Master GEOÏDES - Université Grenoble Alpes
+                    <small>Formation actuelle</small>
+                    Master GAED - parcours GEOÏDES
                 </div>
 
                 <div class="profile-item">
@@ -561,6 +675,11 @@
                 </div>
 
                 <div class="profile-item">
+                    <small>Programme</small>
+                    Graduate School@UGA - RISK
+                </div>
+
+                <div class="profile-item">
                     <small>Localisation</small>
                     Grenoble, France
                 </div>
@@ -570,99 +689,322 @@
         </div>
 
     </div>
+
+</section>
+
+
+<!-- FORMATION -->
+
+<section id="formation">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">02 - Parcours académique</div>
+
+            <h2>Formation</h2>
+
+            <p>
+                Un parcours construit autour de la géographie,
+                de l'environnement, de la gestion des ressources naturelles
+                et de la géomatique.
+            </p>
+
+        </div>
+
+
+        <div class="formation-list">
+
+
+            <div class="formation-item">
+
+                <div class="formation-date">
+                    2026 - 2027
+                </div>
+
+                <div class="formation-content">
+
+                    <h3>
+                        Master GAED - parcours Géographie, Information,
+                        Interfaces, Durabilité, Environnements (GEOÏDES)
+                    </h3>
+
+                    <div class="school">
+                        Université Grenoble Alpes - France
+                    </div>
+
+                    <p>
+                        Formation orientée vers la géomatique, l'analyse
+                        spatiale, l'environnement, les données territoriales
+                        et l'étude des interactions entre sociétés,
+                        territoires et environnement.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="formation-item">
+
+                <div class="formation-date">
+                    2025 - 2026
+                </div>
+
+                <div class="formation-content">
+
+                    <h3>
+                        Licence en Géographie et Aménagement de l'Environnement
+                    </h3>
+
+                    <div class="school">
+                        Université Grenoble Alpes - France
+                    </div>
+
+                    <p>
+                        Formation en géographie, environnement,
+                        aménagement du territoire et analyse des dynamiques
+                        territoriales.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="formation-item">
+
+                <div class="formation-date">
+                    2022 - 2023
+                </div>
+
+                <div class="formation-content">
+
+                    <h3>
+                        Licence en Aménagement et Gestion des Ressources Naturelles
+                    </h3>
+
+                    <div class="school">
+                        Université d'Abomey-Calavi - Bénin
+                    </div>
+
+                    <p>
+                        Formation axée sur la gestion des ressources
+                        naturelles, l'environnement, l'aménagement et
+                        les problématiques liées aux territoires.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CERTIFICATIONS -->
+
+        <div class="certifications">
+
+            <h3>Certifications complémentaires</h3>
+
+            <div class="cert-grid">
+
+                <div class="cert-card">
+
+                    <h4>
+                        Certification en Économie bleue durable
+                        et changement climatique
+                    </h4>
+
+                    <p>
+                        Université de Senghor - Égypte
+                    </p>
+
+                    <p>
+                        2024
+                    </p>
+
+                </div>
+
+
+                <div class="cert-card">
+
+                    <h4>
+                        Certificat de compétence en anglais
+                    </h4>
+
+                    <p>
+                        TBC USA Africa
+                    </p>
+
+                    <p>
+                        2024
+                    </p>
+
+                </div>
+
+
+                <div class="cert-card">
+
+                    <h4>
+                        Graduate School@UGA - Programme RISK
+                    </h4>
+
+                    <p>
+                        Admis au programme thématique RISK de la
+                        Graduate School@UGA.
+                    </p>
+
+                </div>
+
+
+                <div class="cert-card">
+
+                    <h4>
+                        Permis B
+                    </h4>
+
+                    <p>
+                        Permis de conduire
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
 
 <!-- COMPÉTENCES -->
 
 <section id="competences">
+
     <div class="container">
 
         <div class="section-header">
-            <div class="section-number">02 - Expertise</div>
+
+            <div class="section-number">03 - Expertise</div>
+
             <h2>Compétences</h2>
+
             <p>
                 Des compétences techniques mobilisées pour le traitement,
                 l'analyse et la valorisation des données environnementales
                 et territoriales.
             </p>
+
         </div>
+
 
         <div class="skills-grid">
 
             <div class="skill-card">
+
                 <h3>SIG & cartographie</h3>
+
                 <p>
                     QGIS, ArcGIS Pro, cartographie thématique,
                     numérisation, structuration des données spatiales,
                     analyse spatiale et production cartographique.
                 </p>
+
             </div>
 
+
             <div class="skill-card">
+
                 <h3>Télédétection</h3>
+
                 <p>
-                    Traitement et analyse de données issues de
+                    ENVI, traitement et analyse de données issues de
                     l'observation de la Terre et utilisation d'outils
                     dédiés à l'analyse environnementale.
                 </p>
+
             </div>
 
+
             <div class="skill-card">
+
                 <h3>Analyse de données</h3>
+
                 <p>
                     R, SQL, traitement statistique, exploration de données
                     et analyse de données environnementales et
                     socio-économiques.
                 </p>
+
             </div>
 
+
             <div class="skill-card">
+
                 <h3>Bases de données spatiales</h3>
+
                 <p>
                     PostgreSQL, PostGIS, organisation et gestion de
                     données géographiques et préparation des données
                     pour l'analyse spatiale.
                 </p>
+
             </div>
 
+
             <div class="skill-card">
+
                 <h3>Climat & environnement</h3>
+
                 <p>
                     Analyse des changements climatiques, risques climatiques,
                     vulnérabilité des écosystèmes, ressources naturelles
                     et adaptation.
                 </p>
+
             </div>
 
+
             <div class="skill-card">
-                <h3>Traitement statistique</h3>
+
+                <h3>Analyse hydroclimatique</h3>
+
                 <p>
-                    Analyse statistique de données environnementales,
-                    traitement de séries de données climatiques et
-                    interprétation des résultats.
+                    Traitement et analyse de données hydroclimatiques,
+                    notamment avec HyfranPlus, ainsi que l'interprétation
+                    des résultats climatiques.
                 </p>
+
             </div>
 
         </div>
 
     </div>
+
 </section>
 
 
 <!-- PROJETS -->
 
 <section class="projects" id="projets">
+
     <div class="container">
 
         <div class="section-header">
-            <div class="section-number">03 - Réalisations</div>
+
+            <div class="section-number">04 - Réalisations</div>
+
             <h2>Projets</h2>
+
             <p>
                 Quelques travaux académiques et professionnels réalisés
                 autour de la géomatique, de l'environnement et du changement
                 climatique.
             </p>
+
         </div>
 
 
@@ -680,7 +1022,9 @@
             <div class="project-grid">
 
                 <div class="project-box">
+
                     <h4>Contexte</h4>
+
                     <p>
                         Dans le cadre d'un stage réalisé au Laboratoire Pacte
                         de l'Université Grenoble Alpes, ce travail s'inscrit
@@ -688,10 +1032,14 @@
                         des ressources pastorales dans le massif du Djebel
                         Saghro au Maroc.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Travail réalisé</h4>
+
                     <p>
                         Finalisation de la numérisation des facettes de
                         paysage de six bassins versants. Le travail a porté
@@ -701,10 +1049,14 @@
                         la production de données cartographiques cohérentes
                         sous ArcGIS Pro et QGIS.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Importance des résultats</h4>
+
                     <p>
                         Les données produites permettent de disposer d'une
                         représentation spatiale homogène des paysages des
@@ -712,10 +1064,14 @@
                         support pour l'analyse environnementale, le diagnostic
                         territorial et l'étude des ressources pastorales.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Compétences mobilisées</h4>
+
                     <ul>
                         <li>ArcGIS Pro</li>
                         <li>QGIS</li>
@@ -725,6 +1081,7 @@
                         <li>Analyse spatiale</li>
                         <li>Production cartographique</li>
                     </ul>
+
                 </div>
 
             </div>
@@ -746,36 +1103,50 @@
             <div class="project-grid">
 
                 <div class="project-box">
+
                     <h4>Contexte</h4>
+
                     <p>
                         Ce travail s'inscrit dans les démarches de restauration
                         des paysages forestiers et de gestion durable des
                         ressources naturelles au Bénin.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Travail réalisé</h4>
+
                     <p>
                         Contribution à la rédaction de la méthodologie
                         destinée à évaluer les opportunités de restauration
                         des paysages forestiers du Bénin, en intégrant les
                         dimensions environnementales et territoriales.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Importance des résultats</h4>
+
                     <p>
                         La méthodologie contribue à structurer l'identification
                         des espaces présentant un potentiel de restauration
                         et à fournir un cadre d'analyse pouvant soutenir
                         la planification environnementale et territoriale.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Compétences mobilisées</h4>
+
                     <ul>
                         <li>Analyse environnementale</li>
                         <li>Gestion des ressources naturelles</li>
@@ -784,6 +1155,7 @@
                         <li>Rédaction scientifique</li>
                         <li>Conception méthodologique</li>
                     </ul>
+
                 </div>
 
             </div>
@@ -805,7 +1177,9 @@
             <div class="project-grid">
 
                 <div class="project-box">
+
                     <h4>Contexte</h4>
+
                     <p>
                         Le projet porte sur l'analyse des risques climatiques
                         associés à un projet d'extension routière au Bénin,
@@ -813,30 +1187,42 @@
                         environnementaux et climatiques aux projets
                         d'infrastructure.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Travail réalisé</h4>
+
                     <p>
                         Appui à l'évaluation des risques climatiques du projet
                         routier et contribution à la modélisation des émissions
                         de gaz à effet de serre associées à l'extension
                         routière.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Importance des résultats</h4>
+
                     <p>
                         L'analyse permet de mieux prendre en compte les
                         risques climatiques et les émissions associées au
                         projet dans les démarches d'évaluation environnementale
                         et d'aide à la décision.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Compétences mobilisées</h4>
+
                     <ul>
                         <li>Analyse des risques climatiques</li>
                         <li>Évaluation environnementale</li>
@@ -845,6 +1231,7 @@
                         <li>Changement climatique</li>
                         <li>Analyse territoriale</li>
                     </ul>
+
                 </div>
 
             </div>
@@ -866,7 +1253,9 @@
             <div class="project-grid">
 
                 <div class="project-box">
+
                     <h4>Contexte</h4>
+
                     <p>
                         Ce travail s'inscrit dans l'étude des effets des
                         changements climatiques sur les écosystèmes et les
@@ -874,10 +1263,14 @@
                         particulière portée à la vulnérabilité des producteurs
                         et aux risques climatiques auxquels ils sont exposés.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Travail réalisé</h4>
+
                     <p>
                         Participation à l'évaluation de la vulnérabilité des
                         écosystèmes et des systèmes d'élevage face aux
@@ -885,10 +1278,14 @@
                         données environnementales et socio-économiques et
                         l'identification des principaux risques climatiques.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Importance des résultats</h4>
+
                     <p>
                         Les résultats permettent de mieux caractériser
                         l'exposition des systèmes d'élevage aux aléas
@@ -896,10 +1293,14 @@
                         en compte dans les stratégies d'adaptation des
                         producteurs.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Compétences mobilisées</h4>
+
                     <ul>
                         <li>Analyse de la vulnérabilité</li>
                         <li>Analyse des risques climatiques</li>
@@ -908,6 +1309,7 @@
                         <li>Environnement et climat</li>
                         <li>Analyse socio-économique</li>
                     </ul>
+
                 </div>
 
             </div>
@@ -928,26 +1330,36 @@
             <div class="project-grid">
 
                 <div class="project-box">
+
                     <h4>Contexte</h4>
+
                     <p>
                         Ce travail s'inscrit dans la déclinaison territoriale
                         des engagements climatiques du Bénin et dans la mise
                         en œuvre locale de sa Contribution Déterminée au niveau
                         National.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Travail réalisé</h4>
+
                     <p>
                         Contribution à la rédaction du plan local de mise en
                         œuvre de la CDN du Bénin pour les communes
                         d'Abomey-Calavi, Toffo et Bohicon.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Importance des résultats</h4>
+
                     <p>
                         Le travail contribue à rapprocher les objectifs
                         nationaux de lutte contre les changements climatiques
@@ -955,10 +1367,14 @@
                         en fournissant un cadre de planification adapté
                         à l'échelle communale.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Compétences mobilisées</h4>
+
                     <ul>
                         <li>Politiques climatiques</li>
                         <li>Planification territoriale</li>
@@ -967,6 +1383,7 @@
                         <li>Rédaction technique</li>
                         <li>Diagnostic territorial</li>
                     </ul>
+
                 </div>
 
             </div>
@@ -988,17 +1405,23 @@
             <div class="project-grid">
 
                 <div class="project-box">
+
                     <h4>Contexte</h4>
+
                     <p>
                         Ce travail porte sur les effets des changements
                         climatiques sur la production vivrière et les
                         conditions socio-économiques des producteurs
                         agricoles dans le sud du Bénin.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Travail réalisé</h4>
+
                     <p>
                         Contribution à des travaux de recherche portant sur
                         l'analyse des impacts socio-économiques des
@@ -1006,10 +1429,14 @@
                         à partir de données environnementales et
                         socio-économiques.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Importance des résultats</h4>
+
                     <p>
                         L'étude contribue à mieux comprendre les conséquences
                         des changements climatiques sur les activités
@@ -1017,10 +1444,14 @@
                         réflexion sur les stratégies d'adaptation des
                         producteurs.
                     </p>
+
                 </div>
 
+
                 <div class="project-box">
+
                     <h4>Compétences mobilisées</h4>
+
                     <ul>
                         <li>Analyse des changements climatiques</li>
                         <li>Analyse statistique</li>
@@ -1029,6 +1460,7 @@
                         <li>Recherche scientifique</li>
                         <li>Interprétation des résultats</li>
                     </ul>
+
                 </div>
 
             </div>
@@ -1036,22 +1468,29 @@
         </article>
 
     </div>
+
 </section>
 
 
 <!-- EXPÉRIENCE -->
 
 <section id="experience">
+
     <div class="container">
 
         <div class="section-header">
-            <div class="section-number">04 - Parcours</div>
+
+            <div class="section-number">05 - Parcours professionnel</div>
+
             <h2>Expérience</h2>
+
             <p>
                 Expériences professionnelles et académiques en lien avec
                 la géomatique, l'environnement et l'analyse territoriale.
             </p>
+
         </div>
+
 
         <div class="experience-item">
 
@@ -1060,6 +1499,7 @@
             </div>
 
             <div class="experience-content">
+
                 <h3>Chargé d'études junior</h3>
 
                 <div class="organization">
@@ -1072,6 +1512,7 @@
                     naturelles, les risques climatiques et les impacts
                     socio-économiques des changements climatiques.
                 </p>
+
             </div>
 
         </div>
@@ -1084,6 +1525,7 @@
             </div>
 
             <div class="experience-content">
+
                 <h3>Appui cartographique</h3>
 
                 <div class="organization">
@@ -1096,6 +1538,7 @@
                     de supports cartographiques sous ArcGIS Pro et QGIS
                     dans le cadre du projet COGEPHAM.
                 </p>
+
             </div>
 
         </div>
@@ -1108,22 +1551,75 @@
             </div>
 
             <div class="experience-content">
+
                 <h3>Tuteur en cartographie</h3>
 
                 <div class="organization">
-                    Université Grenoble Alpes
+                    Université Grenoble Alpes - France
                 </div>
 
                 <p>
-                    Accompagnement d'étudiants dans l'apprentissage de la
-                    cartographie et des outils associés aux systèmes
-                    d'information géographique.
+                    Accompagnement des étudiants de Licence 1 dans la
+                    compréhension des bases de la cartographie et des
+                    outils SIG.
                 </p>
+
             </div>
 
         </div>
 
     </div>
+
+</section>
+
+
+<!-- LANGUES -->
+
+<section id="langues">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">06 - Langues</div>
+
+            <h2>Langues</h2>
+
+            <p>
+                Compétences linguistiques utilisées dans les contextes
+                académiques et professionnels.
+            </p>
+
+        </div>
+
+
+        <div class="languages-grid">
+
+            <div class="language-card">
+
+                <h3>Français</h3>
+
+                <p>
+                    Langue de travail et d'études.
+                </p>
+
+            </div>
+
+
+            <div class="language-card">
+
+                <h3>Anglais - B2</h3>
+
+                <p>
+                    Niveau intermédiaire avancé.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
 
@@ -1135,7 +1631,7 @@
 
         <div class="section-header">
 
-            <div class="section-number">05 - Contact</div>
+            <div class="section-number">07 - Contact</div>
 
             <h2>Travaillons ensemble</h2>
 
@@ -1146,11 +1642,15 @@
 
         </div>
 
+
         <div class="contact-box">
 
             <div>
                 <strong>Carolus Zyad TOGONOU</strong>
-                <p>Géomatique & analyse environnementale</p>
+
+                <p>
+                    Géomatique & analyse environnementale
+                </p>
             </div>
 
             <a href="mailto:zyadtogonou@gmail.com">
@@ -1167,10 +1667,15 @@
 <!-- FOOTER -->
 
 <footer>
+
     <div class="container">
+
         © 2026 Carolus Zyad TOGONOU - Portfolio professionnel
+
     </div>
+
 </footer>
+
 
 </body>
 </html>
