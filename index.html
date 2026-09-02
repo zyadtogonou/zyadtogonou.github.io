@@ -1,1674 +1,1161 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Carolus Louis Zyad Togonou | Géomatique & Environnement</title>
+    <title>Carolus Zyad TOGONOU | Géomatique & Analyse environnementale</title>
 
-    <meta name="description"
-        content="Portfolio professionnel de Zyad Togonou — Géomatique, SIG, analyse environnementale, climat et risques territoriaux.">
+    <meta name="description" content="Portfolio professionnel de Carolus Zyad TOGONOU, géomaticien et analyste environnemental spécialisé en SIG, analyse spatiale, environnement et changement climatique.">
 
     <style>
-
-        /* ==============================
-           VARIABLES & RESET
-        ============================== */
-
         :root {
-            --primary: #173f35;
-            --primary-light: #2f6b59;
-            --accent: #76a68e;
-            --light-green: #eaf3ee;
-            --dark: #182421;
-            --text: #46504d;
-            --light-text: #6d7774;
-            --background: #f7f8f7;
+            --green: #1f6f5c;
+            --green-dark: #164f42;
+            --green-light: #eaf5f1;
+            --text: #1d2925;
+            --muted: #687570;
             --white: #ffffff;
-            --border: #e4e8e6;
+            --background: #f6f8f7;
+            --border: #dfe7e3;
+            --shadow: 0 10px 30px rgba(22, 79, 66, 0.08);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--background);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
             color: var(--text);
+            background: var(--background);
             line-height: 1.7;
         }
 
         a {
+            color: inherit;
             text-decoration: none;
         }
 
-        /* ==============================
-           NAVIGATION
-        ============================== */
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        /* NAVIGATION */
 
         nav {
-            position: fixed;
+            position: sticky;
             top: 0;
-            width: 100%;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.96);
             border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 17px 25px;
+            height: 72px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
-            color: var(--primary);
-            font-size: 20px;
+            font-size: 1.3rem;
             font-weight: 800;
+            color: var(--green);
             letter-spacing: 1px;
         }
 
         .nav-links {
-            list-style: none;
             display: flex;
             gap: 28px;
+            list-style: none;
         }
 
         .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 600;
             color: var(--text);
-            font-size: 14px;
-            font-weight: 500;
-            transition: 0.3s;
+            transition: 0.2s;
         }
 
         .nav-links a:hover {
-            color: var(--primary-light);
+            color: var(--green);
         }
 
-        /* ==============================
-           HERO
-        ============================== */
+        /* HERO */
 
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 130px 25px 90px;
-
-            background:
-                radial-gradient(
-                    circle at 85% 30%,
-                    rgba(118, 166, 142, 0.16),
-                    transparent 30%
-                ),
-                linear-gradient(
-                    135deg,
-                    #f8faf9 0%,
-                    #ffffff 50%,
-                    #edf5f0 100%
-                );
+            padding: 110px 0 100px;
+            background: var(--white);
         }
 
-        .hero-container {
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: 1.25fr 0.75fr;
-            gap: 80px;
-            align-items: center;
+        .hero-content {
+            max-width: 850px;
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-
-            background: var(--light-green);
-            color: var(--primary);
-
-            padding: 8px 16px;
+        .hero-label {
+            display: inline-block;
+            padding: 7px 13px;
+            margin-bottom: 22px;
+            background: var(--green-light);
+            color: var(--green-dark);
             border-radius: 30px;
-
-            font-size: 12px;
+            font-size: 0.85rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
+        }
 
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            line-height: 1.05;
+            letter-spacing: -2px;
             margin-bottom: 24px;
         }
 
-        .hero-badge::before {
-            content: "";
-            width: 8px;
-            height: 8px;
-            background: var(--primary-light);
-            border-radius: 50%;
+        .hero h1 span {
+            color: var(--green);
         }
 
-        h1 {
-            font-size: clamp(48px, 6vw, 72px);
-            line-height: 1.05;
-            color: var(--dark);
-            margin-bottom: 25px;
-            letter-spacing: -2px;
+        .hero p {
+            max-width: 780px;
+            color: var(--muted);
+            font-size: 1.15rem;
         }
 
-        h1 span {
-            color: var(--primary-light);
-        }
-
-        .hero-description {
-            max-width: 700px;
-            font-size: 19px;
-            color: var(--text);
-            margin-bottom: 32px;
-        }
-
-        .hero-description strong {
-            color: var(--primary);
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            padding: 14px 24px;
-
-            background: var(--primary);
-            color: white;
-
-            border-radius: 8px;
-
-            font-size: 14px;
-            font-weight: 600;
-
-            transition: 0.3s;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-light);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            display: inline-block;
-            padding: 14px 24px;
-
-            border: 1px solid var(--primary);
-            color: var(--primary);
-
-            border-radius: 8px;
-
-            font-size: 14px;
-            font-weight: 600;
-
-            transition: 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background: var(--light-green);
-        }
-
-        /* PROFILE CARD */
-
-        .profile-card {
-            background: rgba(255,255,255,0.9);
-
-            border: 1px solid var(--border);
-            border-radius: 20px;
-
-            padding: 38px;
-
-            box-shadow:
-                0 20px 60px rgba(23, 63, 53, 0.08);
-        }
-
-        .profile-initials {
-            width: 105px;
-            height: 105px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--primary),
-                    var(--primary-light)
-                );
-
-            color: white;
-
-            font-size: 32px;
-            font-weight: 700;
-
-            margin-bottom: 25px;
-        }
-
-        .profile-card h2 {
-            color: var(--dark);
-            font-size: 25px;
-            margin-bottom: 5px;
-        }
-
-        .profile-title {
-            color: var(--primary-light);
-            font-size: 15px;
-            font-weight: 600;
-        }
-
-        .profile-divider {
-            height: 1px;
-            background: var(--border);
-            margin: 25px 0;
-        }
-
-        .profile-info {
-            display: flex;
-            flex-direction: column;
-            gap: 13px;
-        }
-
-        .profile-info div {
-            font-size: 14px;
-            color: var(--text);
-        }
-
-        .profile-info strong {
-            color: var(--dark);
-        }
-
-        /* ==============================
-           GENERAL SECTIONS
-        ============================== */
-
-        section {
-            padding: 105px 25px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section-label {
-            color: var(--primary-light);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .section-title {
-            font-size: 42px;
-            line-height: 1.2;
-            color: var(--dark);
-            margin-bottom: 18px;
-        }
-
-        .section-description {
-            max-width: 750px;
-            color: var(--light-text);
-            font-size: 17px;
-            margin-bottom: 55px;
-        }
-
-        /* ==============================
-           ABOUT
-        ============================== */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 80px;
-        }
-
-        .about-text p {
-            margin-bottom: 22px;
-            font-size: 16px;
-        }
-
-        .highlight-box {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 15px;
-            padding: 32px;
-        }
-
-        .highlight-box h3 {
-            color: var(--dark);
-            margin-bottom: 22px;
-            font-size: 19px;
-        }
-
-        .focus-list {
-            list-style: none;
-        }
-
-        .focus-list li {
-            padding: 13px 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 14px;
-        }
-
-        .focus-list li:last-child {
-            border-bottom: none;
-        }
-
-        .focus-list li::before {
-            content: "—";
-            color: var(--primary-light);
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        /* ==============================
-           SKILLS
-        ============================== */
-
-        .skills-section {
-            background: var(--white);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .skill-card {
-            padding: 28px;
-            background: #fafcfb;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            transition: 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
-        }
-
-        .skill-number {
-            color: var(--accent);
-            font-weight: 800;
-            font-size: 13px;
-            margin-bottom: 18px;
-        }
-
-        .skill-card h3 {
-            color: var(--dark);
-            font-size: 18px;
-            margin-bottom: 12px;
-        }
-
-        .skill-card p {
-            font-size: 14px;
-            color: var(--light-text);
-        }
-
-        /* ==============================
-           PROJECTS
-        ============================== */
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 28px;
-        }
-
-        .project-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.07);
-        }
-
-        .project-header {
-            height: 130px;
-            padding: 25px;
-
-            display: flex;
-            align-items: flex-end;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--primary),
-                    var(--primary-light)
-                );
-
-            color: white;
-        }
-
-        .project-number {
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            opacity: 0.8;
-        }
-
-        .project-content {
-            padding: 30px;
-        }
-
-        .project-content h3 {
-            color: var(--dark);
-            font-size: 20px;
-            line-height: 1.35;
-            margin-bottom: 15px;
-        }
-
-        .project-content p {
-            color: var(--light-text);
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .tags {
+        .hero-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 12px;
+            margin-top: 35px;
         }
 
         .tag {
-            background: var(--light-green);
-            color: var(--primary);
-            padding: 5px 10px;
-            border-radius: 20px;
-
-            font-size: 11px;
-            font-weight: 700;
+            padding: 9px 15px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            background: white;
+            font-size: 0.9rem;
+            font-weight: 600;
         }
 
-        /* ==============================
-           EXPERIENCE
-        ============================== */
+        /* SECTIONS */
 
-        .experience-section {
-            background: var(--white);
+        section {
+            padding: 90px 0;
         }
 
-        .timeline {
-            max-width: 950px;
+        .section-header {
+            margin-bottom: 45px;
+            max-width: 760px;
         }
 
-        .timeline-item {
-            position: relative;
-
-            padding: 0 0 48px 40px;
-
-            border-left: 2px solid #c7ddd1;
-        }
-
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-
-        .timeline-item::before {
-            content: "";
-
-            position: absolute;
-            left: -8px;
-            top: 5px;
-
-            width: 14px;
-            height: 14px;
-
-            background: var(--primary-light);
-            border-radius: 50%;
-        }
-
-        .timeline-date {
-            color: var(--primary-light);
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 7px;
-        }
-
-        .timeline-item h3 {
-            color: var(--dark);
-            font-size: 21px;
-            margin-bottom: 5px;
-        }
-
-        .timeline-company {
-            color: var(--light-text);
-            font-size: 15px;
-            margin-bottom: 13px;
-        }
-
-        .timeline-item p {
-            max-width: 750px;
-            font-size: 15px;
-            color: var(--text);
-        }
-
-        .timeline-list {
-            margin-top: 15px;
-            padding-left: 20px;
-        }
-
-        .timeline-list li {
+        .section-number {
+            color: var(--green);
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 8px;
-            font-size: 14px;
         }
 
-        /* ==============================
-           EDUCATION
-        ============================== */
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
 
-        .education-section {
-            background: var(--primary);
+        .section-header p {
+            color: var(--muted);
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+            color: var(--muted);
+        }
+
+        .profile-card {
+            background: var(--green-dark);
             color: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
         }
 
-        .education-section .section-label {
-            color: #a9d0ba;
+        .profile-card h3 {
+            margin-bottom: 25px;
+            font-size: 1.3rem;
         }
 
-        .education-section .section-title {
-            color: white;
+        .profile-item {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
         }
 
-        .education-section .section-description {
-            color: #d4e6dc;
+        .profile-item:last-child {
+            border-bottom: none;
         }
 
-        .education-grid {
+        .profile-item small {
+            display: block;
+            opacity: 0.65;
+            margin-bottom: 4px;
+        }
+
+        /* COMPETENCES */
+
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
 
-        .education-card {
-            padding: 30px;
-
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 14px;
-
-            background: rgba(255,255,255,0.05);
+        .skill-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: var(--shadow);
         }
 
-        .education-date {
-            color: #a9d0ba;
-            font-size: 13px;
-            font-weight: 700;
+        .skill-card h3 {
+            color: var(--green);
             margin-bottom: 15px;
         }
 
-        .education-card h3 {
-            font-size: 19px;
-            line-height: 1.4;
-            margin-bottom: 14px;
+        .skill-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
         }
 
-        .education-card p {
-            color: #d4e6dc;
-            font-size: 14px;
+        /* PROJETS */
+
+        .projects {
+            background: white;
         }
 
-        /* ==============================
-           CONTACT
-        ============================== */
+        .project {
+            margin-bottom: 55px;
+            padding: 40px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: var(--background);
+        }
+
+        .project:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-number {
+            color: var(--green);
+            font-weight: 800;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .project h3 {
+            font-size: 1.7rem;
+            line-height: 1.3;
+            margin-bottom: 25px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 25px;
+        }
+
+        .project-box h4 {
+            color: var(--green-dark);
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .project-box p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .project-box ul {
+            padding-left: 18px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .project-box li {
+            margin-bottom: 6px;
+        }
+
+        /* EXPERIENCE */
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 40px;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .experience-item:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .experience-date {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .experience-content h3 {
+            margin-bottom: 5px;
+            font-size: 1.25rem;
+        }
+
+        .experience-content .organization {
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+
+        .experience-content p {
+            color: var(--muted);
+        }
+
+        /* CONTACT */
 
         .contact {
-            text-align: center;
+            background: var(--green-dark);
+            color: white;
+        }
+
+        .contact .section-number {
+            color: #b9dfd2;
+        }
+
+        .contact .section-header p {
+            color: rgba(255,255,255,0.7);
         }
 
         .contact-box {
-            max-width: 850px;
-            margin: auto;
-
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-
-            padding: 60px 35px;
-        }
-
-        .contact-box h2 {
-            color: var(--dark);
-            font-size: 38px;
-            margin-bottom: 18px;
-        }
-
-        .contact-box p {
-            max-width: 650px;
-            margin: 0 auto 30px;
-            color: var(--light-text);
-            font-size: 17px;
-        }
-
-        .contact-links {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 14px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            background: rgba(255,255,255,0.05);
         }
 
-        /* ==============================
-           FOOTER
-        ============================== */
+        .contact-box a {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
 
         footer {
-            background: var(--dark);
-            color: #aab8b1;
-
+            background: #103a31;
+            color: rgba(255,255,255,0.65);
+            padding: 25px 0;
             text-align: center;
-
-            padding: 30px 20px;
-
-            font-size: 13px;
+            font-size: 0.85rem;
         }
 
-        /* ==============================
-           RESPONSIVE
-        ============================== */
+        /* RESPONSIVE */
 
-        @media (max-width: 1000px) {
+        @media (max-width: 850px) {
 
-            .hero-container,
-            .about-grid {
-                grid-template-columns: 1fr;
+            .nav-container {
+                height: auto;
+                padding: 18px 0;
+                flex-direction: column;
+                gap: 15px;
             }
-
-            .hero-container {
-                gap: 50px;
-            }
-
-            .profile-card {
-                max-width: 600px;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .education-grid {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-        @media (max-width: 700px) {
 
             .nav-links {
-                display: none;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .hero {
-                padding-top: 110px;
+                padding: 75px 0;
             }
 
-            .projects-grid,
-            .skills-grid {
+            .about-grid,
+            .skills-grid,
+            .project-grid {
                 grid-template-columns: 1fr;
             }
 
-            section {
-                padding: 75px 20px;
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
             }
 
-            .section-title {
-                font-size: 34px;
+            .project {
+                padding: 25px;
             }
 
             .contact-box {
-                padding: 45px 25px;
+                flex-direction: column;
+                align-items: flex-start;
             }
-
-            .timeline-item {
-                padding-left: 28px;
-            }
-
         }
 
+        @media (max-width: 500px) {
+
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .project h3 {
+                font-size: 1.4rem;
+            }
+        }
     </style>
 </head>
 
-
 <body>
 
-
-<!-- ==============================
-     NAVIGATION
-============================== -->
+<!-- NAVIGATION -->
 
 <nav>
-
-    <div class="nav-container">
-
-        <a href="#" class="logo">
-            ZT.
-        </a>
+    <div class="container nav-container">
+        <a href="#accueil" class="logo">ZT.</a>
 
         <ul class="nav-links">
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#skills">Compétences</a></li>
-            <li><a href="#projects">Projets</a></li>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#projets">Projets</a></li>
             <li><a href="#experience">Expérience</a></li>
-            <li><a href="#education">Formation</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-
     </div>
-
 </nav>
 
 
-<!-- ==============================
-     HERO
-============================== -->
+<!-- HERO -->
 
-<section class="hero">
+<header class="hero" id="accueil">
+    <div class="container">
+        <div class="hero-content">
 
-    <div class="hero-container">
-
-        <div>
-
-            <div class="hero-badge">
-                GÉOMATIQUE • ENVIRONNEMENT • CLIMAT
+            <div class="hero-label">
+                Géomatique & analyse environnementale
             </div>
 
             <h1>
-                Zyad<br>
-                <span>Togonou</span>
+                Carolus Zyad <span>TOGONOU</span>
             </h1>
 
-            <p class="hero-description">
-
-                Étudiant en <strong>Master GEOÏDES</strong> à l'Université
-                Grenoble Alpes, avec un parcours à l'intersection de la
-                géographie de l'environnement, des systèmes d'information
-                géographique et de la gestion des ressources naturelles.
-
+            <p>
+                Géomaticien et analyste environnemental spécialisé dans
+                l'analyse spatiale, les systèmes d'information géographique
+                et l'étude des interactions entre environnement, territoires
+                et changement climatique.
             </p>
 
-            <div class="hero-buttons">
-
-                <a href="#projects" class="btn-primary">
-                    Découvrir mes expériences
-                </a>
-
-                <a href="#contact" class="btn-secondary">
-                    Me contacter
-                </a>
-
+            <div class="hero-info">
+                <span class="tag">Grenoble, France</span>
+                <span class="tag">Master GEOÏDES — UGA</span>
+                <span class="tag">SIG & Géomatique</span>
+                <span class="tag">Environnement & Climat</span>
             </div>
 
         </div>
-
-
-        <div class="profile-card">
-
-            <!-- Plus tard, cette zone pourra être remplacée par une photo -->
-
-            <div class="profile-initials">
-                ZT
-            </div>
-
-            <h2>Zyad Togonou</h2>
-
-            <p class="profile-title">
-                Géomatique • Environnement • SIG
-            </p>
-
-            <div class="profile-divider"></div>
-
-            <div class="profile-info">
-
-                <div>
-                    <strong>Localisation :</strong> Grenoble, France
-                </div>
-
-                <div>
-                    <strong>Formation :</strong> Master GEOÏDES
-                </div>
-
-                <div>
-                    <strong>Domaines :</strong> SIG, environnement, climat
-                </div>
-
-                <div>
-                    <strong>Approche :</strong> Analyse spatiale & données
-                </div>
-
-            </div>
-
-        </div>
-
     </div>
+</header>
 
-</section>
 
+<!-- À PROPOS -->
 
-<!-- ==============================
-     ABOUT
-============================== -->
-
-<section id="about">
-
+<section id="apropos">
     <div class="container">
 
-        <div class="section-label">
-            Profil
+        <div class="section-header">
+            <div class="section-number">01 — Profil</div>
+            <h2>À propos</h2>
+            <p>
+                Un profil à l'interface entre données spatiales,
+                environnement et analyse territoriale.
+            </p>
         </div>
-
-        <h2 class="section-title">
-            À propos de moi
-        </h2>
-
-        <p class="section-description">
-
-            Un parcours pluridisciplinaire construit autour de la compréhension
-            des enjeux environnementaux, de l'analyse territoriale et de la
-            mobilisation des outils géomatiques.
-
-        </p>
-
 
         <div class="about-grid">
 
             <div class="about-text">
 
                 <p>
-
-                    Mon parcours académique et professionnel s'inscrit dans
-                    l'étude des relations entre environnement, territoires
-                    et sociétés. Après une formation en aménagement et gestion
-                    des ressources naturelles, j'ai développé une expertise
-                    progressive dans l'analyse environnementale et les systèmes
-                    d'information géographique.
-
+                    Mon parcours est orienté vers l'analyse des territoires,
+                    la géomatique et les problématiques environnementales,
+                    avec un intérêt particulier pour les changements
+                    climatiques et leurs impacts sur les écosystèmes et
+                    les activités humaines.
                 </p>
 
                 <p>
-
-                    Mes expériences m'ont conduit à contribuer à des travaux
-                    portant notamment sur les risques climatiques, la vulnérabilité
-                    des écosystèmes, les émissions de gaz à effet de serre,
-                    la planification climatique territoriale et la cartographie.
-
+                    Je mobilise les systèmes d'information géographique,
+                    la cartographie, l'analyse spatiale et le traitement
+                    des données afin de produire des informations utiles
+                    à la compréhension et à l'aide à la décision territoriale.
                 </p>
 
                 <p>
-
-                    Je m'intéresse particulièrement à la manière dont les données
-                    spatiales, environnementales et climatiques peuvent être
-                    mobilisées pour mieux comprendre les dynamiques territoriales
-                    et contribuer à l'aide à la décision.
-
+                    Mes expériences académiques et professionnelles m'ont
+                    également permis de travailler sur des problématiques
+                    liées à la restauration des paysages, aux risques
+                    climatiques, à la vulnérabilité des systèmes d'élevage,
+                    aux politiques climatiques et à la production agricole.
                 </p>
 
             </div>
 
+            <div class="profile-card">
 
-            <div class="highlight-box">
+                <h3>Profil professionnel</h3>
 
-                <h3>
-                    Domaines d'intérêt
-                </h3>
+                <div class="profile-item">
+                    <small>Formation</small>
+                    Master GEOÏDES — Université Grenoble Alpes
+                </div>
 
-                <ul class="focus-list">
+                <div class="profile-item">
+                    <small>Domaine</small>
+                    Géomatique & environnement
+                </div>
 
-                    <li>Systèmes d'information géographique</li>
+                <div class="profile-item">
+                    <small>Spécialités</small>
+                    SIG, analyse spatiale, cartographie, données environnementales
+                </div>
 
-                    <li>Analyse spatiale et cartographie</li>
-
-                    <li>Environnement et ressources naturelles</li>
-
-                    <li>Changement climatique et risques</li>
-
-                    <li>Analyse et traitement de données</li>
-
-                    <li>Télédétection et données spatiales</li>
-
-                </ul>
+                <div class="profile-item">
+                    <small>Localisation</small>
+                    Grenoble, France
+                </div>
 
             </div>
 
         </div>
 
     </div>
-
 </section>
 
 
-<!-- ==============================
-     SKILLS
-============================== -->
+<!-- COMPÉTENCES -->
 
-<section class="skills-section" id="skills">
-
+<section id="competences">
     <div class="container">
 
-        <div class="section-label">
-            Expertise
+        <div class="section-header">
+            <div class="section-number">02 — Expertise</div>
+            <h2>Compétences</h2>
+            <p>
+                Des compétences techniques mobilisées pour le traitement,
+                l'analyse et la valorisation des données environnementales
+                et territoriales.
+            </p>
         </div>
-
-        <h2 class="section-title">
-            Compétences & outils
-        </h2>
-
-        <p class="section-description">
-
-            Des compétences mobilisées dans les domaines de la géomatique,
-            de l'analyse environnementale et du traitement de données.
-
-        </p>
-
 
         <div class="skills-grid">
 
-
             <div class="skill-card">
-
-                <div class="skill-number">01</div>
-
-                <h3>SIG & Cartographie</h3>
-
+                <h3>SIG & cartographie</h3>
                 <p>
-                    QGIS, ArcGIS Pro, production cartographique
-                    et traitement de données géographiques.
+                    QGIS, ArcGIS Pro, cartographie thématique,
+                    numérisation, structuration des données spatiales,
+                    analyse spatiale et production cartographique.
                 </p>
-
             </div>
 
-
             <div class="skill-card">
-
-                <div class="skill-number">02</div>
-
                 <h3>Télédétection</h3>
-
                 <p>
-                    Exploitation et analyse de données spatiales
-                    avec notamment ENVI.
+                    Traitement et analyse de données issues de
+                    l'observation de la Terre et utilisation d'outils
+                    dédiés à l'analyse environnementale.
                 </p>
-
             </div>
 
-
             <div class="skill-card">
-
-                <div class="skill-number">03</div>
-
                 <h3>Analyse de données</h3>
-
                 <p>
-                    Traitement et analyse de données avec R
-                    et SQL.
+                    R, SQL, traitement statistique, exploration de données
+                    et analyse de données environnementales et
+                    socio-économiques.
                 </p>
-
             </div>
 
-
             <div class="skill-card">
-
-                <div class="skill-number">04</div>
-
                 <h3>Bases de données spatiales</h3>
-
                 <p>
-                    Gestion et exploitation de données géographiques
-                    avec PostgreSQL et PostGIS.
+                    PostgreSQL, PostGIS, organisation et gestion de
+                    données géographiques et préparation des données
+                    pour l'analyse spatiale.
                 </p>
-
             </div>
-
 
             <div class="skill-card">
-
-                <div class="skill-number">05</div>
-
-                <h3>Analyse hydroclimatique</h3>
-
+                <h3>Climat & environnement</h3>
                 <p>
-                    Traitement et analyse de données
-                    hydroclimatiques avec HyfranPlus.
+                    Analyse des changements climatiques, risques climatiques,
+                    vulnérabilité des écosystèmes, ressources naturelles
+                    et adaptation.
                 </p>
-
             </div>
-
 
             <div class="skill-card">
-
-                <div class="skill-number">06</div>
-
-                <h3>Changement climatique</h3>
-
+                <h3>Traitement statistique</h3>
                 <p>
-                    Analyse des risques climatiques, vulnérabilité
-                    et planification territoriale.
+                    Analyse statistique de données environnementales,
+                    traitement de séries de données climatiques et
+                    interprétation des résultats.
                 </p>
-
             </div>
-
-
-            <div class="skill-card">
-
-                <div class="skill-number">07</div>
-
-                <h3>Recherche appliquée</h3>
-
-                <p>
-                    Contribution à des études environnementales
-                    et climatiques.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <div class="skill-number">08</div>
-
-                <h3>Langues</h3>
-
-                <p>
-                    Français : natif<br>
-                    Anglais : niveau B2
-                </p>
-
-            </div>
-
 
         </div>
 
     </div>
-
 </section>
 
 
-<!-- ==============================
-     PROJECTS
-============================== -->
+<!-- PROJETS -->
 
-<section id="projects">
-
+<section class="projects" id="projets">
     <div class="container">
 
-        <div class="section-label">
-            Travaux & contributions
+        <div class="section-header">
+            <div class="section-number">03 — Réalisations</div>
+            <h2>Projets</h2>
+            <p>
+                Quelques travaux académiques et professionnels réalisés
+                autour de la géomatique, de l'environnement et du changement
+                climatique.
+            </p>
         </div>
 
-        <h2 class="section-title">
-            Expériences et projets
-        </h2>
 
-        <p class="section-description">
+        <!-- PROJET 1 -->
 
-            Une sélection de travaux auxquels j'ai contribué dans les domaines
-            de la cartographie, du changement climatique, des risques
-            environnementaux et de la gestion des ressources naturelles.
+        <article class="project">
 
-        </p>
+            <div class="project-number">PROJET 01</div>
 
+            <h3>
+                Cartographie des paysages du Djebel Saghro —
+                Projet COGEPHAM
+            </h3>
 
-        <div class="projects-grid">
+            <div class="project-grid">
 
-
-            <!-- PROJECT 1 -->
-
-            <div class="project-card">
-
-                <div class="project-header">
-                    <div class="project-number">
-                        PROJET 01
-                    </div>
+                <div class="project-box">
+                    <h4>Contexte</h4>
+                    <p>
+                        Dans le cadre d'un stage réalisé au Laboratoire Pacte
+                        de l'Université Grenoble Alpes, ce travail s'inscrit
+                        dans le projet COGEPHAM consacré à la gestion durable
+                        des ressources pastorales dans le massif du Djebel
+                        Saghro au Maroc.
+                    </p>
                 </div>
 
-                <div class="project-content">
-
-                    <h3>
-                        Cartographie des paysages du terrain de parcours
-                        de la tribu des Aït Zekri
-                    </h3>
-
+                <div class="project-box">
+                    <h4>Travail réalisé</h4>
                     <p>
-
-                        Réalisation d'une carte des paysages à partir du
-                        traitement et de l'organisation de données spatiales,
-                        suivis de la production d'un support cartographique
-                        de synthèse sous ArcGIS Pro.
-
+                        Finalisation de la numérisation des facettes de
+                        paysage de six bassins versants. Le travail a porté
+                        sur la digitalisation, la correction et
+                        l'harmonisation des couches spatiales, la structuration
+                        des tables attributaires, le contrôle géométrique et
+                        la production de données cartographiques cohérentes
+                        sous ArcGIS Pro et QGIS.
                     </p>
+                </div>
 
-                    <div class="tags">
+                <div class="project-box">
+                    <h4>Importance des résultats</h4>
+                    <p>
+                        Les données produites permettent de disposer d'une
+                        représentation spatiale homogène des paysages des
+                        différents bassins versants. Elles constituent un
+                        support pour l'analyse environnementale, le diagnostic
+                        territorial et l'étude des ressources pastorales.
+                    </p>
+                </div>
 
-                        <span class="tag">ArcGIS Pro</span>
-                        <span class="tag">Cartographie</span>
-                        <span class="tag">Données spatiales</span>
-
-                    </div>
-
+                <div class="project-box">
+                    <h4>Compétences mobilisées</h4>
+                    <ul>
+                        <li>ArcGIS Pro</li>
+                        <li>QGIS</li>
+                        <li>Numérisation et digitalisation</li>
+                        <li>Structuration de données spatiales</li>
+                        <li>Contrôle géométrique</li>
+                        <li>Analyse spatiale</li>
+                        <li>Production cartographique</li>
+                    </ul>
                 </div>
 
             </div>
 
+        </article>
 
-            <!-- PROJECT 2 -->
 
-            <div class="project-card">
+        <!-- PROJET 2 -->
 
-                <div class="project-header">
-                    <div class="project-number">
-                        PROJET 02
-                    </div>
-                </div>
+        <article class="project">
 
-                <div class="project-content">
+            <div class="project-number">PROJET 02</div>
 
-                    <h3>
-                        Évaluation des risques climatiques du projet routier
-                        Bohicon–Dassa-Zoumé
-                    </h3>
+            <h3>
+                Évaluation des opportunités de restauration
+                des paysages forestiers du Bénin
+            </h3>
 
+            <div class="project-grid">
+
+                <div class="project-box">
+                    <h4>Contexte</h4>
                     <p>
-
-                        Contribution à l'évaluation des risques climatiques
-                        associés au projet routier ainsi qu'à la modélisation
-                        des émissions de gaz à effet de serre liées
-                        à l'extension routière.
-
+                        Ce travail s'inscrit dans les démarches de restauration
+                        des paysages forestiers et de gestion durable des
+                        ressources naturelles au Bénin.
                     </p>
-
-                    <div class="tags">
-
-                        <span class="tag">Climat</span>
-                        <span class="tag">GES</span>
-                        <span class="tag">Risques</span>
-
-                    </div>
-
                 </div>
 
-            </div>
-
-
-            <!-- PROJECT 3 -->
-
-            <div class="project-card">
-
-                <div class="project-header">
-                    <div class="project-number">
-                        PROJET 03
-                    </div>
-                </div>
-
-                <div class="project-content">
-
-                    <h3>
-                        Vulnérabilité des écosystèmes et des systèmes d'élevage
-                        face aux changements climatiques
-                    </h3>
-
+                <div class="project-box">
+                    <h4>Travail réalisé</h4>
                     <p>
-
-                        Participation à l'évaluation de la vulnérabilité des
-                        écosystèmes et des systèmes d'élevage de ruminants
-                        face aux effets des changements climatiques.
-
-                    </p>
-
-                    <div class="tags">
-
-                        <span class="tag">Vulnérabilité</span>
-                        <span class="tag">Écosystèmes</span>
-                        <span class="tag">Climat</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PROJECT 4 -->
-
-            <div class="project-card">
-
-                <div class="project-header">
-                    <div class="project-number">
-                        PROJET 04
-                    </div>
-                </div>
-
-                <div class="project-content">
-
-                    <h3>
-                        Planification climatique territoriale au Bénin
-                    </h3>
-
-                    <p>
-
-                        Contribution à la rédaction du plan local de mise en
-                        œuvre de la Contribution Déterminée au niveau National
-                        du Bénin dans les communes d'Abomey-Calavi,
-                        Toffo et Bohicon.
-
-                    </p>
-
-                    <div class="tags">
-
-                        <span class="tag">Planification</span>
-                        <span class="tag">CDN</span>
-                        <span class="tag">Territoires</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PROJECT 5 -->
-
-            <div class="project-card">
-
-                <div class="project-header">
-                    <div class="project-number">
-                        PROJET 05
-                    </div>
-                </div>
-
-                <div class="project-content">
-
-                    <h3>
-                        Restauration des paysages forestiers du Bénin
-                    </h3>
-
-                    <p>
-
                         Contribution à la rédaction de la méthodologie
-                        d'évaluation des opportunités de restauration
-                        des paysages forestiers du Bénin.
-
+                        destinée à évaluer les opportunités de restauration
+                        des paysages forestiers du Bénin, en intégrant les
+                        dimensions environnementales et territoriales.
                     </p>
-
-                    <div class="tags">
-
-                        <span class="tag">Forêts</span>
-                        <span class="tag">Restauration</span>
-                        <span class="tag">Environnement</span>
-
-                    </div>
-
                 </div>
 
-            </div>
-
-
-            <!-- PROJECT 6 -->
-
-            <div class="project-card">
-
-                <div class="project-header">
-                    <div class="project-number">
-                        PROJET 06
-                    </div>
-                </div>
-
-                <div class="project-content">
-
-                    <h3>
-                        Changements climatiques et production vivrière
-                        au sud du Bénin
-                    </h3>
-
+                <div class="project-box">
+                    <h4>Importance des résultats</h4>
                     <p>
-
-                        Contribution à des travaux de recherche portant sur
-                        les impacts socio-économiques des changements
-                        climatiques sur la production vivrière.
-
+                        La méthodologie contribue à structurer l'identification
+                        des espaces présentant un potentiel de restauration
+                        et à fournir un cadre d'analyse pouvant soutenir
+                        la planification environnementale et territoriale.
                     </p>
+                </div>
 
-                    <div class="tags">
-
-                        <span class="tag">Recherche</span>
-                        <span class="tag">Agriculture</span>
-                        <span class="tag">Climat</span>
-
-                    </div>
-
+                <div class="project-box">
+                    <h4>Compétences mobilisées</h4>
+                    <ul>
+                        <li>Analyse environnementale</li>
+                        <li>Gestion des ressources naturelles</li>
+                        <li>Analyse territoriale</li>
+                        <li>Recherche bibliographique</li>
+                        <li>Rédaction scientifique</li>
+                        <li>Conception méthodologique</li>
+                    </ul>
                 </div>
 
             </div>
 
+        </article>
 
-        </div>
+
+        <!-- PROJET 3 -->
+
+        <article class="project">
+
+            <div class="project-number">PROJET 03</div>
+
+            <h3>
+                Évaluation des risques climatiques du projet
+                routier Bohicon–Dassa-Zoumé
+            </h3>
+
+            <div class="project-grid">
+
+                <div class="project-box">
+                    <h4>Contexte</h4>
+                    <p>
+                        Le projet porte sur l'analyse des risques climatiques
+                        associés à un projet d'extension routière au Bénin,
+                        dans une perspective d'intégration des enjeux
+                        environnementaux et climatiques aux projets
+                        d'infrastructure.
+                    </p>
+                </div>
+
+                <div class="project-box">
+                    <h4>Travail réalisé</h4>
+                    <p>
+                        Appui à l'évaluation des risques climatiques du projet
+                        routier et contribution à la modélisation des émissions
+                        de gaz à effet de serre associées à l'extension
+                        routière.
+                    </p>
+                </div>
+
+                <div class="project-box">
+                    <h4>Importance des résultats</h4>
+                    <p>
+                        L'analyse permet de mieux prendre en compte les
+                        risques climatiques et les émissions associées au
+                        projet dans les démarches d'évaluation environnementale
+                        et d'aide à la décision.
+                    </p>
+                </div>
+
+                <div class="project-box">
+                    <h4>Compétences mobilisées</h4>
+                    <ul>
+                        <li>Analyse des risques climatiques</li>
+                        <li>Évaluation environnementale</li>
+                        <li>Analyse de données</li>
+                        <li>Modélisation des émissions de GES</li>
+                        <li>Changement climatique</li>
+                        <li>Analyse territoriale</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJET 4 -->
+
+        <article class="project">
+
+            <div class="project-number">PROJET 04</div>
+
+            <h3>
+                Vulnérabilité des écosystèmes et des systèmes
+                d'élevage de ruminants face aux changements climatiques
+            </h3>
+
+            <div class="project-grid">
+
+                <div class="project-box">
+                    <h4>Contexte</h4>
+                    <p>
+                        Ce travail s'inscrit dans l'étude des effets des
+                        changements climatiques sur les écosystèmes et les
+                        systèmes d'élevage de ruminants, avec une attention
+                        particulière portée à la vulnérabilité des producteurs
+                        et aux risques climatiques auxquels ils sont exposés.
+                    </p>
+                </div>
+
+                <div class="project-box">
+                    <h4>Travail réalisé</h4>
+                    <p>
+                        Participation à l'évaluation de la vulnérabilité des
+                        écosystèmes et des systèmes d'élevage face aux
+                        changements climatiques, à travers l'analyse de
+                        données environnementales et socio-économiques et
+                        l'identification des principaux risques climatiques.
+                    </p>
+                </div>
+
+                <div class="project-box">
+                    <h4>Importance des résultats</h4>
+                    <p>
+                        Les résultats permettent de mieux caractériser
+                        l'exposition des systèmes d'élevage aux aléas
+                        climatiques et d'identifier les facteurs à prendre
+                        en compte dans les stratégies d'adaptation des
+                        producteurs.
+                    </p>
+                </div>
+
+                <div class="project-box">
+                    <h4>Compétences mobilisées</h4>
+                    <ul>
+                        <li>Analyse de la vulnérabilité</li>
+                        <li>Analyse des risques climatiques</li>
+                        <li>Traitement de données</li>
+                        <li>Analyse statistique</li>
+                        <li>Environnement et climat</li>
+                        <li>Analyse socio-économique</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJET 5 -->
+
+        <article class="project">
+
+            <div class="project-number">PROJET 05</div>
+
+            <h3>
+                Plan local de mise en œuvre de la CDN du Bénin
+            </h3>
+
+            <div class="project-grid">
+
+                <div class="project-box">
+                    <h4>Contexte</h4>
+                    <p>
+                        Ce travail s'inscrit dans la déclinaison territoriale
+                        des engagements climatiques du Bénin et dans la mise
+                        en œuvre locale de sa Contribution Déterminée au niveau
+                        National.
+                    </p>
+                </div>
+
+                <div class="project-box">
+                    <h4>Travail réalisé</h4>
+                    <p>
+                        Contribution à la rédaction du plan local de mise en
+                        œuvre de la CDN du Bénin pour les communes
+                        d'Abomey-Calavi, Toffo et Bohicon.
+                    </p>
+                </div>
+
+                <div class="project-box">
+                    <h4>Importance des résultats</h4>
+                    <p>
+                        Le travail contribue à rapprocher les objectifs
+                        nationaux de lutte contre les changements climatiques
+                        des réalités et priorités des territoires locaux,
+                        en fournissant un cadre de planification adapté
+                        à l'échelle communale.
+                    </p>
+                </div>
+
+                <div class="project-box">
+                    <h4>Compétences mobilisées</h4>
+                    <ul>
+                        <li>Politiques climatiques</li>
+                        <li>Planification territoriale</li>
+                        <li>Adaptation au changement climatique</li>
+                        <li>Analyse environnementale</li>
+                        <li>Rédaction technique</li>
+                        <li>Diagnostic territorial</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROJET 6 -->
+
+        <article class="project">
+
+            <div class="project-number">PROJET 06</div>
+
+            <h3>
+                Impacts socio-économiques des changements climatiques
+                sur la production vivrière au sud du Bénin
+            </h3>
+
+            <div class="project-grid">
+
+                <div class="project-box">
+                    <h4>Contexte</h4>
+                    <p>
+                        Ce travail porte sur les effets des changements
+                        climatiques sur la production vivrière et les
+                        conditions socio-économiques des producteurs
+                        agricoles dans le sud du Bénin.
+                    </p>
+                </div>
+
+                <div class="project-box">
+                    <h4>Travail réalisé</h4>
+                    <p>
+                        Contribution à des travaux de recherche portant sur
+                        l'analyse des impacts socio-économiques des
+                        changements climatiques sur la production vivrière,
+                        à partir de données environnementales et
+                        socio-économiques.
+                    </p>
+                </div>
+
+                <div class="project-box">
+                    <h4>Importance des résultats</h4>
+                    <p>
+                        L'étude contribue à mieux comprendre les conséquences
+                        des changements climatiques sur les activités
+                        agricoles et à fournir des éléments utiles à la
+                        réflexion sur les stratégies d'adaptation des
+                        producteurs.
+                    </p>
+                </div>
+
+                <div class="project-box">
+                    <h4>Compétences mobilisées</h4>
+                    <ul>
+                        <li>Analyse des changements climatiques</li>
+                        <li>Analyse statistique</li>
+                        <li>Traitement de données socio-économiques</li>
+                        <li>Analyse environnementale</li>
+                        <li>Recherche scientifique</li>
+                        <li>Interprétation des résultats</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </article>
 
     </div>
-
 </section>
 
 
-<!-- ==============================
-     EXPERIENCE
-============================== -->
+<!-- EXPÉRIENCE -->
 
-<section class="experience-section" id="experience">
-
+<section id="experience">
     <div class="container">
 
-        <div class="section-label">
-            Parcours professionnel
+        <div class="section-header">
+            <div class="section-number">04 — Parcours</div>
+            <h2>Expérience</h2>
+            <p>
+                Expériences professionnelles et académiques en lien avec
+                la géomatique, l'environnement et l'analyse territoriale.
+            </p>
         </div>
 
-        <h2 class="section-title">
-            Expériences professionnelles
-        </h2>
+        <div class="experience-item">
 
-        <p class="section-description">
+            <div class="experience-date">
+                2023 — 2024
+            </div>
 
-            Des expériences en recherche, cartographie et transmission
-            des compétences géomatiques.
+            <div class="experience-content">
+                <h3>Chargé d'études junior</h3>
 
-        </p>
-
-
-        <div class="timeline">
-
-
-            <!-- EXPERIENCE 1 -->
-
-            <div class="timeline-item">
-
-                <div class="timeline-date">
-                    2026 — 2027
-                </div>
-
-                <h3>
-                    Tuteur en cartographie
-                </h3>
-
-                <div class="timeline-company">
-                    Université Grenoble Alpes — France
+                <div class="organization">
+                    Laboratoire d'Écologie Appliquée — Université d'Abomey-Calavi, Bénin
                 </div>
 
                 <p>
-
-                    Accompagnement des étudiants de Licence 1 dans la
-                    compréhension des bases de la cartographie et des
-                    outils SIG.
-
+                    Participation à des études portant sur le climat,
+                    l'environnement, la gestion durable des ressources
+                    naturelles, les risques climatiques et les impacts
+                    socio-économiques des changements climatiques.
                 </p>
-
             </div>
 
+        </div>
 
-            <!-- EXPERIENCE 2 -->
 
-            <div class="timeline-item">
+        <div class="experience-item">
 
-                <div class="timeline-date">
-                    2026
-                </div>
-
-                <h3>
-                    Appui cartographique
-                </h3>
-
-                <div class="timeline-company">
-                    Laboratoire Pacte — France
-                </div>
-
-                <ul class="timeline-list">
-
-                    <li>
-                        Réalisation d'une carte des paysages du terrain
-                        de parcours de la tribu des Aït Zekri.
-                    </li>
-
-                    <li>
-                        Traitement et organisation de données spatiales.
-                    </li>
-
-                    <li>
-                        Production d'un support cartographique de synthèse
-                        sous ArcGIS Pro.
-                    </li>
-
-                </ul>
-
+            <div class="experience-date">
+                Janvier 2026
             </div>
 
+            <div class="experience-content">
+                <h3>Appui cartographique</h3>
 
-            <!-- EXPERIENCE 3 -->
-
-            <div class="timeline-item">
-
-                <div class="timeline-date">
-                    2023 — 2024
+                <div class="organization">
+                    Laboratoire Pacte — Université Grenoble Alpes, France
                 </div>
 
-                <h3>
-                    Chargé d'études junior
-                </h3>
-
-                <div class="timeline-company">
-                    Laboratoire d'Écologie Appliquée — Bénin
-                </div>
-
-                <ul class="timeline-list">
-
-                    <li>
-                        Contribution à des études sur les risques
-                        climatiques et les émissions de gaz à effet de serre.
-                    </li>
-
-                    <li>
-                        Participation à l'évaluation de la vulnérabilité
-                        des écosystèmes et des systèmes d'élevage.
-                    </li>
-
-                    <li>
-                        Contribution à la planification climatique
-                        territoriale.
-                    </li>
-
-                    <li>
-                        Participation à des travaux sur les impacts
-                        socio-économiques des changements climatiques.
-                    </li>
-
-                </ul>
-
+                <p>
+                    Traitement et organisation de données spatiales,
+                    numérisation de facettes de paysage et production
+                    de supports cartographiques sous ArcGIS Pro et QGIS
+                    dans le cadre du projet COGEPHAM.
+                </p>
             </div>
 
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="experience-date">
+                2026 — 2027
+            </div>
+
+            <div class="experience-content">
+                <h3>Tuteur en cartographie</h3>
+
+                <div class="organization">
+                    Université Grenoble Alpes
+                </div>
+
+                <p>
+                    Accompagnement d'étudiants dans l'apprentissage de la
+                    cartographie et des outils associés aux systèmes
+                    d'information géographique.
+                </p>
+            </div>
 
         </div>
 
     </div>
-
 </section>
 
 
-<!-- ==============================
-     EDUCATION
-============================== -->
-
-<section class="education-section" id="education">
-
-    <div class="container">
-
-        <div class="section-label">
-            Parcours académique
-        </div>
-
-        <h2 class="section-title">
-            Formation
-        </h2>
-
-        <p class="section-description">
-
-            Un parcours académique progressif entre gestion des ressources
-            naturelles, géographie de l'environnement et géomatique.
-
-        </p>
-
-
-        <div class="education-grid">
-
-
-            <div class="education-card">
-
-                <div class="education-date">
-                    2026 — 2027
-                </div>
-
-                <h3>
-                    Master GAED — parcours GEOÏDES
-                </h3>
-
-                <p>
-
-                    Géographie, Information, Interfaces, Durabilité,
-                    Environnements.
-
-                    <br><br>
-
-                    Université Grenoble Alpes — France.
-
-                    <br><br>
-
-                    Admis au programme thématique RISK de la
-                    Graduate School@UGA.
-
-                </p>
-
-            </div>
-
-
-            <div class="education-card">
-
-                <div class="education-date">
-                    2025 — 2026
-                </div>
-
-                <h3>
-                    Licence en Géographie et Aménagement de l'Environnement
-                </h3>
-
-                <p>
-
-                    Université Grenoble Alpes — France.
-
-                </p>
-
-            </div>
-
-
-            <div class="education-card">
-
-                <div class="education-date">
-                    2022 — 2023
-                </div>
-
-                <h3>
-                    Licence Aménagement et Gestion des Ressources Naturelles
-                </h3>
-
-                <p>
-
-                    Université d'Abomey-Calavi — Bénin.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ==============================
-     CONTACT
-============================== -->
+<!-- CONTACT -->
 
 <section class="contact" id="contact">
 
     <div class="container">
 
-        <div class="contact-box">
+        <div class="section-header">
 
-            <div class="section-label">
-                Contact
-            </div>
+            <div class="section-number">05 — Contact</div>
 
-            <h2>
-                Restons en contact
-            </h2>
+            <h2>Travaillons ensemble</h2>
 
             <p>
-
-                Vous souhaitez échanger autour d'un projet en géomatique,
-                cartographie, environnement, analyse spatiale ou changement
-                climatique ? Vous pouvez me contacter directement.
-
+                Pour un projet en géomatique, analyse spatiale,
+                environnement ou traitement de données.
             </p>
 
+        </div>
 
-            <div class="contact-links">
+        <div class="contact-box">
 
-                <a href="mailto:zyadtogonou@gmail.com"
-                   class="btn-primary">
-
-                    Me contacter par email
-
-                </a>
-
-
-                <a href="https://www.linkedin.com/in/zyad-togonou/"
-                   target="_blank"
-                   class="btn-secondary">
-
-                    LinkedIn
-
-                </a>
-
-
-                <a href="https://github.com/zyadtogonou"
-                   target="_blank"
-                   class="btn-secondary">
-
-                    GitHub
-
-                </a>
-
+            <div>
+                <strong>Carolus Zyad TOGONOU</strong>
+                <p>Géomatique & analyse environnementale</p>
             </div>
+
+            <a href="mailto:zyadtogonou@gmail.com">
+                zyadtogonou@gmail.com
+            </a>
 
         </div>
 
@@ -1677,17 +1164,13 @@
 </section>
 
 
-<!-- ==============================
-     FOOTER
-============================== -->
+<!-- FOOTER -->
 
 <footer>
-
-    © 2026–2027 Zyad Togonou — Géomatique, Environnement & Analyse spatiale
-
+    <div class="container">
+        © 2026 Carolus Zyad TOGONOU — Portfolio professionnel
+    </div>
 </footer>
 
-
 </body>
-
 </html>
