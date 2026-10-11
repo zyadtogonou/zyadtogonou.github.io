@@ -6,19 +6,19 @@
 
     <title>Carolus Zyad TOGONOU — Géomatique & Environnement</title>
 
-    <meta name="description" content="Portfolio de Carolus Zyad TOGONOU, géomaticien spécialisé en analyse spatiale, cartographie et environnement.">
+    <meta name="description" content="Portfolio professionnel de Carolus Zyad TOGONOU, géomaticien spécialisé en SIG, analyse spatiale, cartographie et environnement.">
 
-    <meta name="theme-color" content="#f8f9f7">
+    <meta name="theme-color" content="#f7f7f5">
 
     <style>
         :root {
-            --green: #236b57;
-            --green-dark: #174a3b;
-            --text: #202923;
-            --muted: #737b75;
-            --background: #f8f9f7;
+            --accent: #526579;
+            --accent-dark: #344658;
+            --text: #20252b;
+            --muted: #555e68;
+            --background: #f7f7f5;
             --white: #ffffff;
-            --border: #e5e9e4;
+            --border: #dfe2e5;
             --content-width: 1120px;
         }
 
@@ -38,14 +38,9 @@
                 Helvetica, Arial, sans-serif;
             color: var(--text);
             background: var(--background);
-            line-height: 1.7;
+            font-size: 16px;
+            line-height: 1.8;
             -webkit-font-smoothing: antialiased;
-        }
-
-        body,
-        button,
-        a {
-            -webkit-tap-highlight-color: transparent;
         }
 
         a {
@@ -67,43 +62,44 @@
         }
 
         .eyebrow {
-            color: var(--green);
-            font-size: 0.76rem;
+            color: var(--accent-dark);
+            font-size: 0.8rem;
             font-weight: 750;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
             margin-bottom: 18px;
         }
 
         .section {
-            padding: 105px 0;
+            padding: 100px 0;
         }
 
         .section-heading {
-            max-width: 690px;
-            margin-bottom: 52px;
+            max-width: 720px;
+            margin-bottom: 50px;
         }
 
         .section-heading h2 {
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            line-height: 1.12;
-            letter-spacing: -0.055em;
-            font-weight: 650;
-            margin-bottom: 18px;
+            font-size: clamp(2.1rem, 4vw, 3.2rem);
+            line-height: 1.2;
+            letter-spacing: -0.045em;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
 
         .section-heading p {
             color: var(--muted);
-            max-width: 620px;
-            font-size: 1rem;
+            max-width: 650px;
+            font-size: 1.05rem;
+            line-height: 1.8;
         }
 
         .text-link {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            color: var(--green);
-            font-size: 0.94rem;
+            color: var(--accent-dark);
+            font-size: 0.95rem;
             font-weight: 650;
             transition: gap 0.25s ease;
         }
@@ -112,20 +108,16 @@
             gap: 15px;
         }
 
-        .text-link span {
-            font-size: 1.2rem;
-        }
-
         /* Navigation */
 
         .site-header {
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(248, 249, 247, 0.92);
+            background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid rgba(229, 233, 228, 0.8);
+            border-bottom: 1px solid var(--border);
         }
 
         .nav-container {
@@ -137,10 +129,10 @@
         }
 
         .logo {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 800;
             letter-spacing: -0.06em;
-            color: var(--green);
+            color: var(--text);
             flex-shrink: 0;
         }
 
@@ -148,28 +140,28 @@
             list-style: none;
             display: flex;
             align-items: center;
-            gap: 27px;
+            gap: 24px;
         }
 
         .nav-links a {
-            color: #4e5851;
-            font-size: 0.84rem;
-            font-weight: 550;
+            color: #414952;
+            font-size: 0.88rem;
+            font-weight: 600;
             transition: color 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: var(--green);
+            color: var(--accent-dark);
         }
 
         /* Accueil */
 
         .hero {
-            min-height: 630px;
+            min-height: 620px;
             display: flex;
             align-items: center;
             background: var(--background);
-            padding: 105px 0 115px;
+            padding: 100px 0 110px;
         }
 
         .hero-content {
@@ -181,23 +173,23 @@
         }
 
         .hero h1 {
-            font-size: clamp(3.2rem, 8vw, 6.7rem);
-            line-height: 0.98;
-            letter-spacing: -0.085em;
-            font-weight: 720;
+            font-size: clamp(3.2rem, 8vw, 6.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.065em;
+            font-weight: 750;
             margin-bottom: 30px;
         }
 
         .hero h1 span {
             display: block;
-            color: var(--green);
+            color: var(--accent-dark);
         }
 
         .hero-description {
-            max-width: 680px;
+            max-width: 700px;
             color: var(--muted);
-            font-size: clamp(1.05rem, 2vw, 1.2rem);
-            line-height: 1.85;
+            font-size: 1.2rem;
+            line-height: 1.9;
         }
 
         .hero-actions {
@@ -212,19 +204,18 @@
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            padding: 13px 19px;
-            background: var(--green);
+            padding: 14px 21px;
+            background: var(--text);
             color: white;
-            border: 1px solid var(--green);
+            border: 1px solid var(--text);
             border-radius: 4px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            transition: background 0.25s ease,
-                transform 0.25s ease;
+            transition: background 0.25s ease, transform 0.25s ease;
         }
 
         .button-primary:hover {
-            background: var(--green-dark);
+            background: var(--accent-dark);
             transform: translateY(-2px);
         }
 
@@ -236,7 +227,7 @@
             padding-top: 23px;
             border-top: 1px solid var(--border);
             color: var(--muted);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
         .hero-meta span {
@@ -250,7 +241,7 @@
             width: 5px;
             height: 5px;
             border-radius: 50%;
-            background: var(--green);
+            background: var(--accent);
         }
 
         /* À propos */
@@ -261,8 +252,8 @@
 
         .about-grid {
             display: grid;
-            grid-template-columns: 1.35fr 0.65fr;
-            gap: 95px;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 80px;
             align-items: start;
         }
 
@@ -270,6 +261,7 @@
             color: var(--muted);
             margin-bottom: 22px;
             font-size: 1rem;
+            line-height: 1.9;
         }
 
         .about-text p:last-child {
@@ -288,13 +280,13 @@
         .profile-item small {
             display: block;
             color: var(--muted);
-            font-size: 0.78rem;
+            font-size: 0.85rem;
             margin-bottom: 5px;
         }
 
         .profile-item strong {
-            font-size: 0.95rem;
-            font-weight: 600;
+            font-size: 0.98rem;
+            font-weight: 650;
         }
 
         /* Formation */
@@ -312,33 +304,34 @@
         }
 
         .formation-date {
-            color: var(--green);
-            font-size: 0.87rem;
-            font-weight: 650;
+            color: var(--accent-dark);
+            font-size: 0.92rem;
+            font-weight: 700;
         }
 
         .formation-content h3 {
             font-size: 1.2rem;
-            line-height: 1.45;
+            line-height: 1.5;
             font-weight: 650;
             margin-bottom: 6px;
         }
 
         .formation-content .school {
-            color: var(--green);
-            font-size: 0.9rem;
+            color: var(--accent-dark);
+            font-size: 0.95rem;
+            font-weight: 600;
             margin-bottom: 12px;
         }
 
         .formation-content p {
             color: var(--muted);
-            font-size: 0.94rem;
-            max-width: 720px;
+            font-size: 0.98rem;
+            max-width: 750px;
         }
 
         .subheading {
-            font-size: 1.3rem;
-            font-weight: 650;
+            font-size: 1.4rem;
+            font-weight: 700;
             letter-spacing: -0.03em;
             margin: 60px 0 25px;
         }
@@ -351,19 +344,19 @@
         }
 
         .cert-card {
-            padding: 22px 0;
+            padding: 24px 0;
             border-bottom: 1px solid var(--border);
         }
 
         .cert-card h4 {
-            font-size: 0.98rem;
+            font-size: 1rem;
             font-weight: 650;
-            margin-bottom: 6px;
+            margin-bottom: 7px;
         }
 
         .cert-card p {
             color: var(--muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         /* Compétences */
@@ -380,25 +373,27 @@
         }
 
         .skill-card {
-            padding: 27px 0 30px;
+            padding: 30px 0;
             border-bottom: 1px solid var(--border);
         }
 
         .skill-index {
-            color: #9aa29c;
-            font-size: 0.78rem;
-            margin-bottom: 18px;
+            color: var(--accent-dark);
+            font-size: 0.82rem;
+            font-weight: 650;
+            margin-bottom: 16px;
         }
 
         .skill-card h3 {
-            font-size: 1.08rem;
-            font-weight: 650;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
         .skill-card p {
             color: var(--muted);
-            font-size: 0.92rem;
+            font-size: 0.97rem;
+            line-height: 1.8;
         }
 
         /* Galerie cartographique */
@@ -420,7 +415,7 @@
 
         .cartography-count {
             color: var(--muted);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             white-space: nowrap;
             padding-bottom: 50px;
         }
@@ -442,7 +437,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: #eef0ed;
+            background: #eeefed;
             border: 1px solid var(--border);
             aspect-ratio: 1.32 / 1;
         }
@@ -464,10 +459,11 @@
             position: absolute;
             right: 13px;
             bottom: 13px;
-            padding: 7px 10px;
-            background: rgba(255, 255, 255, 0.94);
+            padding: 7px 11px;
+            background: rgba(255, 255, 255, 0.97);
             color: var(--text);
-            font-size: 0.72rem;
+            font-size: 0.8rem;
+            font-weight: 600;
             opacity: 0;
             transform: translateY(5px);
             transition: opacity 0.25s ease, transform 0.25s ease;
@@ -483,30 +479,30 @@
             display: flex;
             align-items: flex-start;
             gap: 17px;
-            padding-top: 17px;
+            padding-top: 18px;
         }
 
         .cartography-number {
-            color: var(--green);
-            font-size: 0.76rem;
-            font-weight: 700;
-            padding-top: 4px;
+            color: var(--accent-dark);
+            font-size: 0.85rem;
+            font-weight: 750;
+            padding-top: 3px;
             flex-shrink: 0;
         }
 
         .cartography-content h3 {
-            font-size: 1.05rem;
-            font-weight: 620;
-            line-height: 1.5;
+            font-size: 1.08rem;
+            font-weight: 650;
+            line-height: 1.6;
             letter-spacing: -0.015em;
         }
 
         .cartography-card:focus-visible {
-            outline: 2px solid var(--green);
+            outline: 2px solid var(--accent-dark);
             outline-offset: 5px;
         }
 
-        /* Fenêtre d'agrandissement */
+        /* Agrandissement des cartes */
 
         .lightbox {
             position: fixed;
@@ -516,7 +512,7 @@
             align-items: center;
             justify-content: center;
             padding: 35px;
-            background: rgba(15, 22, 18, 0.92);
+            background: rgba(15, 18, 22, 0.94);
         }
 
         .lightbox.is-open {
@@ -537,10 +533,10 @@
             right: 25px;
             width: 44px;
             height: 44px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             background: transparent;
             color: white;
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             cursor: pointer;
         }
 
@@ -559,59 +555,60 @@
         }
 
         .project {
-            padding: 35px 0 40px;
+            padding: 38px 0 42px;
             border-bottom: 1px solid var(--border);
         }
 
         .project-top {
             display: grid;
-            grid-template-columns: 90px 1fr;
+            grid-template-columns: 100px 1fr;
             gap: 25px;
             align-items: start;
         }
 
         .project-number {
-            color: var(--green);
-            font-size: 0.8rem;
-            font-weight: 700;
+            color: var(--accent-dark);
+            font-size: 0.85rem;
+            font-weight: 750;
             padding-top: 8px;
         }
 
         .project h3 {
             max-width: 850px;
-            font-size: clamp(1.3rem, 2.4vw, 1.8rem);
-            line-height: 1.35;
-            font-weight: 650;
+            font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+            line-height: 1.45;
+            font-weight: 700;
             letter-spacing: -0.035em;
         }
 
         .project-details {
-            margin-left: 115px;
-            margin-top: 24px;
+            margin-left: 125px;
+            margin-top: 25px;
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 25px 45px;
+            gap: 27px 45px;
         }
 
         .project-detail h4 {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--green);
-            margin-bottom: 8px;
+            font-size: 0.85rem;
+            font-weight: 750;
+            color: var(--accent-dark);
+            margin-bottom: 9px;
         }
 
         .project-detail p,
         .project-detail ul {
             color: var(--muted);
-            font-size: 0.91rem;
+            font-size: 0.96rem;
+            line-height: 1.8;
         }
 
         .project-detail ul {
-            padding-left: 17px;
+            padding-left: 19px;
         }
 
         .project-detail li {
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
 
         /* Expérience */
@@ -624,31 +621,31 @@
             display: grid;
             grid-template-columns: 155px 1fr;
             gap: 35px;
-            padding: 30px 0;
+            padding: 32px 0;
             border-bottom: 1px solid var(--border);
         }
 
         .experience-date {
-            color: var(--green);
-            font-size: 0.87rem;
-            font-weight: 650;
+            color: var(--accent-dark);
+            font-size: 0.92rem;
+            font-weight: 700;
         }
 
         .experience-content h3 {
-            font-size: 1.15rem;
-            font-weight: 650;
+            font-size: 1.2rem;
+            font-weight: 700;
             margin-bottom: 5px;
         }
 
         .experience-content .organization {
             color: var(--muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-bottom: 12px;
         }
 
         .experience-content p {
             color: var(--muted);
-            font-size: 0.94rem;
+            font-size: 0.98rem;
             max-width: 750px;
         }
 
@@ -671,41 +668,42 @@
         }
 
         .language-card h3 {
-            font-size: 1.1rem;
-            font-weight: 650;
-            margin-bottom: 6px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 7px;
         }
 
         .language-card p {
             color: var(--muted);
-            font-size: 0.92rem;
+            font-size: 0.97rem;
         }
 
         /* Contact */
 
         .contact {
-            background: var(--green-dark);
+            background: #20252b;
             color: white;
-            padding: 90px 0;
+            padding: 95px 0;
         }
 
         .contact .eyebrow {
-            color: #b9d9cc;
+            color: #d2d9e0;
         }
 
         .contact h2 {
-            max-width: 720px;
-            font-size: clamp(2.4rem, 5vw, 4.3rem);
-            line-height: 1.08;
-            letter-spacing: -0.065em;
-            font-weight: 650;
-            margin-bottom: 20px;
+            max-width: 750px;
+            font-size: clamp(2.4rem, 5vw, 4.2rem);
+            line-height: 1.15;
+            letter-spacing: -0.06em;
+            font-weight: 700;
+            margin-bottom: 22px;
         }
 
         .contact-description {
-            color: rgba(255, 255, 255, 0.72);
-            max-width: 560px;
+            color: #d3d8dd;
+            max-width: 600px;
             margin-bottom: 35px;
+            font-size: 1.05rem;
         }
 
         .contact-email {
@@ -713,9 +711,9 @@
             align-items: center;
             gap: 12px;
             padding-bottom: 7px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            border-bottom: 1px solid #aeb8c2;
             font-size: clamp(1rem, 2.5vw, 1.25rem);
-            font-weight: 600;
+            font-weight: 650;
             transition: border-color 0.2s ease;
         }
 
@@ -726,10 +724,10 @@
         /* Pied de page */
 
         footer {
-            background: #12372d;
-            color: rgba(255, 255, 255, 0.65);
-            padding: 22px 0;
-            font-size: 0.8rem;
+            background: #171b20;
+            color: #c6cbd0;
+            padding: 23px 0;
+            font-size: 0.85rem;
         }
 
         .footer-content {
@@ -741,7 +739,7 @@
 
         .footer-name {
             color: white;
-            font-weight: 600;
+            font-weight: 650;
         }
 
         /* Animations */
@@ -797,7 +795,7 @@
             }
         }
 
-        /* Adaptation aux écrans */
+        /* Tablettes */
 
         @media (max-width: 900px) {
             .nav-container {
@@ -812,12 +810,12 @@
             }
 
             .nav-links a {
-                font-size: 0.8rem;
+                font-size: 0.85rem;
             }
 
             .hero {
                 min-height: auto;
-                padding: 90px 0;
+                padding: 85px 0;
             }
 
             .about-grid {
@@ -832,15 +830,13 @@
             .project-details {
                 margin-left: 0;
             }
-
-            .cartography-grid {
-                gap: 35px 20px;
-            }
         }
+
+        /* Téléphones */
 
         @media (max-width: 600px) {
             .container {
-                width: 88%;
+                width: 90%;
             }
 
             .nav-container {
@@ -849,15 +845,15 @@
 
             .nav-links {
                 width: 100%;
-                gap: 8px 16px;
+                gap: 9px 15px;
             }
 
             .nav-links a {
-                font-size: 0.77rem;
+                font-size: 0.8rem;
             }
 
             .section {
-                padding: 75px 0;
+                padding: 72px 0;
             }
 
             .section-heading {
@@ -869,11 +865,11 @@
             }
 
             .hero h1 {
-                font-size: clamp(3rem, 13vw, 4.8rem);
+                font-size: clamp(3rem, 12vw, 4.7rem);
             }
 
             .hero-description {
-                font-size: 1rem;
+                font-size: 1.05rem;
             }
 
             .hero-meta {
@@ -894,11 +890,6 @@
             .project-details,
             .languages-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .cert-grid,
-            .skills-grid {
-                gap: 0;
             }
 
             .cartography-header {
@@ -922,11 +913,11 @@
             }
 
             .cartography-content h3 {
-                font-size: 1rem;
+                font-size: 1.05rem;
             }
 
             .project {
-                padding: 27px 0 30px;
+                padding: 28px 0 32px;
             }
 
             .project-top {
@@ -939,7 +930,7 @@
             }
 
             .project-details {
-                gap: 20px;
+                gap: 22px;
                 margin-top: 22px;
             }
 
@@ -1011,7 +1002,9 @@
     <section class="hero" id="accueil">
         <div class="container">
             <div class="hero-content">
-                <div class="eyebrow">Géomatique · Environnement · Analyse spatiale</div>
+                <div class="eyebrow">
+                    Géomatique · Environnement · Analyse spatiale
+                </div>
 
                 <h1>
                     Carolus Zyad
@@ -1131,7 +1124,9 @@
                             Interfaces, Durabilité, Environnements (GEOÏDES)
                         </h3>
 
-                        <div class="school">Université Grenoble Alpes · France</div>
+                        <div class="school">
+                            Université Grenoble Alpes · France
+                        </div>
 
                         <p>
                             Formation orientée vers la géomatique, l'analyse
@@ -1146,9 +1141,13 @@
                     <div class="formation-date">2025 — 2026</div>
 
                     <div class="formation-content">
-                        <h3>Licence en Géographie et Aménagement de l'Environnement</h3>
+                        <h3>
+                            Licence en Géographie et Aménagement de l'Environnement
+                        </h3>
 
-                        <div class="school">Université Grenoble Alpes · France</div>
+                        <div class="school">
+                            Université Grenoble Alpes · France
+                        </div>
 
                         <p>
                             Géographie, environnement, aménagement du territoire
@@ -1161,9 +1160,13 @@
                     <div class="formation-date">2022 — 2023</div>
 
                     <div class="formation-content">
-                        <h3>Licence en Aménagement et Gestion des Ressources Naturelles</h3>
+                        <h3>
+                            Licence en Aménagement et Gestion des Ressources Naturelles
+                        </h3>
 
-                        <div class="school">Université d'Abomey-Calavi · Bénin</div>
+                        <div class="school">
+                            Université d'Abomey-Calavi · Bénin
+                        </div>
 
                         <p>
                             Gestion des ressources naturelles, environnement
@@ -1733,9 +1736,12 @@
 
                     <div class="experience-content">
                         <h3>Chargé d'études junior</h3>
+
                         <div class="organization">
-                            Laboratoire d'Écologie Appliquée · Université d'Abomey-Calavi, Bénin
+                            Laboratoire d'Écologie Appliquée ·
+                            Université d'Abomey-Calavi, Bénin
                         </div>
+
                         <p>
                             Participation à des études portant sur le climat,
                             l'environnement, la gestion durable des ressources
@@ -1750,9 +1756,11 @@
 
                     <div class="experience-content">
                         <h3>Appui cartographique</h3>
+
                         <div class="organization">
                             Laboratoire Pacte · Université Grenoble Alpes, France
                         </div>
+
                         <p>
                             Traitement et organisation de données spatiales,
                             numérisation de facettes de paysage et production
@@ -1767,9 +1775,11 @@
 
                     <div class="experience-content">
                         <h3>Tuteur en cartographie</h3>
+
                         <div class="organization">
                             Université Grenoble Alpes · France
                         </div>
+
                         <p>
                             Accompagnement des étudiants de Licence 1 dans
                             la compréhension des bases de la cartographie
@@ -1788,6 +1798,10 @@
             <div class="section-heading reveal">
                 <div class="eyebrow">07 — Langues</div>
                 <h2>Langues</h2>
+                <p>
+                    Compétences linguistiques utilisées dans les contextes
+                    académiques et professionnels.
+                </p>
             </div>
 
             <div class="languages-grid">
@@ -1832,7 +1846,7 @@
     </div>
 </footer>
 
-<!-- Agrandissement des cartes -->
+<!-- Fenêtre d'agrandissement des cartes -->
 
 <div class="lightbox" id="lightbox" role="dialog"
     aria-modal="true" aria-label="Aperçu agrandi de la carte">
