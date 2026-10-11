@@ -2,23 +2,19 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101b2b">
-
   <meta name="description" content="Portfolio de Carolus Zyad TOGONOU, géomaticien et analyste environnemental spécialisé en cartographie, SIG, télédétection et analyse spatiale.">
-
   <title>Carolus Zyad TOGONOU | Atlas personnel</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --navy: #101b2b;
       --navy-light: #1a2a40;
-      --navy-soft: #263951;
       --paper: #f3efe5;
       --paper-light: #faf8f1;
       --orange: #d96c3f;
@@ -26,29 +22,23 @@
       --green: #b7c96a;
       --text: #192434;
       --muted: #69717a;
-      --line: rgba(25, 36, 52, 0.16);
-      --white: #ffffff;
+      --line: rgba(25, 36, 52, .16);
       --mono: "DM Mono", monospace;
       --sans: "DM Sans", sans-serif;
       --serif: "Playfair Display", Georgia, serif;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
+      margin: 0;
       min-height: 100vh;
+      overflow-x: hidden;
       background: var(--navy);
       color: var(--text);
       font-family: var(--sans);
-      overflow-x: hidden;
     }
 
     body::before {
@@ -57,7 +47,7 @@
       inset: 0;
       z-index: -1;
       pointer-events: none;
-      opacity: 0.12;
+      opacity: .1;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E");
     }
 
@@ -66,24 +56,18 @@
       text-decoration: none;
     }
 
-    button {
-      font: inherit;
-    }
+    button { font: inherit; }
 
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
+    button, a { -webkit-tap-highlight-color: transparent; }
 
-    button:focus-visible,
-    a:focus-visible {
+    button:focus-visible, a:focus-visible {
       outline: 2px solid var(--orange);
       outline-offset: 4px;
     }
 
     ::selection {
       background: var(--orange);
-      color: var(--white);
+      color: #fff;
     }
 
     .site-header {
@@ -92,50 +76,45 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      padding: 22px 5vw;
+      gap: 18px;
+      padding: 20px 5vw;
       color: var(--paper);
-      border-bottom: 1px solid rgba(243, 239, 229, 0.12);
+      border-bottom: 1px solid rgba(243,239,229,.12);
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.12em;
+      gap: 11px;
+      font: 10px var(--mono);
+      letter-spacing: .12em;
       text-transform: uppercase;
     }
 
     .brand-mark {
-      width: 34px;
-      height: 34px;
       display: grid;
       place-items: center;
-      color: var(--navy);
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
       background: var(--orange);
-      font-family: var(--serif);
-      font-size: 18px;
-      font-weight: 700;
+      color: var(--navy);
+      font: 700 18px var(--serif);
     }
 
     .header-right {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
     }
 
     .header-index {
-      color: rgba(243, 239, 229, 0.55);
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.1em;
+      color: rgba(243,239,229,.6);
+      font: 10px var(--mono);
+      letter-spacing: .1em;
     }
 
-    .header-index span {
-      color: var(--green);
-    }
+    .header-index span { color: var(--green); }
 
     .menu-toggle {
       display: none;
@@ -143,7 +122,7 @@
       background: transparent;
       color: var(--paper);
       cursor: pointer;
-      font-size: 22px;
+      font-size: 23px;
     }
 
     .book-navigation {
@@ -151,222 +130,179 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      gap: 5px;
-      padding: 16px 20px 22px;
+      gap: 4px;
+      padding: 15px 18px 21px;
       color: var(--paper);
     }
 
     .nav-link {
+      padding: 10px 12px;
       border: 1px solid transparent;
-      padding: 10px 13px;
       background: transparent;
-      color: rgba(243, 239, 229, 0.65);
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.04em;
+      color: rgba(243,239,229,.68);
+      font: 9px var(--mono);
+      letter-spacing: .04em;
       text-transform: uppercase;
       cursor: pointer;
-      transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+      transition: color .2s, border-color .2s, background .2s;
     }
 
     .nav-link:hover {
       color: var(--paper);
-      border-color: rgba(243, 239, 229, 0.2);
+      border-color: rgba(243,239,229,.2);
     }
 
     .nav-link.active {
       color: var(--paper);
       border-color: var(--orange);
-      background: rgba(217, 108, 63, 0.12);
+      background: rgba(217,108,63,.12);
     }
 
     .book-area {
       width: min(1160px, 92vw);
-      margin: 10px auto 0;
-      perspective: 2200px;
+      margin: 8px auto 0;
+      perspective: 1800px;
     }
 
     .book {
       position: relative;
-      min-height: 690px;
+      isolation: isolate;
       background: var(--paper);
-      box-shadow:
-        0 30px 100px rgba(0, 0, 0, 0.28),
-        0 5px 15px rgba(0, 0, 0, 0.18);
-      transform-style: preserve-3d;
+      box-shadow: 0 28px 85px rgba(0,0,0,.27), 0 4px 14px rgba(0,0,0,.16);
     }
 
-    .book::before {
+    .book::before, .book::after {
       content: "";
       position: absolute;
       top: 0;
       bottom: 0;
-      left: -7px;
-      width: 7px;
-      background: repeating-linear-gradient(
-        to right,
-        #d4cdbd 0,
-        #d4cdbd 1px,
-        #eee8db 1px,
-        #eee8db 3px
-      );
+      width: 5px;
+      pointer-events: none;
+      background: repeating-linear-gradient(to right, #d4cdbd 0 1px, #eee8db 1px 3px);
     }
 
-    .book::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: -7px;
-      width: 7px;
-      background: repeating-linear-gradient(
-        to right,
-        #d4cdbd 0,
-        #d4cdbd 1px,
-        #eee8db 1px,
-        #eee8db 3px
-      );
-    }
+    .book::before { left: -5px; }
+    .book::after { right: -5px; }
 
     .chapter {
       display: none;
-      min-height: 690px;
+      width: 100%;
+      min-width: 0;
       background: var(--paper);
       transform-origin: left center;
-      transform-style: preserve-3d;
       backface-visibility: hidden;
     }
 
     .chapter.active {
       display: block;
-      animation: pageEnter 0.7s cubic-bezier(0.22, 0.7, 0.18, 1) both;
+      animation: pageEnter .45s ease both;
     }
 
     .chapter.turn-forward {
-      animation: turnForward 0.48s ease both;
+      display: block;
+      animation: turnForward .32s ease both;
     }
 
     .chapter.turn-backward {
+      display: block;
       transform-origin: right center;
-      animation: turnBackward 0.48s ease both;
+      animation: turnBackward .32s ease both;
     }
 
     @keyframes pageEnter {
       from {
         opacity: 0;
-        transform: rotateY(-9deg) translateX(20px);
+        transform: translateX(12px) rotateY(-3deg);
       }
       to {
         opacity: 1;
-        transform: rotateY(0) translateX(0);
+        transform: translateX(0) rotateY(0);
       }
     }
 
     @keyframes turnForward {
-      0% {
+      from {
         opacity: 1;
         transform: rotateY(0);
       }
-      45% {
-        opacity: 0.65;
-        transform: rotateY(-13deg);
-      }
-      100% {
+      to {
         opacity: 0;
-        transform: rotateY(-28deg);
+        transform: rotateY(-12deg);
       }
     }
 
     @keyframes turnBackward {
-      0% {
+      from {
         opacity: 1;
         transform: rotateY(0);
       }
-      45% {
-        opacity: 0.65;
-        transform: rotateY(13deg);
-      }
-      100% {
+      to {
         opacity: 0;
-        transform: rotateY(28deg);
+        transform: rotateY(12deg);
       }
     }
 
     .chapter-inner {
-      min-height: 690px;
-      padding: 56px 7%;
+      padding: clamp(30px, 5.2vw, 58px) clamp(22px, 7%, 80px);
     }
 
     .chapter-meta {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 42px;
-      padding-bottom: 14px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-bottom: 38px;
+      padding-bottom: 13px;
       border-bottom: 1px solid var(--line);
       color: var(--muted);
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.1em;
+      font: 9px var(--mono);
+      letter-spacing: .09em;
       text-transform: uppercase;
     }
 
-    .chapter-meta .chapter-number {
-      color: var(--orange-dark);
-    }
+    .chapter-number { color: var(--orange-dark); }
 
     .eyebrow {
-      margin-bottom: 17px;
+      margin: 0 0 15px;
       color: var(--orange-dark);
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.13em;
-      line-height: 1.8;
+      font: 10px/1.7 var(--mono);
+      letter-spacing: .12em;
       text-transform: uppercase;
     }
 
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
+      margin-top: 0;
       font-weight: 500;
     }
 
-    h1,
-    h2,
-    .serif {
-      font-family: var(--serif);
-    }
+    h1, h2, .serif { font-family: var(--serif); }
 
     .chapter-title {
       max-width: 800px;
-      margin-bottom: 22px;
-      font-family: var(--serif);
-      font-size: clamp(35px, 5.2vw, 64px);
-      font-weight: 500;
-      letter-spacing: -0.045em;
-      line-height: 1.08;
+      margin-bottom: 20px;
+      font: 500 clamp(34px, 5vw, 61px)/1.1 var(--serif);
+      letter-spacing: -.04em;
+      overflow-wrap: anywhere;
     }
 
-    .chapter-description {
-      max-width: 660px;
+    .chapter-description, .gallery-intro {
+      max-width: 690px;
       color: var(--muted);
-      font-size: 15px;
-      line-height: 1.9;
+      font-size: 14px;
+      line-height: 1.85;
     }
 
     .chapter-footer {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      margin-top: 55px;
-      padding-top: 18px;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      margin-top: 44px;
+      padding-top: 16px;
       border-top: 1px solid var(--line);
       color: var(--muted);
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.04em;
+      font: 9px/1.7 var(--mono);
     }
 
     .chapter-footer strong {
@@ -374,141 +310,67 @@
       font-weight: 500;
     }
 
-    .page-controls {
-      width: min(1160px, 92vw);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      margin: 25px auto 70px;
-      color: var(--paper);
-    }
-
-    .page-control {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 0;
-      border: 0;
-      background: transparent;
-      color: var(--paper);
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
-
-    .page-control span {
-      display: grid;
-      width: 36px;
-      height: 36px;
-      place-items: center;
-      border: 1px solid rgba(243, 239, 229, 0.35);
-      border-radius: 50%;
-      font-size: 16px;
-      transition: background 0.25s ease, color 0.25s ease;
-    }
-
-    .page-control:hover span {
-      background: var(--orange);
-      border-color: var(--orange);
-      color: var(--navy);
-    }
-
-    .page-control:disabled {
-      opacity: 0.25;
-      cursor: default;
-    }
-
-    .page-control:disabled:hover span {
-      background: transparent;
-      border-color: rgba(243, 239, 229, 0.35);
-      color: var(--paper);
-    }
-
-    .page-progress {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: rgba(243, 239, 229, 0.6);
-      font-family: var(--mono);
-      font-size: 10px;
-    }
-
-    .progress-track {
-      width: 100px;
-      height: 2px;
-      background: rgba(243, 239, 229, 0.2);
-    }
-
-    .progress-fill {
-      width: 12.5%;
-      height: 100%;
-      background: var(--orange);
-      transition: width 0.4s ease;
-    }
-
     .cover {
-      position: relative;
-      min-height: 690px;
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+      min-height: 620px;
       overflow: hidden;
       background: var(--navy);
       color: var(--paper);
     }
 
     .cover-copy {
-      position: relative;
-      z-index: 2;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 65px 0 42px 7%;
+      gap: 35px;
+      min-width: 0;
+      padding: clamp(30px, 5vw, 62px) 0 30px clamp(24px, 7%, 76px);
     }
 
     .cover-topline {
       color: var(--green);
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.13em;
+      font: 9px/1.8 var(--mono);
+      letter-spacing: .12em;
       text-transform: uppercase;
     }
 
     .cover h1 {
-      margin: 38px 0 25px;
-      font-size: clamp(43px, 6vw, 78px);
-      letter-spacing: -0.055em;
-      line-height: 0.99;
+      margin: 35px 0 23px;
+      font: 500 clamp(42px, 5.6vw, 74px)/1 var(--serif);
+      letter-spacing: -.055em;
+      overflow-wrap: anywhere;
     }
 
     .cover h1 span {
       display: block;
+      margin-top: 7px;
       color: var(--orange);
     }
 
     .cover-role {
-      max-width: 370px;
-      color: rgba(243, 239, 229, 0.7);
-      font-size: 14px;
+      max-width: 380px;
+      color: rgba(243,239,229,.72);
+      font-size: 13px;
       line-height: 1.9;
     }
 
     .cover-cta {
       display: inline-flex;
       align-items: center;
-      gap: 16px;
+      gap: 17px;
       width: fit-content;
-      margin-top: 30px;
-      padding: 15px 19px;
+      max-width: 100%;
+      margin-top: 26px;
+      padding: 14px 17px;
+      border: 0;
       background: var(--orange);
       color: var(--navy);
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.08em;
+      font: 9px var(--mono);
+      letter-spacing: .08em;
       text-transform: uppercase;
-      transition: background 0.25s ease, transform 0.25s ease;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
     }
 
     .cover-cta:hover {
@@ -518,1888 +380,60 @@
 
     .cover-bottom {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
-      gap: 15px;
-      padding-top: 22px;
-      border-top: 1px solid rgba(243, 239, 229, 0.17);
-      color: rgba(243, 239, 229, 0.5);
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: 0.07em;
+      gap: 8px 15px;
+      padding-top: 17px;
+      border-top: 1px solid rgba(243,239,229,.17);
+      color: rgba(243,239,229,.55);
+      font: 8px/1.7 var(--mono);
+      letter-spacing: .06em;
       text-transform: uppercase;
     }
 
     .cover-art {
       position: relative;
-      min-height: 690px;
+      min-width: 0;
+      min-height: 620px;
       overflow: hidden;
-      background:
-        radial-gradient(ellipse at 55% 45%, rgba(217, 108, 63, 0.14), transparent 46%),
-        var(--navy-light);
-    }
-
-    .cover-art::before,
-    .cover-art::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
+      background: radial-gradient(ellipse at 50% 45%, rgba(217,108,63,.15), transparent 47%), var(--navy-light);
     }
 
     .cover-art::before {
-      opacity: 0.32;
-      background-image:
-        linear-gradient(rgba(243, 239, 229, 0.12) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(243, 239, 229, 0.12) 1px, transparent 1px);
-      background-size: 34px 34px;
-      mask-image: linear-gradient(to bottom, black, transparent);
-    }
-
-    .cover-art::after {
-      opacity: 0.65;
-      background:
-        radial-gradient(ellipse at 50% 50%, transparent 35%, var(--navy-light) 85%);
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .3;
+      background-image: linear-gradient(rgba(243,239,229,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(243,239,229,.12) 1px, transparent 1px);
+      background-size: 32px 32px;
     }
 
     .orbit {
       position: absolute;
       top: 50%;
       left: 50%;
-      border: 1px solid rgba(243, 239, 229, 0.25);
+      border: 1px solid rgba(243,239,229,.22);
       border-radius: 50%;
-      transform: translate(-50%, -50%) rotate(-28deg);
+      transform: translate(-50%,-50%) rotate(-28deg);
     }
 
-    .orbit-one {
-      width: 85%;
-      height: 57%;
-    }
-
-    .orbit-two {
-      width: 66%;
-      height: 88%;
-      transform: translate(-50%, -50%) rotate(32deg);
-    }
-
-    .orbit-three {
-      width: 105%;
-      height: 37%;
-      transform: translate(-50%, -50%) rotate(57deg);
-    }
+    .orbit-one { width: 85%; height: 57%; }
+    .orbit-two { width: 66%; height: 88%; transform: translate(-50%,-50%) rotate(32deg); }
+    .orbit-three { width: 105%; height: 37%; transform: translate(-50%,-50%) rotate(57deg); }
 
     .map-contours {
       position: absolute;
       inset: 8%;
       width: 84%;
       height: 84%;
-      opacity: 0.92;
+      opacity: .9;
     }
 
     .map-contours path {
       fill: none;
       stroke: var(--green);
-      stroke-width: 0.7;
+      stroke-width: .7;
       vector-effect: non-scaling-stroke;
-    }
-
-    .map-contours path:nth-child(3n) {
-      stroke: var(--orange);
-      stroke-width: 1;
-    }
-
-    .map-marker {
-      position: absolute;
-      top: 43%;
-      left: 49%;
-      z-index: 2;
-      width: 13px;
-      height: 13px;
-      border: 2px solid var(--paper);
-      border-radius: 50%;
-      background: var(--orange);
-      box-shadow: 0 0 0 8px rgba(217, 108, 63, 0.15);
-    }
-
-    .map-marker::after {
-      content: "";
-      position: absolute;
-      top: 11px;
-      left: 5px;
-      width: 1px;
-      height: 85px;
-      background: rgba(243, 239, 229, 0.55);
-      transform: rotate(25deg);
-      transform-origin: top;
-    }
-
-    .map-label {
-      position: absolute;
-      z-index: 3;
-      color: var(--paper);
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .map-label-one {
-      top: 35%;
-      left: 54%;
-    }
-
-    .map-label-two {
-      right: 8%;
-      bottom: 15%;
-      color: var(--green);
-    }
-
-    .map-label-three {
-      top: 12%;
-      left: 10%;
-      color: rgba(243, 239, 229, 0.55);
-    }
-
-    .cover-art-number {
-      position: absolute;
-      right: 8%;
-      bottom: 7%;
-      color: rgba(243, 239, 229, 0.08);
-      font-family: var(--serif);
-      font-size: clamp(100px, 18vw, 210px);
-      line-height: 1;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 60px;
-      margin-top: 48px;
-    }
-
-    .intro-text {
-      color: #414b56;
-      font-size: 15px;
-      line-height: 2;
-    }
-
-    .intro-text p + p {
-      margin-top: 18px;
-    }
-
-    .pull-quote {
-      align-self: start;
-      padding: 24px;
-      border-left: 3px solid var(--orange);
-      background: rgba(217, 108, 63, 0.07);
-    }
-
-    .pull-quote p {
-      font-family: var(--serif);
-      font-size: 24px;
-      line-height: 1.45;
-    }
-
-    .pull-quote span {
-      display: block;
-      margin-top: 20px;
-      color: var(--orange-dark);
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 48px;
-      padding-top: 24px;
-      border-top: 1px solid var(--line);
-    }
-
-    .stat-number {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--orange-dark);
-      font-family: var(--serif);
-      font-size: 34px;
-    }
-
-    .stat-label {
-      color: var(--muted);
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: 0.06em;
-      line-height: 1.7;
-      text-transform: uppercase;
-    }
-
-    .timeline {
-      position: relative;
-      margin-top: 40px;
-      padding-left: 26px;
-      border-left: 1px solid rgba(217, 108, 63, 0.45);
-    }
-
-    .timeline-item {
-      position: relative;
-      padding: 0 0 35px 25px;
-    }
-
-    .timeline-item:last-child {
-      padding-bottom: 0;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      top: 4px;
-      left: -31px;
-      width: 11px;
-      height: 11px;
-      border: 2px solid var(--paper);
-      border-radius: 50%;
-      background: var(--orange);
-      box-shadow: 0 0 0 1px var(--orange);
-    }
-
-    .timeline-date {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--orange-dark);
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.08em;
-    }
-
-    .timeline-item h3 {
-      margin-bottom: 8px;
-      font-family: var(--serif);
-      font-size: 22px;
-      line-height: 1.35;
-    }
-
-    .timeline-item p {
-      max-width: 700px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .timeline-place {
-      display: block;
-      margin-top: 9px;
-      color: var(--text);
-      font-family: var(--mono);
-      font-size: 10px;
-    }
-
-    .skill-intro {
-      margin-top: 18px;
-      max-width: 690px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .skill-groups {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin-top: 35px;
-    }
-
-    .skill-card {
-      padding: 25px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.24);
-      transition: transform 0.25s ease, border-color 0.25s ease;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--orange);
-    }
-
-    .skill-card-number {
-      color: var(--orange-dark);
-      font-family: var(--mono);
-      font-size: 10px;
-    }
-
-    .skill-card h3 {
-      margin: 16px 0 18px;
-      font-family: var(--serif);
-      font-size: 24px;
-    }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 8px 10px;
-      border: 1px solid var(--line);
-      color: #3e4854;
-      font-size: 11px;
-    }
-
-    .skill-note {
-      margin-top: 28px;
-      padding: 17px 20px;
-      background: var(--navy);
-      color: var(--paper);
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .skill-note strong {
-      color: var(--green);
-      font-weight: 500;
-    }
-
-    .project-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 35px;
-      margin-top: 38px;
-    }
-
-    .project-item {
-      position: relative;
-      padding: 25px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .project-number {
-      color: var(--orange-dark);
-      font-family: var(--mono);
-      font-size: 10px;
-    }
-
-    .project-item h3 {
-      margin: 12px 0;
-      font-family: var(--serif);
-      font-size: 22px;
-      line-height: 1.35;
-    }
-
-    .project-item p {
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .project-category {
-      display: inline-block;
-      margin-top: 15px;
-      color: var(--orange-dark);
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .gallery-intro {
-      max-width: 680px;
-      margin-top: 15px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 26px;
-      margin-top: 36px;
-    }
-
-    .map-card {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      border: 1px solid var(--line);
-      background: var(--paper-light);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .map-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(25, 36, 52, 0.08);
-    }
-
-    .map-image-button {
-      display: block;
-      width: 100%;
-      padding: 0;
-      overflow: hidden;
-      border: 0;
-      background: #e7e3d8;
-      cursor: zoom-in;
-    }
-
-    .map-image-button img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 1.2 / 1;
-      object-fit: contain;
-      transition: transform 0.45s ease;
-    }
-
-    .map-card:hover .map-image-button img {
-      transform: scale(1.025);
-    }
-
-    .map-info {
-      flex: 1;
-      padding: 20px;
-    }
-
-    .map-type {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--orange-dark);
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
-    .map-info h3 {
-      font-family: var(--serif);
-      font-size: 19px;
-      line-height: 1.45;
-    }
-
-    .map-info p {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.7;
-    }
-
-    .experience-list {
-      margin-top: 40px;
-    }
-
-    .experience-item {
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 25px;
-      padding: 24px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .experience-date {
-      color: var(--orange-dark);
-      font-family: var(--mono);
-      font-size: 10px;
-      line-height: 1.8;
-    }
-
-    .experience-item h3 {
-      font-family: var(--serif);
-      font-size: 22px;
-      line-height: 1.4;
-    }
-
-    .experience-place {
-      display: block;
-      margin-top: 6px;
-      color: var(--text);
-      font-size: 12px;
-    }
-
-    .experience-item p {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.9;
-    }
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
-      margin-top: 45px;
-    }
-
-    .contact-heading {
-      font-family: var(--serif);
-      font-size: clamp(30px, 4vw, 48px);
-      line-height: 1.2;
-    }
-
-    .contact-description {
-      margin-top: 20px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .contact-email {
-      display: inline-block;
-      margin-top: 28px;
-      padding-bottom: 7px;
-      border-bottom: 1px solid var(--orange);
-      color: var(--orange-dark);
-      font-family: var(--serif);
-      font-size: clamp(17px, 2.2vw, 25px);
-      overflow-wrap: anywhere;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      align-self: start;
-      border-top: 1px solid var(--line);
-    }
-
-    .contact-link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line);
-      font-size: 13px;
-      transition: color 0.2s ease;
-    }
-
-    .contact-link span:last-child {
-      color: var(--orange-dark);
-      font-size: 17px;
-    }
-
-    .contact-link:hover {
-      color: var(--orange-dark);
-    }
-
-    .contact-details {
-      margin-top: 35px;
-      padding: 20px;
-      background: rgba(183, 201, 106, 0.18);
-    }
-
-    .contact-details span {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--muted);
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .contact-details p {
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 25px;
-      background: rgba(9, 16, 26, 0.94);
-      backdrop-filter: blur(8px);
-    }
-
-    .modal.open {
-      display: flex;
-      animation: modalFade 0.25s ease both;
-    }
-
-    @keyframes modalFade {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    .modal-content {
-      position: relative;
-      width: min(1100px, 95vw);
-      max-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .modal-image {
-      display: block;
-      max-width: 100%;
-      max-height: 78vh;
-      object-fit: contain;
-      background: var(--paper);
-    }
-
-    .modal-caption {
-      margin-top: 15px;
-      color: var(--paper);
-      font-family: var(--mono);
-      font-size: 11px;
-      text-align: center;
-      line-height: 1.8;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: -45px;
-      right: 0;
-      width: 38px;
-      height: 38px;
-      border: 1px solid rgba(243, 239, 229, 0.4);
-      border-radius: 50%;
-      background: transparent;
-      color: var(--paper);
-      font-size: 22px;
-      cursor: pointer;
-    }
-
-    .site-footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      width: min(1160px, 92vw);
-      margin: 0 auto;
-      padding: 25px 0 35px;
-      border-top: 1px solid rgba(243, 239, 229, 0.15);
-      color: rgba(243, 239, 229, 0.5);
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: 0.08em;
-      line-height: 1.8;
-      text-transform: uppercase;
-    }
-
-    .site-footer strong {
-      color: var(--paper);
-      font-weight: 400;
-    }
-
-    @media (max-width: 850px) {
-      .book-navigation {
-        gap: 2px;
-      }
-
-      .nav-link {
-        padding: 9px 10px;
-        font-size: 9px;
-      }
-
-      .book,
-      .chapter,
-      .chapter-inner {
-        min-height: 650px;
-      }
-
-      .cover,
-      .cover-art {
-        min-height: 650px;
-      }
-
-      .cover {
-        grid-template-columns: 1fr 0.75fr;
-      }
-
-      .cover h1 {
-        font-size: clamp(38px, 6vw, 60px);
-      }
-
-      .intro-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .contact-layout {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .site-header {
-        padding: 17px 5vw;
-      }
-
-      .brand {
-        font-size: 9px;
-      }
-
-      .brand-mark {
-        width: 30px;
-        height: 30px;
-      }
-
-      .header-index {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .book-navigation {
-        display: none;
-        align-items: stretch;
-        flex-direction: column;
-        padding: 12px 5vw 20px;
-      }
-
-      .book-navigation.open {
-        display: flex;
-      }
-
-      .nav-link {
-        padding: 13px;
-        text-align: left;
-      }
-
-      .book-area {
-        width: 92vw;
-        margin-top: 5px;
-      }
-
-      .book,
-      .chapter,
-      .chapter-inner {
-        min-height: auto;
-      }
-
-      .chapter-inner {
-        padding: 35px 6%;
-      }
-
-      .chapter-meta {
-        margin-bottom: 30px;
-        font-size: 8px;
-      }
-
-      .chapter-title {
-        font-size: clamp(33px, 9vw, 48px);
-      }
-
-      .chapter-description {
-        font-size: 13px;
-      }
-
-      .cover {
-        grid-template-columns: 1fr;
-      }
-
-      .cover-copy {
-        min-height: 510px;
-        padding: 38px 7% 28px;
-      }
-
-      .cover h1 {
-        margin: 35px 0 20px;
-        font-size: clamp(48px, 12vw, 68px);
-      }
-
-      .cover-role {
-        font-size: 13px;
-      }
-
-      .cover-art {
-        min-height: 340px;
-      }
-
-      .cover-bottom {
-        font-size: 8px;
-      }
-
-      .map-contours {
-        inset: 5%;
-        width: 90%;
-        height: 90%;
-      }
-
-      .intro-grid {
-        gap: 25px;
-        margin-top: 30px;
-      }
-
-      .intro-text {
-        font-size: 13px;
-      }
-
-      .pull-quote p {
-        font-size: 21px;
-      }
-
-      .stats-row {
-        gap: 12px;
-        margin-top: 32px;
-      }
-
-      .stat-number {
-        font-size: 27px;
-      }
-
-      .stat-label {
-        font-size: 8px;
-      }
-
-      .skill-groups,
-      .project-list,
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .skill-groups {
-        gap: 12px;
-      }
-
-      .skill-card {
-        padding: 20px;
-      }
-
-      .project-list {
-        gap: 0;
-      }
-
-      .gallery {
-        gap: 20px;
-      }
-
-      .experience-item {
-        grid-template-columns: 1fr;
-        gap: 9px;
-      }
-
-      .page-controls {
-        margin-top: 18px;
-        margin-bottom: 45px;
-      }
-
-      .page-control {
-        gap: 7px;
-        font-size: 8px;
-      }
-
-      .page-control span {
-        width: 32px;
-        height: 32px;
-      }
-
-      .page-progress {
-        gap: 7px;
-        font-size: 9px;
-      }
-
-      .progress-track {
-        width: 45px;
-      }
-
-      .chapter-footer {
-        margin-top: 35px;
-        font-size: 8px;
-      }
-
-      .site-footer {
-        flex-direction: column;
-        gap: 7px;
-        font-size: 8px;
-      }
-
-      .modal {
-        padding: 12px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
     }
   </style>
 </head>
-
-<body>
-
-  <header class="site-header">
-    <a href="#" class="brand" aria-label="Retour à la couverture" data-go="0">
-      <span class="brand-mark">ZT</span>
-      <span>Atlas personnel</span>
-    </a>
-
-    <div class="header-right">
-      <div class="header-index">
-        Édition <span>2026</span>
-      </div>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">
-        ☰
-      </button>
-    </div>
-  </header>
-
-  <nav class="book-navigation" id="bookNavigation" aria-label="Navigation principale">
-    <button class="nav-link active" data-go="0">Couverture</button>
-    <button class="nav-link" data-go="1">Profil</button>
-    <button class="nav-link" data-go="2">Formation</button>
-    <button class="nav-link" data-go="3">Compétences</button>
-    <button class="nav-link" data-go="4">Projets</button>
-    <button class="nav-link" data-go="5">Cartographie</button>
-    <button class="nav-link" data-go="6">Expériences</button>
-    <button class="nav-link" data-go="7">Contact</button>
-  </nav>
-
-  <main>
-    <div class="book-area">
-      <div class="book" id="book">
-
-        <!-- Couverture -->
-
-        <section class="chapter active" data-chapter="0" aria-label="Couverture du portfolio">
-          <div class="cover">
-
-            <div class="cover-copy">
-              <div>
-                <div class="cover-topline">Géomatique / Environnement / Territoires</div>
-
-                <h1>
-                  Carolus Zyad
-                  <span>TOGONOU.</span>
-                </h1>
-
-                <p class="cover-role">
-                  Géomaticien et analyste environnemental.
-                  J'explore les territoires à travers la cartographie,
-                  les systèmes d'information géographique et l'analyse spatiale.
-                </p>
-
-                <button class="cover-cta" data-go="1">
-                  Entrer dans l'atlas
-                  <span aria-hidden="true">↗</span>
-                </button>
-              </div>
-
-              <div class="cover-bottom">
-                <span>Portfolio professionnel</span>
-                <span>Grenoble, France</span>
-              </div>
-            </div>
-
-            <div class="cover-art" aria-label="Illustration cartographique abstraite">
-              <div class="orbit orbit-one"></div>
-              <div class="orbit orbit-two"></div>
-              <div class="orbit orbit-three"></div>
-
-              <svg class="map-contours" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-                <path d="M40 70 C100 35 150 100 210 65 S310 50 365 110"/>
-                <path d="M30 95 C90 60 155 125 215 90 S315 75 370 135"/>
-                <path d="M25 125 C85 90 160 155 220 120 S320 105 375 165"/>
-                <path d="M20 155 C80 120 165 185 225 150 S325 135 380 195"/>
-                <path d="M20 185 C80 150 170 215 230 180 S330 165 380 225"/>
-                <path d="M25 215 C85 180 175 245 235 210 S330 195 375 255"/>
-                <path d="M30 245 C90 210 180 275 240 240 S325 225 370 285"/>
-                <path d="M35 275 C95 240 185 305 245 270 S320 255 365 315"/>
-                <path d="M40 305 C100 270 190 335 250 300 S315 285 360 345"/>
-                <path d="M45 335 C105 300 195 365 255 330 S310 315 355 375"/>
-                <path d="M50 365 C110 330 200 395 260 360 S305 345 350 405"/>
-                <path d="M55 395 C115 360 205 425 265 390 S300 375 345 435"/>
-                <path d="M60 425 C120 390 210 455 270 420 S295 405 340 465"/>
-                <path d="M65 455 C125 420 215 485 275 450 S290 435 335 495"/>
-                <path d="M70 485 C130 450 220 515 280 480 S285 465 330 525"/>
-
-                <path d="M100 25 C135 100 95 165 130 235 S180 350 145 420 S140 530 185 580"/>
-                <path d="M125 20 C160 95 120 160 155 230 S205 345 170 415 S165 525 210 575"/>
-                <path d="M150 15 C185 90 145 155 180 225 S230 340 195 410 S190 520 235 570"/>
-                <path d="M175 10 C210 85 170 150 205 220 S255 335 220 405 S215 515 260 565"/>
-                <path d="M200 10 C235 85 195 150 230 220 S280 335 245 405 S240 515 285 565"/>
-                <path d="M225 15 C260 90 220 155 255 225 S305 340 270 410 S265 520 310 570"/>
-                <path d="M250 20 C285 95 245 160 280 230 S330 345 295 415 S290 525 335 575"/>
-
-                <path d="M40 120 C100 150 150 130 195 165 S275 215 350 185"/>
-                <path d="M35 155 C95 185 145 165 190 200 S270 250 345 220"/>
-                <path d="M30 190 C90 220 140 200 185 235 S265 285 340 255"/>
-                <path d="M25 225 C85 255 135 235 180 270 S260 320 335 290"/>
-                <path d="M25 260 C85 290 130 270 175 305 S255 355 330 325"/>
-                <path d="M30 295 C90 325 125 305 170 340 S250 390 325 360"/>
-                <path d="M35 330 C95 360 120 340 165 375 S245 425 320 395"/>
-                <path d="M40 365 C100 395 115 375 160 410 S240 460 315 430"/>
-                <path d="M45 400 C105 430 110 410 155 445 S235 495 310 465"/>
-
-                <path d="M100 70 L145 120 L175 175 L160 235 L205 290 L195 350 L235 405 L250 470"/>
-                <path d="M110 65 L155 115 L185 170 L170 230 L215 285 L205 345 L245 400 L260 465"/>
-                <path d="M120 60 L165 110 L195 165 L180 225 L225 280 L215 340 L255 395 L270 460"/>
-              </svg>
-
-              <div class="map-marker"></div>
-              <div class="map-label map-label-one">Analyse spatiale</div>
-              <div class="map-label map-label-two">06°N / 02°E</div>
-              <div class="map-label map-label-three">Atlas / 001</div>
-              <div class="cover-art-number">01</div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- Profil -->
-
-        <section class="chapter" data-chapter="1" aria-label="Profil">
-          <div class="chapter-inner">
-
-            <div class="chapter-meta">
-              <span>Atlas personnel</span>
-              <span class="chapter-number">01 / Profil</span>
-            </div>
-
-            <p class="eyebrow">Point de départ</p>
-
-            <h2 class="chapter-title">
-              Lire les territoires.<br>
-              Comprendre leurs dynamiques.
-            </h2>
-
-            <div class="intro-grid">
-              <div class="intro-text">
-                <p>
-                  Géomaticien et analyste environnemental, je m'intéresse
-                  à la manière dont les données spatiales permettent de
-                  mieux comprendre les territoires, leurs ressources et
-                  leur évolution.
-                </p>
-
-                <p>
-                  Mon parcours associe géographie, aménagement du territoire,
-                  gestion des ressources naturelles et analyse des
-                  problématiques environnementales.
-                </p>
-
-                <p>
-                  J'utilise les systèmes d'information géographique,
-                  la télédétection et l'analyse de données pour produire
-                  des représentations cartographiques et contribuer à
-                  l'aide à la décision.
-                </p>
-
-                <p>
-                  Mes travaux portent notamment sur le changement climatique,
-                  la vulnérabilité des écosystèmes, les dynamiques agricoles
-                  et la représentation spatiale des phénomènes environnementaux.
-                </p>
-              </div>
-
-              <aside class="pull-quote">
-                <p>
-                  La carte ne montre pas seulement où se trouvent les choses.
-                  Elle aide à comprendre ce qui se passe.
-                </p>
-                <span>Approche de travail</span>
-              </aside>
-            </div>
-
-            <div class="stats-row">
-              <div>
-                <span class="stat-number">SIG</span>
-                <span class="stat-label">Analyse et représentation spatiale</span>
-              </div>
-
-              <div>
-                <span class="stat-number">R</span>
-                <span class="stat-label">Traitement et analyse de données</span>
-              </div>
-
-              <div>
-                <span class="stat-number">ENV.</span>
-                <span class="stat-label">Environnement et climat</span>
-              </div>
-            </div>
-
-            <div class="chapter-footer">
-              <span>01 - Présentation</span>
-              <strong>Comprendre avant de représenter.</strong>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- Formation -->
-
-        <section class="chapter" data-chapter="2" aria-label="Formation et parcours académique">
-          <div class="chapter-inner">
-
-            <div class="chapter-meta">
-              <span>Atlas personnel</span>
-              <span class="chapter-number">02 / Formation</span>
-            </div>
-
-            <p class="eyebrow">Construire une expertise</p>
-
-            <h2 class="chapter-title">Un parcours entre environnement et géomatique.</h2>
-
-            <p class="chapter-description">
-              Une formation progressivement orientée vers l'analyse
-              territoriale, les données géographiques et les enjeux environnementaux.
-            </p>
-
-            <div class="timeline">
-
-              <article class="timeline-item">
-                <span class="timeline-date">2026 - 2027</span>
-                <h3>Master GEOÏDES</h3>
-                <p>
-                  Formation orientée vers la géomatique, l'analyse des données
-                  spatiales et leurs applications dans l'étude des territoires.
-                </p>
-                <span class="timeline-place">
-                  Université Grenoble Alpes - Grenoble, France
-                </span>
-              </article>
-
-              <article class="timeline-item">
-                <span class="timeline-date">2025 - 2026</span>
-                <h3>Licence 3 Géographie et Aménagement, parcours Environnement</h3>
-                <p>
-                  Approfondissement des connaissances en géographie,
-                  aménagement, environnement et analyse territoriale.
-                </p>
-                <span class="timeline-place">
-                  Institut d'Urbanisme et de Géographie Alpine - UGA
-                </span>
-              </article>
-
-              <article class="timeline-item">
-                <span class="timeline-date">2022 - 2023</span>
-                <h3>Licence professionnelle en Sciences agronomiques</h3>
-                <p>
-                  Aménagement et gestion des ressources naturelles.
-                  Formation centrée sur la gestion des territoires et
-                  des ressources environnementales.
-                </p>
-                <span class="timeline-place">
-                  Faculté des Sciences Agronomiques - Université d'Abomey-Calavi, Bénin
-                </span>
-              </article>
-
-            </div>
-
-            <div class="chapter-footer">
-              <span>02 - Formation</span>
-              <strong>Du terrain aux données spatiales.</strong>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- Compétences -->
-
-        <section class="chapter" data-chapter="3" aria-label="Compétences techniques">
-          <div class="chapter-inner">
-
-            <div class="chapter-meta">
-              <span>Atlas personnel</span>
-              <span class="chapter-number">03 / Compétences</span>
-            </div>
-
-            <p class="eyebrow">Boîte à outils</p>
-
-            <h2 class="chapter-title">Des outils pour explorer les données.</h2>
-
-            <p class="skill-intro">
-              Mes compétences couvrent la préparation des données,
-              leur traitement, l'analyse spatiale et la production
-              de cartes destinées à la compréhension des phénomènes territoriaux.
-            </p>
-
-            <div class="skill-groups">
-
-              <article class="skill-card">
-                <span class="skill-card-number">01 / CARTOGRAPHIE</span>
-                <h3>Systèmes d'information géographique</h3>
-                <div class="tag-list">
-                  <span class="tag">QGIS</span>
-                  <span class="tag">ArcGIS Pro</span>
-                  <span class="tag">Cartographie thématique</span>
-                  <span class="tag">Analyse spatiale</span>
-                </div>
-              </article>
-
-              <article class="skill-card">
-                <span class="skill-card-number">02 / DONNÉES</span>
-                <h3>Programmation et bases de données</h3>
-                <div class="tag-list">
-                  <span class="tag">R</span>
-                  <span class="tag">SQL</span>
-                  <span class="tag">PostgreSQL</span>
-                  <span class="tag">PostGIS</span>
-                </div>
-              </article>
-
-              <article class="skill-card">
-                <span class="skill-card-number">03 / OBSERVATION</span>
-                <h3>Télédétection et climat</h3>
-                <div class="tag-list">
-                  <span class="tag">ENVI</span>
-                  <span class="tag">Imagerie satellitaire</span>
-                  <span class="tag">Indices de végétation</span>
-                  <span class="tag">Données climatiques</span>
-                </div>
-              </article>
-
-              <article class="skill-card">
-                <span class="skill-card-number">04 / MÉTHODES</span>
-                <h3>Analyse et modélisation</h3>
-                <div class="tag-list">
-                  <span class="tag">Interpolation spatiale</span>
-                  <span class="tag">Statistiques</span>
-                  <span class="tag">HyfranPlus</span>
-                  <span class="tag">Analyse environnementale</span>
-                </div>
-              </article>
-
-            </div>
-
-            <div class="skill-note">
-              <strong>Approche :</strong>
-              structurer les données, choisir une méthode adaptée,
-              interpréter les résultats et produire une représentation lisible.
-            </div>
-
-            <div class="chapter-footer">
-              <span>03 - Compétences</span>
-              <strong>La donnée devient information.</strong>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- Projets -->
-
-        <section class="chapter" data-chapter="4" aria-label="Projets et études">
-          <div class="chapter-inner">
-
-            <div class="chapter-meta">
-              <span>Atlas personnel</span>
-              <span class="chapter-number">04 / Projets</span>
-            </div>
-
-            <p class="eyebrow">Travaux sélectionnés</p>
-
-            <h2 class="chapter-title">Des données aux enjeux territoriaux.</h2>
-
-            <p class="chapter-description">
-              Des projets consacrés à la compréhension des paysages,
-              à la vulnérabilité environnementale et à l'aide à la décision.
-            </p>
-
-            <div class="project-list">
-
-              <article class="project-item">
-                <span class="project-number">PROJET / 01</span>
-                <h3>Cartographie des paysages du Djebel Saghro</h3>
-                <p>
-                  Contribution à une étude consacrée à la cartographie
-                  des paysages et à leur caractérisation spatiale dans
-                  le cadre du projet COGEPHAM.
-                </p>
-                <span class="project-category">Paysages / Cartographie</span>
-              </article>
-
-              <article class="project-item">
-                <span class="project-number">PROJET / 02</span>
-                <h3>Identification des possibilités de restauration des paysages forestiers du Bénin</h3>
-                <p>
-                  Analyse territoriale visant à repérer les espaces
-                  présentant des possibilités de restauration des
-                  paysages forestiers.
-                </p>
-                <span class="project-category">Forêts / Restauration</span>
-              </article>
-
-              <article class="project-item">
-                <span class="project-number">PROJET / 03</span>
-                <h3>Risques climatiques sur l'axe Bohicon - Dassa-Zoumé</h3>
-                <p>
-                  Étude des risques climatiques associés à un axe routier
-                  et de leurs implications pour l'aménagement du territoire.
-                </p>
-                <span class="project-category">Climat / Infrastructures</span>
-              </article>
-
-              <article class="project-item">
-                <span class="project-number">PROJET / 04</span>
-                <h3>Vulnérabilité des écosystèmes et élevage de ruminants</h3>
-                <p>
-                  Mobilisation de données environnementales et territoriales
-                  pour étudier la vulnérabilité des écosystèmes et les
-                  dynamiques de l'élevage.
-                </p>
-                <span class="project-category">Écosystèmes / Élevage</span>
-              </article>
-
-              <article class="project-item">
-                <span class="project-number">PROJET / 05</span>
-                <h3>Mise en œuvre locale de la CDN du Bénin</h3>
-                <p>
-                  Réflexion sur la déclinaison locale des engagements
-                  climatiques dans les communes d'Abomey-Calavi,
-                  de Toffo et de Bohicon.
-                </p>
-                <span class="project-category">Adaptation / Territoires</span>
-              </article>
-
-              <article class="project-item">
-                <span class="project-number">PROJET / 06</span>
-                <h3>Impacts socio-économiques du climat sur la production alimentaire</h3>
-                <p>
-                  Analyse des effets des variations climatiques sur
-                  les activités agricoles et la production alimentaire
-                  dans le sud du Bénin.
-                </p>
-                <span class="project-category">Agriculture / Climat</span>
-              </article>
-
-            </div>
-
-            <div class="chapter-footer">
-              <span>04 - Projets</span>
-              <strong>Des problématiques concrètes, des analyses spatiales.</strong>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- Cartographie -->
-
-        <section class="chapter" data-chapter="5" aria-label="Galerie cartographique">
-          <div class="chapter-inner">
-
-            <div class="chapter-meta">
-              <span>Atlas personnel</span>
-              <span class="chapter-number">05 / Cartographie</span>
-            </div>
-
-            <p class="eyebrow">Atlas du Bénin</p>
-
-            <h2 class="chapter-title">Les territoires racontés par la carte.</h2>
-
-            <p class="gallery-intro">
-              Une sélection de travaux cartographiques consacrés aux
-              dynamiques climatiques et à la distribution spatiale
-              des productions animales au Bénin. Sélectionnez une carte
-              pour l'afficher en grand format.
-            </p>
-
-            <div class="gallery">
-
-              <article class="map-card">
-                <button class="map-image-button" data-image="images/Precipitations.png" data-title="Évolution spatio-temporelle des précipitations au Bénin (2001-2025)" aria-label="Agrandir la carte des précipitations">
-                  <img src="images/Precipitations.png" alt="Carte de l'évolution des précipitations au Bénin entre 2001 et 2025" loading="lazy">
-                </button>
-                <div class="map-info">
-                  <span class="map-type">Climatologie / Précipitations</span>
-                  <h3>Évolution spatio-temporelle des précipitations au Bénin (2001-2025)</h3>
-                  <p>Représentation des variations spatiales des précipitations moyennes sur trois périodes.</p>
-                </div>
-              </article>
-
-              <article class="map-card">
-                <button class="map-image-button" data-image="images/temp_2001_2025.png" data-title="Évolution spatio-temporelle des températures moyennes au Bénin (2001-2025)" aria-label="Agrandir la carte des températures">
-                  <img src="images/temp_2001_2025.png" alt="Carte de l'évolution des températures moyennes au Bénin entre 2001 et 2025" loading="lazy">
-                </button>
-                <div class="map-info">
-                  <span class="map-type">Climatologie / Températures</span>
-                  <h3>Évolution spatio-temporelle des températures moyennes au Bénin (2001-2025)</h3>
-                  <p>Comparaison des températures moyennes entre différentes périodes.</p>
-                </div>
-              </article>
-
-              <article class="map-card">
-                <button class="map-image-button" data-image="images/bovin.png" data-title="Évolution spatiale des effectifs moyens de bovins au Bénin (2000-2025)" aria-label="Agrandir la carte des bovins">
-                  <img src="images/bovin.png" alt="Carte de la distribution spatiale des bovins au Bénin" loading="lazy">
-                </button>
-                <div class="map-info">
-                  <span class="map-type">Élevage / Bovins</span>
-                  <h3>Évolution spatiale des effectifs moyens de bovins au Bénin (2000-2025)</h3>
-                  <p>Représentation des dynamiques territoriales des effectifs bovins.</p>
-                </div>
-              </article>
-
-              <article class="map-card">
-                <button class="map-image-button" data-image="images/ovins.png" data-title="Évolution spatiale des effectifs moyens d'ovins au Bénin (2000-2025)" aria-label="Agrandir la carte des ovins">
-                  <img src="images/ovins.png" alt="Carte de la distribution spatiale des ovins au Bénin" loading="lazy">
-                </button>
-                <div class="map-info">
-                  <span class="map-type">Élevage / Ovins</span>
-                  <h3>Évolution spatiale des effectifs moyens d'ovins au Bénin (2000-2025)</h3>
-                  <p>Analyse de la répartition territoriale des effectifs ovins.</p>
-                </div>
-              </article>
-
-              <article class="map-card">
-                <button class="map-image-button" data-image="images/caprins.png" data-title="Évolution spatio-temporelle des effectifs moyens de caprins au Bénin (2000-2025)" aria-label="Agrandir la carte des caprins">
-                  <img src="images/caprins.png" alt="Carte de la distribution spatiale des caprins au Bénin" loading="lazy">
-                </button>
-                <div class="map-info">
-                  <span class="map-type">Élevage / Caprins</span>
-                  <h3>Évolution spatio-temporelle des effectifs moyens de caprins au Bénin (2000-2025)</h3>
-                  <p>Comparaison spatiale des effectifs caprins sur plusieurs périodes.</p>
-                </div>
-              </article>
-
-              <article class="map-card">
-                <button class="map-image-button" data-image="images/porcins.png" data-title="Évolution spatio-temporelle des effectifs moyens de porcins au Bénin (2000-2025)" aria-label="Agrandir la carte des porcins">
-                  <img src="images/porcins.png" alt="Carte de la distribution spatiale des porcins au Bénin" loading="lazy">
-                </button>
-                <div class="map-info">
-                  <span class="map-type">Élevage / Porcins</span>
-                  <h3>Évolution spatio-temporelle des effectifs moyens de porcins au Bénin (2000-2025)</h3>
-                  <p>Analyse de la distribution des effectifs porcins selon les périodes étudiées.</p>
-                </div>
-              </article>
-
-              <article class="map-card">
-                <button class="map-image-button" data-image="images/volaille.png" data-title="Évolution spatio-temporelle des effectifs moyens de volailles au Bénin (2000-2025)" aria-label="Agrandir la carte des volailles">
-                  <img src="images/volaille.png" alt="Carte de la distribution spatiale des volailles au Bénin" loading="lazy">
-                </button>
-                <div class="map-info">
-                  <span class="map-type">Élevage / Volailles</span>
-                  <h3>Évolution spatio-temporelle des effectifs moyens de volailles au Bénin (2000-2025)</h3>
-                  <p>Représentation des variations spatiales des effectifs de volailles.</p>
-                </div>
-              </article>
-
-            </div>
-
-            <div class="chapter-footer">
-              <span>05 - Cartographie</span>
-              <strong>Sources de données : DSA, Bénin</strong>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- Expériences -->
-
-        <section class="chapter" data-chapter="6" aria-label="Expériences professionnelles">
-          <div class="chapter-inner">
-
-            <div class="chapter-meta">
-              <span>Atlas personnel</span>
-              <span class="chapter-number">06 / Expériences</span>
-            </div>
-
-            <p class="eyebrow">Expérience et engagement</p>
-
-            <h2 class="chapter-title">Mettre les connaissances en pratique.</h2>
-
-            <div class="experience-list">
-
-              <article class="experience-item">
-                <div class="experience-date">2026 - 2027</div>
-                <div>
-                  <h3>Tuteur en cartographie</h3>
-                  <span class="experience-place">Université Grenoble Alpes - France</span>
-                  <p>
-                    Accompagnement des étudiants dans l'apprentissage
-                    de la cartographie, la compréhension des représentations
-                    spatiales et la maîtrise des méthodes cartographiques.
-                  </p>
-                </div>
-              </article>
-
-              <article class="experience-item">
-                <div class="experience-date">Janvier 2026</div>
-                <div>
-                  <h3>Appui aux activités cartographiques</h3>
-                  <span class="experience-place">Laboratoire Pacte - Université Grenoble Alpes</span>
-                  <p>
-                    Participation à des activités liées à la cartographie
-                    et à la représentation de données territoriales.
-                  </p>
-                </div>
-              </article>
-
-              <article class="experience-item">
-                <div class="experience-date">2023 - 2024</div>
-                <div>
-                  <h3>Assistant de recherche</h3>
-                  <span class="experience-place">Laboratoire d'Écologie Appliquée - Université d'Abomey-Calavi</span>
-                  <p>
-                    Contribution à des travaux portant sur l'écologie,
-                    la gestion durable des ressources naturelles,
-                    la climatologie et l'adaptation au changement climatique.
-                  </p>
-                </div>
-              </article>
-
-            </div>
-
-            <div class="skill-groups">
-
-              <article class="skill-card">
-                <span class="skill-card-number">LANGUES</span>
-                <h3>Communication</h3>
-                <div class="tag-list">
-                  <span class="tag">Français</span>
-                  <span class="tag">Anglais - B2</span>
-                </div>
-              </article>
-
-              <article class="skill-card">
-                <span class="skill-card-number">ENGAGEMENT</span>
-                <h3>Programme académique</h3>
-                <div class="tag-list">
-                  <span class="tag">Graduate School @ UGA</span>
-                  <span class="tag">Thématique RISK</span>
-                </div>
-              </article>
-
-            </div>
-
-            <div class="chapter-footer">
-              <span>06 - Expériences</span>
-              <strong>Apprendre, analyser et transmettre.</strong>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- Contact -->
-
-        <section class="chapter" data-chapter="7" aria-label="Contact">
-          <div class="chapter-inner">
-
-            <div class="chapter-meta">
-              <span>Atlas personnel</span>
-              <span class="chapter-number">07 / Contact</span>
-            </div>
-
-            <p class="eyebrow">Dernière page</p>
-
-            <h2 class="chapter-title">Poursuivons la conversation.</h2>
-
-            <div class="contact-layout">
-
-              <div>
-                <h3 class="contact-heading">
-                  Un projet territorial,<br>
-                  une étude, une carte ?
-                </h3>
-
-                <p class="contact-description">
-                  Je suis ouvert aux échanges professionnels, aux projets
-                  en géomatique, aux études environnementales et aux
-                  collaborations mobilisant les données spatiales.
-                </p>
-
-                <a class="contact-email" href="mailto:zyadtogonou@gmail.com">
-                  zyadtogonou@gmail.com
-                </a>
-
-                <div class="contact-details">
-                  <span>Localisation</span>
-                  <p>Grenoble, France</p>
-                </div>
-              </div>
-
-              <div class="contact-links">
-
-                <a class="contact-link" href="mailto:zyadtogonou@gmail.com">
-                  <span>Envoyer un e-mail</span>
-                  <span aria-hidden="true">↗</span>
-                </a>
-
-                <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-                  <span>LinkedIn</span>
-                  <span aria-hidden="true">↗</span>
-                </a>
-
-                <a class="contact-link" href="https://github.com/zyadtogonou" target="_blank" rel="noopener noreferrer">
-                  <span>GitHub</span>
-                  <span aria-hidden="true">↗</span>
-                </a>
-
-              </div>
-
-            </div>
-
-            <div class="chapter-footer">
-              <span>07 - Contact</span>
-              <strong>Carolus Zyad TOGONOU</strong>
-            </div>
-
-          </div>
-        </section>
-
-      </div>
-    </div>
-
-    <div class="page-controls">
-      <button class="page-control" id="previousPage" disabled>
-        <span aria-hidden="true">←</span>
-        <span class="control-label">Précédent</span>
-      </button>
-
-      <div class="page-progress">
-        <span id="currentPage">01</span>
-        <div class="progress-track">
-          <div class="progress-fill" id="progressFill"></div>
-        </div>
-        <span>08</span>
-      </div>
-
-      <button class="page-control" id="nextPage">
-        <span class="control-label">Suivant</span>
-        <span aria-hidden="true">→</span>
-      </button>
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <span>© 2026 <strong>Carolus Zyad TOGONOU</strong></span>
-    <span>Géomatique / Environnement / Cartographie</span>
-    <span>Conçu comme un atlas personnel</span>
-  </footer>
-
-  <!-- Fenêtre d'agrandissement des cartes -->
-
-  <div class="modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Agrandissement de la carte">
-    <div class="modal-content">
-      <button class="modal-close" id="modalClose" aria-label="Fermer l'image">×</button>
-      <img class="modal-image" id="modalImage" src="" alt="">
-      <p class="modal-caption" id="modalCaption"></p>
-    </div>
-  </div>
-
-  <script>
-    const chapters = Array.from(document.querySelectorAll(".chapter"));
-    const navigationLinks = Array.from(document.querySelectorAll(".nav-link"));
-
-    const previousButton = document.getElementById("previousPage");
-    const nextButton = document.getElementById("nextPage");
-    const currentPage = document.getElementById("currentPage");
-    const progressFill = document.getElementById("progressFill");
-
-    const menuToggle = document.getElementById("menuToggle");
-    const bookNavigation = document.getElementById("bookNavigation");
-
-    const imageModal = document.getElementById("imageModal");
-    const modalImage = document.getElementById("modalImage");
-    const modalCaption = document.getElementById("modalCaption");
-    const modalClose = document.getElementById("modalClose");
-
-    let activeChapter = 0;
-    let isTurning = false;
-    let modalReturnFocus = null;
-
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    );
-
-    function formatPage(number) {
-      return String(number + 1).padStart(2, "0");
-    }
-
-    function updateNavigation() {
-      navigationLinks.forEach((link) => {
-        const index = Number(link.dataset.go);
-
-        link.classList.toggle("active", index === activeChapter);
-        link.setAttribute(
-          "aria-current",
-          index === activeChapter ? "page" : "false"
-        );
-      });
-
-      currentPage.textContent = formatPage(activeChapter);
-
-      progressFill.style.width =
-        ((activeChapter + 1) / chapters.length) * 100 + "%";
-
-      previousButton.disabled = activeChapter === 0;
-      nextButton.disabled = activeChapter === chapters.length - 1;
-
-      document.title =
-        activeChapter === 0
-          ? "Carolus Zyad TOGONOU | Atlas personnel"
-          : chapters[activeChapter].querySelector(".chapter-title")
-            ? chapters[activeChapter].querySelector(".chapter-title").textContent.trim().replace(/\s+/g, " ") + " | Carolus Zyad TOGONOU"
-            : "Carolus Zyad TOGONOU | Atlas personnel";
-    }
-
-    function closeMobileMenu() {
-      bookNavigation.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.textContent = "☰";
-    }
-
-    function goToChapter(targetIndex) {
-      if (
-        isTurning ||
-        targetIndex === activeChapter ||
-        targetIndex < 0 ||
-        targetIndex >= chapters.length
-      ) {
-        return;
-      }
-
-      const oldChapter = chapters[activeChapter];
-      const newChapter = chapters[targetIndex];
-
-      const direction =
-        targetIndex > activeChapter ? "forward" : "backward";
-
-      isTurning = true;
-
-      closeMobileMenu();
-
-      if (reducedMotion.matches) {
-        oldChapter.classList.remove("active");
-        newChapter.classList.add("active");
-
-        activeChapter = targetIndex;
-        isTurning = false;
-
-        updateNavigation();
-
-        window.scrollTo({
-          top: 0,
-          behavior: "auto"
-        });
-
-        return;
-      }
-
-      oldChapter.classList.remove("turn-forward", "turn-backward");
-      oldChapter.classList.add(
-        direction === "forward" ? "turn-forward" : "turn-backward"
-      );
-
-      window.setTimeout(() => {
-        oldChapter.classList.remove("active", "turn-forward", "turn-backward");
-
-        newChapter.classList.add("active");
-
-        activeChapter = targetIndex;
-        updateNavigation();
-
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-
-        window.setTimeout(() => {
-          isTurning = false;
-        }, 650);
-
-      }, 450);
-    }
-
-    navigationLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        goToChapter(Number(link.dataset.go));
-      });
-    });
-
-    document.querySelectorAll("[data-go]").forEach((element) => {
-      element.addEventListener("click", (event) => {
-        event.preventDefault();
-        goToChapter(Number(element.dataset.go));
-      });
-    });
-
-    previousButton.addEventListener("click", () => {
-      goToChapter(activeChapter - 1);
-    });
-
-    nextButton.addEventListener("click", () => {
-      goToChapter(activeChapter + 1);
-    });
-
-    menuToggle.addEventListener("click", () => {
-      const isOpen = bookNavigation.classList.toggle("open");
-
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.textContent = isOpen ? "×" : "☰";
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (imageModal.classList.contains("open")) {
-        if (event.key === "Escape") {
-          closeImageModal();
-        }
-
-        return;
-      }
-
-      if (event.altKey || event.ctrlKey || event.metaKey) {
-        return;
-      }
-
-      if (event.key === "ArrowRight") {
-        goToChapter(activeChapter + 1);
-      }
-
-      if (event.key === "ArrowLeft") {
-        goToChapter(activeChapter - 1);
-      }
-    });
-
-    function openImageModal(imagePath, title, sourceButton) {
-      modalReturnFocus = sourceButton;
-
-      modalImage.src = imagePath;
-      modalImage.alt = title;
-      modalCaption.textContent = title;
-
-      imageModal.classList.add("open");
-      document.body.style.overflow = "hidden";
-
-      modalClose.focus();
-    }
-
-    function closeImageModal() {
-      imageModal.classList.remove("open");
-      document.body.style.overflow = "";
-
-      modalImage.src = "";
-
-      if (modalReturnFocus) {
-        modalReturnFocus.focus();
-      }
-    }
-
-    document.querySelectorAll(".map-image-button").forEach((button) => {
-      button.addEventListener("click", () => {
-        openImageModal(
-          button.dataset.image,
-          button.dataset.title,
-          button
-        );
-      });
-    });
-
-    modalClose.addEventListener("click", closeImageModal);
-
-    imageModal.addEventListener("click", (event) => {
-      if (event.target === imageModal) {
-        closeImageModal();
-      }
-    });
-
-    updateNavigation();
-  </script>
-
-</body>
-</html>
