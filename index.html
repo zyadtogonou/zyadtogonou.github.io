@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101b2b">
-  <meta name="description" content="Portfolio de Carolus Zyad TOGONOU, géomaticien et analyste environnemental spécialisé en cartographie, SIG, télédétection et analyse spatiale.">
-  <title>Carolus Zyad TOGONOU | Atlas personnel</title>
+  <meta name="theme-color" content="#292d26">
+  <meta name="description" content="Portfolio de Carolus Zyad TOGONOU, géomaticien spécialisé en SIG, cartographie et environnement.">
+  <title>Carolus Zyad TOGONOU | Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,42 +13,35 @@
 
   <style>
     :root {
-      --navy: #101b2b;
-      --navy-light: #1a2a40;
-      --paper: #f3efe5;
-      --paper-light: #faf8f1;
-      --orange: #d96c3f;
-      --orange-dark: #b74f29;
-      --green: #b7c96a;
-      --text: #192434;
-      --muted: #69717a;
-      --line: rgba(25, 36, 52, .16);
-      --mono: "DM Mono", monospace;
-      --sans: "DM Sans", sans-serif;
+      --fond: #292d26;
+      --fond-clair: #373c32;
+      --papier: #eee9dc;
+      --papier-clair: #f8f5ed;
+      --brun: #a66b48;
+      --brun-fonce: #805038;
+      --olive: #a5a987;
+      --texte: #292d27;
+      --secondaire: #6d7066;
+      --ligne: rgba(41,45,39,.16);
       --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+      --mono: "DM Mono", monospace;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      min-height: 100vh;
-      overflow-x: hidden;
-      background: var(--navy);
-      color: var(--text);
+      background: var(--fond);
+      color: var(--texte);
       font-family: var(--sans);
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      opacity: .1;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E");
+      overflow-x: hidden;
     }
 
     a {
@@ -56,267 +49,194 @@
       text-decoration: none;
     }
 
-    button { font: inherit; }
+    button {
+      font: inherit;
+    }
 
-    button, a { -webkit-tap-highlight-color: transparent; }
+    img {
+      max-width: 100%;
+    }
 
-    button:focus-visible, a:focus-visible {
-      outline: 2px solid var(--orange);
+    button:focus-visible,
+    a:focus-visible {
+      outline: 2px solid var(--brun);
       outline-offset: 4px;
     }
 
     ::selection {
-      background: var(--orange);
-      color: #fff;
+      background: var(--brun);
+      color: white;
     }
 
     .site-header {
-      position: relative;
-      z-index: 20;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 18px;
-      padding: 20px 5vw;
-      color: var(--paper);
-      border-bottom: 1px solid rgba(243,239,229,.12);
+      gap: 20px;
+      padding: 20px 5%;
+      color: var(--papier);
+      border-bottom: 1px solid rgba(238,233,220,.15);
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 11px;
+      gap: 12px;
       font: 10px var(--mono);
-      letter-spacing: .12em;
+      letter-spacing: .08em;
       text-transform: uppercase;
     }
 
     .brand-mark {
       display: grid;
       place-items: center;
-      width: 34px;
-      height: 34px;
-      flex: 0 0 34px;
-      background: var(--orange);
-      color: var(--navy);
+      width: 35px;
+      height: 35px;
+      background: var(--olive);
+      color: var(--fond);
       font: 700 18px var(--serif);
     }
 
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .header-index {
-      color: rgba(243,239,229,.6);
+    .header-note {
+      color: rgba(238,233,220,.6);
       font: 10px var(--mono);
-      letter-spacing: .1em;
+      text-align: right;
     }
 
-    .header-index span { color: var(--green); }
-
-    .menu-toggle {
-      display: none;
-      border: 0;
-      background: transparent;
-      color: var(--paper);
-      cursor: pointer;
-      font-size: 23px;
-    }
-
-    .book-navigation {
+    .navigation {
       display: flex;
       justify-content: center;
-      align-items: center;
       flex-wrap: wrap;
       gap: 4px;
-      padding: 15px 18px 21px;
-      color: var(--paper);
+      padding: 16px 15px 22px;
     }
 
     .nav-link {
-      padding: 10px 12px;
+      padding: 10px 13px;
       border: 1px solid transparent;
       background: transparent;
-      color: rgba(243,239,229,.68);
+      color: rgba(238,233,220,.65);
       font: 9px var(--mono);
-      letter-spacing: .04em;
       text-transform: uppercase;
       cursor: pointer;
-      transition: color .2s, border-color .2s, background .2s;
+      transition: .2s;
     }
 
-    .nav-link:hover {
-      color: var(--paper);
-      border-color: rgba(243,239,229,.2);
-    }
-
+    .nav-link:hover,
     .nav-link.active {
-      color: var(--paper);
-      border-color: var(--orange);
-      background: rgba(217,108,63,.12);
-    }
-
-    .book-area {
-      width: min(1160px, 92vw);
-      margin: 8px auto 0;
-      perspective: 1800px;
+      border-color: var(--olive);
+      color: var(--papier);
+      background: rgba(165,169,135,.1);
     }
 
     .book {
-      position: relative;
-      isolation: isolate;
-      background: var(--paper);
-      box-shadow: 0 28px 85px rgba(0,0,0,.27), 0 4px 14px rgba(0,0,0,.16);
+      width: min(1160px, 92vw);
+      margin: 0 auto;
+      background: var(--papier);
+      box-shadow: 0 25px 70px rgba(0,0,0,.2);
     }
-
-    .book::before, .book::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 5px;
-      pointer-events: none;
-      background: repeating-linear-gradient(to right, #d4cdbd 0 1px, #eee8db 1px 3px);
-    }
-
-    .book::before { left: -5px; }
-    .book::after { right: -5px; }
 
     .chapter {
       display: none;
-      width: 100%;
       min-width: 0;
-      background: var(--paper);
-      transform-origin: left center;
-      backface-visibility: hidden;
+      background: var(--papier);
     }
 
     .chapter.active {
       display: block;
-      animation: pageEnter .45s ease both;
+      animation: apparition .35s ease;
     }
 
-    .chapter.turn-forward {
-      display: block;
-      animation: turnForward .32s ease both;
-    }
-
-    .chapter.turn-backward {
-      display: block;
-      transform-origin: right center;
-      animation: turnBackward .32s ease both;
-    }
-
-    @keyframes pageEnter {
+    @keyframes apparition {
       from {
         opacity: 0;
-        transform: translateX(12px) rotateY(-3deg);
+        transform: translateY(7px);
       }
       to {
         opacity: 1;
-        transform: translateX(0) rotateY(0);
-      }
-    }
-
-    @keyframes turnForward {
-      from {
-        opacity: 1;
-        transform: rotateY(0);
-      }
-      to {
-        opacity: 0;
-        transform: rotateY(-12deg);
-      }
-    }
-
-    @keyframes turnBackward {
-      from {
-        opacity: 1;
-        transform: rotateY(0);
-      }
-      to {
-        opacity: 0;
-        transform: rotateY(12deg);
+        transform: translateY(0);
       }
     }
 
     .chapter-inner {
-      padding: clamp(30px, 5.2vw, 58px) clamp(22px, 7%, 80px);
+      padding: clamp(28px, 6vw, 75px);
     }
 
     .chapter-meta {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
       flex-wrap: wrap;
-      gap: 8px 18px;
-      margin-bottom: 38px;
+      gap: 10px;
+      margin-bottom: 35px;
       padding-bottom: 13px;
-      border-bottom: 1px solid var(--line);
-      color: var(--muted);
+      border-bottom: 1px solid var(--ligne);
+      color: var(--secondaire);
       font: 9px var(--mono);
-      letter-spacing: .09em;
       text-transform: uppercase;
+      letter-spacing: .07em;
     }
 
-    .chapter-number { color: var(--orange-dark); }
+    .chapter-number,
+    .eyebrow {
+      color: var(--brun-fonce);
+    }
 
     .eyebrow {
-      margin: 0 0 15px;
-      color: var(--orange-dark);
-      font: 10px/1.7 var(--mono);
-      letter-spacing: .12em;
+      margin: 0 0 14px;
+      font: 10px/1.8 var(--mono);
       text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    h1, h2, h3, h4 {
+      margin-top: 0;
     }
 
     h1, h2, h3 {
-      margin-top: 0;
+      font-family: var(--serif);
       font-weight: 500;
     }
-
-    h1, h2, .serif { font-family: var(--serif); }
 
     .chapter-title {
       max-width: 800px;
       margin-bottom: 20px;
-      font: 500 clamp(34px, 5vw, 61px)/1.1 var(--serif);
-      letter-spacing: -.04em;
+      font: 500 clamp(34px, 5vw, 60px)/1.12 var(--serif);
+      letter-spacing: -.035em;
       overflow-wrap: anywhere;
     }
 
-    .chapter-description, .gallery-intro {
-      max-width: 690px;
-      color: var(--muted);
+    .chapter-description {
+      max-width: 700px;
+      color: var(--secondaire);
       font-size: 14px;
-      line-height: 1.85;
+      line-height: 1.9;
     }
 
     .chapter-footer {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 10px 20px;
-      margin-top: 44px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font: 9px/1.7 var(--mono);
+      gap: 10px;
+      margin-top: 45px;
+      padding-top: 15px;
+      border-top: 1px solid var(--ligne);
+      color: var(--secondaire);
+      font: 9px/1.8 var(--mono);
     }
 
     .chapter-footer strong {
-      color: var(--text);
+      color: var(--texte);
       font-weight: 500;
     }
 
+    /* Couverture */
+
     .cover {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-      min-height: 620px;
-      overflow: hidden;
-      background: var(--navy);
-      color: var(--paper);
+      grid-template-columns: 1.05fr .95fr;
+      min-height: 590px;
+      background: var(--fond);
+      color: var(--papier);
     }
 
     .cover-copy {
@@ -324,116 +244,1835 @@
       flex-direction: column;
       justify-content: space-between;
       gap: 35px;
-      min-width: 0;
-      padding: clamp(30px, 5vw, 62px) 0 30px clamp(24px, 7%, 76px);
+      padding: clamp(28px, 5vw, 65px) 0 28px clamp(24px, 6vw, 70px);
     }
 
-    .cover-topline {
-      color: var(--green);
-      font: 9px/1.8 var(--mono);
-      letter-spacing: .12em;
+    .cover-label {
+      color: var(--olive);
+      font: 10px/1.8 var(--mono);
+      letter-spacing: .1em;
       text-transform: uppercase;
     }
 
     .cover h1 {
-      margin: 35px 0 23px;
-      font: 500 clamp(42px, 5.6vw, 74px)/1 var(--serif);
-      letter-spacing: -.055em;
+      margin: 35px 0 22px;
+      font: 500 clamp(42px, 5.6vw, 72px)/1.03 var(--serif);
+      letter-spacing: -.05em;
       overflow-wrap: anywhere;
     }
 
     .cover h1 span {
       display: block;
-      margin-top: 7px;
-      color: var(--orange);
+      color: var(--olive);
     }
 
     .cover-role {
-      max-width: 380px;
-      color: rgba(243,239,229,.72);
+      max-width: 390px;
+      color: rgba(238,233,220,.72);
       font-size: 13px;
       line-height: 1.9;
     }
 
-    .cover-cta {
+    .primary-button {
       display: inline-flex;
       align-items: center;
-      gap: 17px;
+      gap: 18px;
       width: fit-content;
       max-width: 100%;
-      margin-top: 26px;
-      padding: 14px 17px;
-      border: 0;
-      background: var(--orange);
-      color: var(--navy);
+      margin-top: 24px;
+      padding: 14px 18px;
+      border: 1px solid var(--olive);
+      background: var(--olive);
+      color: var(--fond);
       font: 9px var(--mono);
-      letter-spacing: .08em;
       text-transform: uppercase;
       cursor: pointer;
-      transition: background .2s, transform .2s;
+      transition: .2s;
     }
 
-    .cover-cta:hover {
-      background: var(--green);
-      transform: translateY(-2px);
+    .primary-button:hover {
+      background: transparent;
+      color: var(--papier);
     }
 
     .cover-bottom {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 8px 15px;
-      padding-top: 17px;
-      border-top: 1px solid rgba(243,239,229,.17);
-      color: rgba(243,239,229,.55);
-      font: 8px/1.7 var(--mono);
-      letter-spacing: .06em;
+      gap: 8px 18px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(238,233,220,.2);
+      color: rgba(238,233,220,.55);
+      font: 8px/1.8 var(--mono);
       text-transform: uppercase;
     }
 
     .cover-art {
       position: relative;
-      min-width: 0;
-      min-height: 620px;
+      display: grid;
+      place-items: center;
+      min-height: 590px;
       overflow: hidden;
-      background: radial-gradient(ellipse at 50% 45%, rgba(217,108,63,.15), transparent 47%), var(--navy-light);
+      background: var(--fond-clair);
     }
 
     .cover-art::before {
       content: "";
       position: absolute;
       inset: 0;
-      opacity: .3;
-      background-image: linear-gradient(rgba(243,239,229,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(243,239,229,.12) 1px, transparent 1px);
-      background-size: 32px 32px;
+      opacity: .25;
+      background-image:
+        linear-gradient(rgba(238,233,220,.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(238,233,220,.12) 1px, transparent 1px);
+      background-size: 34px 34px;
     }
 
-    .orbit {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      border: 1px solid rgba(243,239,229,.22);
-      border-radius: 50%;
-      transform: translate(-50%,-50%) rotate(-28deg);
+    .contour-map {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      max-height: 490px;
     }
 
-    .orbit-one { width: 85%; height: 57%; }
-    .orbit-two { width: 66%; height: 88%; transform: translate(-50%,-50%) rotate(32deg); }
-    .orbit-three { width: 105%; height: 37%; transform: translate(-50%,-50%) rotate(57deg); }
-
-    .map-contours {
-      position: absolute;
-      inset: 8%;
-      width: 84%;
-      height: 84%;
-      opacity: .9;
-    }
-
-    .map-contours path {
+    .contour-map path {
       fill: none;
-      stroke: var(--green);
-      stroke-width: .7;
-      vector-effect: non-scaling-stroke;
+      stroke: var(--olive);
+      stroke-width: 1;
+    }
+
+    .cover-coordinates {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      z-index: 2;
+      color: rgba(238,233,220,.6);
+      font: 9px var(--mono);
+    }
+
+    /* Présentation */
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+      gap: 45px;
+      margin-top: 30px;
+    }
+
+    .intro-text {
+      color: #51544b;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .intro-text p {
+      margin-top: 0;
+      margin-bottom: 17px;
+    }
+
+    .profile-note {
+      align-self: start;
+      padding: 25px;
+      border-top: 3px solid var(--brun);
+      background: var(--papier-clair);
+    }
+
+    .profile-note h3 {
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .profile-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--ligne);
+      font-size: 11px;
+    }
+
+    .profile-row span:first-child {
+      color: var(--secondaire);
+    }
+
+    .profile-row span:last-child {
+      text-align: right;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .stat {
+      padding: 20px 16px;
+      border: 1px solid var(--ligne);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--brun-fonce);
+      font: 30px var(--serif);
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 7px;
+      color: var(--secondaire);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    /* Formation et expériences */
+
+    .timeline {
+      margin-top: 35px;
+      padding-left: 20px;
+      border-left: 1px solid var(--brun);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 32px 22px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: -25px;
+      width: 8px;
+      height: 8px;
+      border: 2px solid var(--papier);
+      border-radius: 50%;
+      background: var(--brun);
+      box-shadow: 0 0 0 1px var(--brun);
+    }
+
+    .timeline-date {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--brun-fonce);
+      font: 9px var(--mono);
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 7px;
+      font-size: 22px;
+      line-height: 1.4;
+    }
+
+    .timeline-item p {
+      max-width: 720px;
+      margin: 0;
+      color: var(--secondaire);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .timeline-place {
+      display: block;
+      margin-top: 8px;
+      font: 10px/1.7 var(--mono);
+    }
+
+    /* Compétences */
+
+    .skill-groups {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .skill-card {
+      min-width: 0;
+      padding: 24px;
+      border: 1px solid var(--ligne);
+      background: rgba(255,255,255,.25);
+    }
+
+    .skill-number {
+      color: var(--brun-fonce);
+      font: 9px var(--mono);
+    }
+
+    .skill-card h3 {
+      margin: 14px 0;
+      font-size: 23px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tag {
+      padding: 7px 9px;
+      border: 1px solid var(--ligne);
+      color: #4e5148;
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .skill-note {
+      margin-top: 22px;
+      padding: 19px;
+      background: var(--fond);
+      color: var(--papier);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .skill-note strong {
+      color: var(--olive);
+    }
+
+    /* Projets détaillés */
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 24px;
+      border: 1px solid var(--ligne);
+      background: rgba(255,255,255,.23);
+    }
+
+    .project-index {
+      color: var(--brun-fonce);
+      font: 10px var(--mono);
+    }
+
+    .project-card h3 {
+      margin: 13px 0;
+      font-size: 23px;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .project-description {
+      color: #51544b;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .project-detail {
+      margin-top: 17px;
+      padding-top: 14px;
+      border-top: 1px solid var(--ligne);
+    }
+
+    .project-detail h4 {
+      margin: 0 0 7px;
+      color: var(--brun-fonce);
+      font: 9px/1.6 var(--mono);
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+
+    .project-detail p {
+      margin: 0;
+      color: var(--secondaire);
+      font-size: 11px;
+      line-height: 1.85;
+    }
+
+    .project-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .project-tools span {
+      padding: 5px 7px;
+      background: rgba(165,169,135,.2);
+      color: #535744;
+      font-size: 9px;
+    }
+
+    /* Galerie cartographique */
+
+    .gallery-intro {
+      max-width: 700px;
+      color: var(--secondaire);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .map-card {
+      min-width: 0;
+      border: 1px solid var(--ligne);
+      background: var(--papier-clair);
+    }
+
+    .map-button {
+      display: block;
+      width: 100%;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      background: #e3dfd3;
+      cursor: zoom-in;
+    }
+
+    .map-button img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1.2 / 1;
+      object-fit: contain;
+      transition: transform .3s;
+    }
+
+    .map-button:hover img {
+      transform: scale(1.025);
+    }
+
+    .map-info {
+      padding: 18px;
+    }
+
+    .map-type {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--brun-fonce);
+      font: 9px/1.6 var(--mono);
+      text-transform: uppercase;
+    }
+
+    .map-info h3 {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .map-info p {
+      margin: 9px 0 0;
+      color: var(--secondaire);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    /* Contact */
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 45px;
+      margin-top: 35px;
+    }
+
+    .contact-heading {
+      margin: 0;
+      font: clamp(30px,4vw,45px)/1.2 var(--serif);
+    }
+
+    .contact-description {
+      margin-top: 18px;
+      color: var(--secondaire);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .contact-email {
+      display: inline-block;
+      max-width: 100%;
+      margin-top: 22px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--brun);
+      color: var(--brun-fonce);
+      font: clamp(15px,2vw,22px) var(--serif);
+      overflow-wrap: anywhere;
+    }
+
+    .contact-links {
+      align-self: start;
+      border-top: 1px solid var(--ligne);
+    }
+
+    .contact-link {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--ligne);
+      font-size: 12px;
+    }
+
+    .contact-link span:last-child {
+      color: var(--brun-fonce);
+    }
+
+    .contact-link:hover {
+      color: var(--brun-fonce);
+    }
+
+    .contact-details {
+      margin-top: 28px;
+      padding: 18px;
+      background: rgba(165,169,135,.2);
+    }
+
+    .contact-details span {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--secondaire);
+      font: 9px var(--mono);
+      text-transform: uppercase;
+    }
+
+    .contact-details p {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* Navigation entre les pages */
+
+    .page-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      width: min(1160px,92vw);
+      margin: 22px auto 55px;
+      color: var(--papier);
+    }
+
+    .page-control {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border: 0;
+      background: transparent;
+      color: var(--papier);
+      font: 9px var(--mono);
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .page-control .arrow {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(238,233,220,.35);
+      border-radius: 50%;
+      font-size: 17px;
+    }
+
+    .page-control:hover .arrow {
+      background: var(--olive);
+      color: var(--fond);
+    }
+
+    .page-control:disabled {
+      opacity: .3;
+      cursor: default;
+    }
+
+    .page-progress {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(238,233,220,.65);
+      font: 9px var(--mono);
+    }
+
+    .progress-track {
+      width: 90px;
+      height: 2px;
+      background: rgba(238,233,220,.2);
+    }
+
+    .progress-fill {
+      width: 14.28%;
+      height: 100%;
+      background: var(--olive);
+      transition: width .25s;
+    }
+
+    .site-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      width: min(1160px,92vw);
+      margin: 0 auto;
+      padding: 22px 0 30px;
+      border-top: 1px solid rgba(238,233,220,.15);
+      color: rgba(238,233,220,.55);
+      font: 9px/1.8 var(--mono);
+      text-transform: uppercase;
+    }
+
+    .site-footer strong {
+      color: var(--papier);
+      font-weight: 400;
+    }
+
+    /* Agrandissement des cartes */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      background: rgba(20,23,19,.95);
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: min(1100px,95vw);
+      max-height: 90vh;
+    }
+
+    .modal-image {
+      display: block;
+      max-width: 100%;
+      max-height: 78vh;
+      object-fit: contain;
+      background: var(--papier);
+    }
+
+    .modal-caption {
+      margin: 13px 0 0;
+      color: var(--papier);
+      font: 10px/1.7 var(--mono);
+      text-align: center;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -43px;
+      right: 0;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(238,233,220,.5);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--papier);
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* Adaptation aux écrans */
+
+    @media (max-width: 800px) {
+      .cover {
+        grid-template-columns: 1fr .8fr;
+      }
+
+      .cover h1 {
+        font-size: clamp(38px,6vw,55px);
+      }
+
+      .intro-grid,
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .site-header {
+        padding: 15px 4%;
+      }
+
+      .brand {
+        font-size: 8px;
+      }
+
+      .header-note {
+        font-size: 8px;
+      }
+
+      .navigation {
+        gap: 2px;
+        padding: 12px 5px 17px;
+      }
+
+      .nav-link {
+        padding: 9px 8px;
+        font-size: 8px;
+      }
+
+      .book {
+        width: 94vw;
+      }
+
+      .chapter-inner {
+        padding: 28px 22px;
+      }
+
+      .cover {
+        grid-template-columns: 1fr;
+      }
+
+      .cover-copy {
+        min-height: 440px;
+        padding: 30px 7% 24px;
+      }
+
+      .cover-art {
+        min-height: 300px;
+      }
+
+      .contour-map {
+        max-height: 280px;
+      }
+
+      .intro-grid,
+      .skill-groups,
+      .project-list,
+      .gallery,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        padding: 15px;
+      }
+
+      .stat strong {
+        font-size: 25px;
+      }
+
+      .page-controls {
+        width: 94vw;
+      }
+
+      .page-control {
+        font-size: 8px;
+      }
+
+      .page-progress {
+        gap: 6px;
+      }
+
+      .progress-track {
+        width: 38px;
+      }
+
+      .site-footer {
+        width: 94vw;
+        font-size: 8px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
+
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="#" data-go="0" aria-label="Retour à la couverture">
+      <span class="brand-mark">Z</span>
+      <span>Carolus Zyad TOGONOU</span>
+    </a>
+
+    <div class="header-note">
+      Géomatique · Environnement · Cartographie
+    </div>
+  </header>
+
+  <nav class="navigation" id="navigation" aria-label="Navigation principale">
+    <button class="nav-link active" data-go="0">Couverture</button>
+    <button class="nav-link" data-go="1">Profil</button>
+    <button class="nav-link" data-go="2">Formation</button>
+    <button class="nav-link" data-go="3">Compétences</button>
+    <button class="nav-link" data-go="4">Projets</button>
+    <button class="nav-link" data-go="5">Cartes</button>
+    <button class="nav-link" data-go="6">Expériences</button>
+    <button class="nav-link" data-go="7">Contact</button>
+  </nav>
+
+  <main class="book" id="book">
+
+    <!-- PAGE 1 : COUVERTURE -->
+
+    <section class="chapter active" id="couverture">
+      <div class="cover">
+
+        <div class="cover-copy">
+          <div class="cover-label">
+            Portfolio professionnel<br>
+            Géomatique et environnement<br>
+            Édition 2026
+          </div>
+
+          <div>
+            <p class="eyebrow">Cartographier pour comprendre</p>
+
+            <h1>
+              Carolus Zyad
+              <span>TOGONOU</span>
+            </h1>
+
+            <p class="cover-role">
+              Géomaticien et analyste environnemental.
+              J'utilise les systèmes d'information géographique,
+              la cartographie et l'analyse spatiale pour étudier
+              les territoires et leurs dynamiques environnementales.
+            </p>
+
+            <button class="primary-button" data-go="1">
+              Découvrir mon parcours <span>→</span>
+            </button>
+          </div>
+
+          <div class="cover-bottom">
+            <span>SIG et télédétection</span>
+            <span>Analyse spatiale</span>
+            <span>Environnement</span>
+          </div>
+        </div>
+
+        <div class="cover-art" aria-label="Illustration de courbes topographiques">
+          <svg class="contour-map" viewBox="0 0 500 600" role="img" aria-label="Courbes topographiques stylisées">
+            <path d="M30 70 C120 20 210 40 250 100 S380 170 470 100"/>
+            <path d="M20 95 C100 45 190 60 230 120 S370 200 480 125"/>
+            <path d="M10 125 C95 75 175 85 215 145 S365 230 490 155"/>
+            <path d="M15 155 C90 110 160 110 200 170 S360 260 485 185"/>
+            <path d="M25 185 C90 145 150 140 185 195 S350 290 470 220"/>
+            <path d="M35 215 C95 175 145 170 170 220 S340 320 455 255"/>
+            <path d="M50 245 C100 205 140 200 155 245 S325 350 440 290"/>
+            <path d="M70 275 C110 240 135 230 145 270 S305 380 420 330"/>
+            <path d="M100 305 C125 275 140 270 150 300 S280 410 395 365"/>
+            <path d="M125 335 C145 310 160 305 170 330 S265 435 370 400"/>
+            <path d="M150 365 C175 340 190 340 200 360 S255 460 345 435"/>
+            <path d="M175 395 C205 370 220 375 230 390 S250 480 320 470"/>
+            <path d="M200 425 C230 405 250 410 260 425 S270 500 300 500"/>
+            <path d="M40 430 C95 390 130 400 145 440 S230 520 310 540"/>
+            <path d="M20 465 C80 425 120 440 135 475 S220 555 290 575"/>
+            <path d="M10 500 C70 465 110 480 125 510 S200 580 260 595"/>
+            <path d="M80 50 C130 100 110 170 85 220 S70 330 125 380 S190 480 180 550"/>
+            <path d="M120 35 C165 100 145 165 120 225 S110 330 160 390 S220 480 210 565"/>
+            <path d="M160 25 C200 90 185 160 155 230 S150 340 195 400 S245 485 245 570"/>
+            <path d="M200 25 C240 95 220 165 195 235 S190 350 230 415 S275 490 280 570"/>
+            <path d="M250 30 C285 100 260 170 235 240 S230 360 265 430 S305 500 315 570"/>
+            <path d="M300 40 C330 110 300 180 275 250 S275 370 300 440 S340 500 350 560"/>
+            <path d="M350 50 C375 120 340 190 320 260 S320 380 340 450 S375 500 390 550"/>
+            <path d="M400 65 C420 135 380 200 365 275 S365 390 380 455 S410 505 430 540"/>
+            <path d="M445 80 C460 145 420 215 410 285 S405 395 425 465 S450 505 470 525"/>
+          </svg>
+
+          <div class="cover-coordinates">45°11′ N · 5°43′ E</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PAGE 2 : PROFIL -->
+
+    <section class="chapter" id="profil">
+      <div class="chapter-inner">
+
+        <div class="chapter-meta">
+          <span class="chapter-number">01 / Présentation</span>
+          <span>Profil professionnel</span>
+        </div>
+
+        <p class="eyebrow">À propos</p>
+
+        <h2 class="chapter-title">Comprendre les territoires par la donnée spatiale.</h2>
+
+        <div class="intro-grid">
+          <div class="intro-text">
+            <p>
+              Mon parcours se situe à la croisée de la géomatique,
+              de l'environnement et de l'aménagement du territoire.
+              Je m'intéresse à la manière dont les données spatiales
+              permettent de mieux comprendre les phénomènes naturels
+              et les transformations des territoires.
+            </p>
+
+            <p>
+              Formé en sciences agronomiques et en gestion des ressources
+              naturelles, j'ai progressivement orienté mon travail vers
+              les systèmes d'information géographique, la télédétection
+              et l'analyse de données environnementales.
+            </p>
+
+            <p>
+              Mes travaux portent notamment sur les changements climatiques,
+              les ressources naturelles, la cartographie thématique et
+              l'utilisation des données géographiques pour éclairer
+              les décisions d'aménagement.
+            </p>
+
+            <p>
+              Je développe également mes compétences en programmation
+              et en traitement statistique afin d'automatiser les analyses
+              et de produire des représentations cartographiques rigoureuses.
+            </p>
+          </div>
+
+          <aside class="profile-note">
+            <h3>Repères</h3>
+
+            <div class="profile-row">
+              <span>Localisation</span>
+              <span>Grenoble, France</span>
+            </div>
+
+            <div class="profile-row">
+              <span>Formation actuelle</span>
+              <span>Master GEOIDES</span>
+            </div>
+
+            <div class="profile-row">
+              <span>Domaines</span>
+              <span>SIG et environnement</span>
+            </div>
+
+            <div class="profile-row">
+              <span>Approche</span>
+              <span>Analyse spatiale</span>
+            </div>
+
+            <div class="profile-row">
+              <span>Intérêts</span>
+              <span>Climat et territoires</span>
+            </div>
+          </aside>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat">
+            <strong>SIG</strong>
+            <span>Gestion et analyse des données géographiques</span>
+          </div>
+
+          <div class="stat">
+            <strong>Climat</strong>
+            <span>Étude des dynamiques et risques environnementaux</span>
+          </div>
+
+          <div class="stat">
+            <strong>Cartes</strong>
+            <span>Représentation et communication des résultats</span>
+          </div>
+        </div>
+
+        <div class="chapter-footer">
+          <span><strong>Profil</strong> / Géomatique et environnement</span>
+          <span>02</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3 : FORMATION -->
+
+    <section class="chapter" id="formation">
+      <div class="chapter-inner">
+
+        <div class="chapter-meta">
+          <span class="chapter-number">02 / Parcours</span>
+          <span>Formation académique</span>
+        </div>
+
+        <p class="eyebrow">Formation</p>
+
+        <h2 class="chapter-title">Un parcours entre sciences du vivant et géomatique.</h2>
+
+        <div class="timeline">
+
+          <article class="timeline-item">
+            <span class="timeline-date">2026 - EN COURS</span>
+            <h3>Master GEOIDES</h3>
+            <p>
+              Formation orientée vers la géomatique, l'information
+              géographique et l'analyse des données spatiales.
+              Approfondissement des méthodes de traitement, de représentation
+              et d'exploitation des données géographiques.
+            </p>
+            <span class="timeline-place">
+              Université Grenoble Alpes · Grenoble, France
+            </span>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-date">2025 - 2026</span>
+            <h3>Licence 3 Géographie et Aménagement, parcours Environnement</h3>
+            <p>
+              Approfondissement des connaissances en environnement,
+              aménagement, géographie physique et analyse territoriale.
+            </p>
+            <span class="timeline-place">
+              Institut d'Urbanisme et de Géographie Alpine · UGA
+            </span>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-date">2023</span>
+            <h3>Licence professionnelle en sciences agronomiques</h3>
+            <p>
+              Formation en aménagement et gestion des ressources naturelles,
+              avec une approche tournée vers la gestion des territoires
+              et les problématiques environnementales.
+            </p>
+            <span class="timeline-place">
+              Faculté des Sciences Agronomiques · Université d'Abomey-Calavi, Bénin
+            </span>
+          </article>
+
+        </div>
+
+        <div class="chapter-footer">
+          <span><strong>Formation</strong> / Parcours académique</span>
+          <span>03</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4 : COMPÉTENCES -->
+
+    <section class="chapter" id="competences">
+      <div class="chapter-inner">
+
+        <div class="chapter-meta">
+          <span class="chapter-number">03 / Savoir-faire</span>
+          <span>Outils et méthodes</span>
+        </div>
+
+        <p class="eyebrow">Compétences techniques</p>
+
+        <h2 class="chapter-title">Des outils pour transformer les données en information.</h2>
+
+        <p class="chapter-description">
+          Les compétences mobilisées couvrent la préparation des données,
+          leur analyse spatiale, le traitement statistique et la production
+          de cartes thématiques.
+        </p>
+
+        <div class="skill-groups">
+
+          <article class="skill-card">
+            <span class="skill-number">01</span>
+            <h3>Systèmes d'information géographique</h3>
+            <div class="tag-list">
+              <span class="tag">QGIS</span>
+              <span class="tag">ArcGIS</span>
+              <span class="tag">PostGIS</span>
+              <span class="tag">Analyse spatiale</span>
+              <span class="tag">Géotraitement</span>
+              <span class="tag">Cartographie thématique</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <span class="skill-number">02</span>
+            <h3>Programmation et données</h3>
+            <div class="tag-list">
+              <span class="tag">R</span>
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Nettoyage des données</span>
+              <span class="tag">Automatisation</span>
+              <span class="tag">Statistiques</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <span class="skill-number">03</span>
+            <h3>Télédétection et environnement</h3>
+            <div class="tag-list">
+              <span class="tag">Landsat</span>
+              <span class="tag">Sentinel-2</span>
+              <span class="tag">NDVI</span>
+              <span class="tag">Température de surface</span>
+              <span class="tag">Maxent</span>
+              <span class="tag">Occupation du sol</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <span class="skill-number">04</span>
+            <h3>Climatologie et statistiques</h3>
+            <div class="tag-list">
+              <span class="tag">RClimDex</span>
+              <span class="tag">Hyfran Plus</span>
+              <span class="tag">MAGICC/SCENGEN</span>
+              <span class="tag">SPSS</span>
+              <span class="tag">Analyse climatique</span>
+              <span class="tag">Interpolation spatiale</span>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="skill-note">
+          <strong>Approche de travail.</strong>
+          Préparation et contrôle des données, choix des méthodes d'analyse,
+          traitement spatial, interprétation des résultats et production
+          de cartes adaptées à la problématique étudiée.
+        </div>
+
+        <div class="chapter-footer">
+          <span><strong>Compétences</strong> / Outils et méthodes</span>
+          <span>04</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 5 : PROJETS -->
+
+    <section class="chapter" id="projets">
+      <div class="chapter-inner">
+
+        <div class="chapter-meta">
+          <span class="chapter-number">04 / Réalisations</span>
+          <span>Études et projets</span>
+        </div>
+
+        <p class="eyebrow">Projets</p>
+
+        <h2 class="chapter-title">Des problématiques territoriales aux analyses spatiales.</h2>
+
+        <p class="chapter-description">
+          Cette sélection présente des travaux portant sur les paysages,
+          les ressources naturelles, les risques climatiques et l'agriculture.
+          Chaque fiche distingue le contexte, le travail réalisé et les
+          compétences mobilisées.
+        </p>
+
+        <div class="project-list">
+
+          <article class="project-card">
+            <span class="project-index">PROJET 01</span>
+            <h3>Cartographie des paysages du Djebel Saghro</h3>
+
+            <p class="project-description">
+              Étude géographique consacrée aux caractéristiques et à la
+              représentation des paysages du massif du Djebel Saghro.
+            </p>
+
+            <div class="project-detail">
+              <h4>Contexte</h4>
+              <p>
+                Les paysages de montagne présentent des caractéristiques
+                physiques et environnementales qui influencent leur
+                organisation spatiale. Leur cartographie permet de mieux
+                comprendre la répartition des unités paysagères.
+              </p>
+            </div>
+
+            <div class="project-detail">
+              <h4>Travail réalisé</h4>
+              <p>
+                Organisation des informations géographiques, préparation
+                des couches spatiales, représentation cartographique
+                et mise en forme des résultats pour faciliter la lecture
+                des caractéristiques territoriales.
+              </p>
+            </div>
+
+            <div class="project-detail">
+              <h4>Compétences mobilisées</h4>
+              <p>
+                Cartographie thématique, organisation des données spatiales,
+                lecture du territoire, sémiologie graphique et mise en page.
+              </p>
+              <div class="project-tools">
+                <span>SIG</span>
+                <span>Cartographie</span>
+                <span>Analyse territoriale</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-index">PROJET 02</span>
+            <h3>Restauration des paysages forestiers au Bénin</h3>
+
+            <p class="project-description">
+              Analyse territoriale visant à représenter les possibilités
+              de restauration des paysages forestiers.
+            </p>
+
+            <div class="project-detail">
+              <h4>Contexte</h4>
+              <p>
+                La dégradation des terres et la pression exercée sur les
+                ressources forestières constituent des enjeux pour la
+                conservation de la biodiversité et la gestion durable
+                des territoires au Bénin.
+              </p>
+            </div>
+
+            <div class="project-detail">
+              <h4>Travail réalisé</h4>
+              <p>
+                Structuration des données utiles à l'étude, préparation
+                des couches géographiques et représentation spatiale
+                des secteurs présentant un intérêt pour la restauration.
+                Les critères exacts dépendent des données utilisées
+                dans le projet initial.
+              </p>
+            </div>
+
+            <div class="project-detail">
+              <h4>Compétences mobilisées</h4>
+              <p>
+                SIG, analyse multicritère si applicable, cartographie
+                environnementale, gestion des données géographiques
+                et interprétation territoriale.
+              </p>
+              <div class="project-tools">
+                <span>QGIS</span>
+                <span>Environnement</span>
+                <span>Ressources forestières</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-index">PROJET 03</span>
+            <h3>Risques climatiques sur l'axe Bohicon - Dassa-Zoumé</h3>
+
+            <p class="project-description">
+              Étude spatiale des enjeux climatiques le long d'un axe
+              territorial du centre du Bénin.
+            </p>
+
+            <div class="project-detail">
+              <h4>Contexte</h4>
+              <p>
+                Les variations climatiques peuvent affecter les activités
+                humaines, les infrastructures et les ressources naturelles.
+                L'analyse territoriale aide à localiser les secteurs
+                potentiellement exposés.
+              </p>
+            </div>
+
+            <div class="project-detail">
+              <h4>Travail réalisé</h4>
+              <p>
+                Organisation des données géographiques et climatiques,
+                préparation des représentations cartographiques et
+                analyse de la distribution spatiale des phénomènes étudiés
+                le long de l'axe.
+              </p>
+            </div>
+
+            <div class="project-detail">
+              <h4>Compétences mobilisées</h4>
+              <p>
+                Analyse spatiale, cartographie des risques, manipulation
+                de données climatiques, interprétation géographique
+                et représentation des résultats.
+              </p>
+              <div class="project-tools">
+                <span>Climat</span>
+                <span>Cartographie</span>
+                <span>Analyse spatiale</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-index">PROJET 04</span>
+            <h3>Vulnérabilité des écosystèmes et élevage de ruminants</h3>
+
+            <p class="project-description">
+              Analyse des relations entre les dynamiques environnementales
+              et la distribution spatiale de l'élevage.
+            </p>
+
+            <div class="project-detail">
+              <h4>Contexte</h4>
+              <p>
+                Les changements climatiques et la disponibilité des
+                ressources naturelles influencent les écosystèmes
+                et les systèmes d'élevage. La dimension spatiale permet
+                d'étudier les disparités entre les territoires.
+              </p>
+            </div>
+
+            <div class="project-detail">
+              <h4>Travail réalisé</h4>
+              <p>
+                Préparation et organisation des données relatives à
+                l'élevage et à l'environnement, comparaison des
+                informations disponibles et réalisation de cartes
+                destinées à représenter les variations spatiales.
+              </p>
+            </div>
+
+            <div class="project-detail">
+              <h4>Compétences mobilisées</h4>
+              <p>
+                Analyse de données, cartographie thématique, traitement
+                statistique, SIG et interprétation des relations
+                entre activités agricoles et environnement.
+              </p>
+              <div class="project-tools">
+                <span>Élevage</span>
+                <span>Statistiques</span>
+                <span>SIG</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-index">PROJET 05</span>
+            <h3>Mise en œuvre locale de la CDN du Bénin</h3>
+
+            <p class="project-description">
+              Travail portant sur la territorialisation des enjeux
+              climatiques et des orientations nationales d'adaptation
+              et d'atténuation.
+            </p>
+
+            <div class="project-detail">
+              <h4>Contexte</h4>
+              <p>
+                La contribution déterminée au niveau national (CDN)
+                définit des engagements climatiques. Leur mise en œuvre
+                nécessite de tenir compte des particularités des territoires
+                et de leurs vulnérabilités.
+              </p>
+            </div>
+
+            <div class="project-detail">
+              <h4>Travail réalisé</h4>
+              <p>
+                Organisation des informations relatives aux enjeux
+                climatiques et territoriaux, analyse des éléments
+                disponibles et préparation de représentations
+                permettant de faciliter la lecture spatiale
+                des problématiques étudiées.
+              </p>
+            </div>
+
+            <div class="project-detail">
+              <h4>Compétences mobilisées</h4>
+              <p>
+                Analyse environnementale, recherche documentaire,
+                structuration des données, cartographie et compréhension
+                des politiques climatiques.
+              </p>
+              <div class="project-tools">
+                <span>CDN</span>
+                <span>Adaptation climatique</span>
+                <span>Territoires</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-index">PROJET 06</span>
+            <h3>Climat et production alimentaire</h3>
+
+            <p class="project-description">
+              Étude des liens entre les conditions climatiques et
+              les activités de production alimentaire.
+            </p>
+
+            <div class="project-detail">
+              <h4>Contexte</h4>
+              <p>
+                Les précipitations et les températures influencent
+                les systèmes de production agricole. L'étude de leurs
+                variations permet de mieux comprendre les contraintes
+                climatiques auxquelles les producteurs sont confrontés.
+              </p>
+            </div>
+
+            <div class="project-detail">
+              <h4>Travail réalisé</h4>
+              <p>
+                Organisation des données climatiques et agricoles,
+                comparaison des informations disponibles et préparation
+                de représentations statistiques ou cartographiques
+                pour faciliter leur interprétation.
+              </p>
+            </div>
+
+            <div class="project-detail">
+              <h4>Compétences mobilisées</h4>
+              <p>
+                Traitement de données, statistiques, analyse climatique,
+                cartographie thématique et interprétation des relations
+                entre climat et agriculture.
+              </p>
+              <div class="project-tools">
+                <span>Agriculture</span>
+                <span>Climat</span>
+                <span>Analyse de données</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="chapter-footer">
+          <span><strong>Projets</strong> / Études et réalisations</span>
+          <span>05</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 6 : CARTES -->
+
+    <section class="chapter" id="cartes">
+      <div class="chapter-inner">
+
+        <div class="chapter-meta">
+          <span class="chapter-number">05 / Cartothèque</span>
+          <span>Exemples de réalisations</span>
+        </div>
+
+        <p class="eyebrow">Production cartographique</p>
+
+        <h2 class="chapter-title">Les territoires racontés par les cartes.</h2>
+
+        <p class="gallery-intro">
+          Une sélection de productions cartographiques consacrées
+          aux précipitations, aux températures et à la distribution
+          spatiale de différentes catégories d'élevage au Bénin.
+          Sélectionne une carte pour l'afficher en grand format.
+        </p>
+
+        <div class="gallery">
+
+          <article class="map-card">
+            <button class="map-button" data-image="images/Precipitations.png" data-caption="Précipitations moyennes au Bénin">
+              <img src="images/Precipitations.png" alt="Carte des précipitations moyennes au Bénin" loading="lazy">
+            </button>
+            <div class="map-info">
+              <span class="map-type">Climatologie</span>
+              <h3>Précipitations moyennes</h3>
+              <p>Distribution spatiale des précipitations au Bénin.</p>
+            </div>
+          </article>
+
+          <article class="map-card">
+            <button class="map-button" data-image="images/temp_2001_2025.png" data-caption="Températures moyennes au Bénin de 2001 à 2025">
+              <img src="images/temp_2001_2025.png" alt="Carte des températures moyennes au Bénin de 2001 à 2025" loading="lazy">
+            </button>
+            <div class="map-info">
+              <span class="map-type">Climatologie</span>
+              <h3>Températures moyennes, 2001-2025</h3>
+              <p>Représentation des variations spatiales des températures.</p>
+            </div>
+          </article>
+
+          <article class="map-card">
+            <button class="map-button" data-image="images/bovin.png" data-caption="Distribution spatiale des bovins au Bénin">
+              <img src="images/bovin.png" alt="Carte de la distribution des bovins au Bénin" loading="lazy">
+            </button>
+            <div class="map-info">
+              <span class="map-type">Agriculture et élevage</span>
+              <h3>Élevage bovin</h3>
+              <p>Répartition spatiale des effectifs bovins.</p>
+            </div>
+          </article>
+
+          <article class="map-card">
+            <button class="map-button" data-image="images/ovins.png" data-caption="Distribution spatiale des ovins au Bénin">
+              <img src="images/ovins.png" alt="Carte de la distribution des ovins au Bénin" loading="lazy">
+            </button>
+            <div class="map-info">
+              <span class="map-type">Agriculture et élevage</span>
+              <h3>Élevage ovin</h3>
+              <p>Représentation cartographique des effectifs ovins.</p>
+            </div>
+          </article>
+
+          <article class="map-card">
+            <button class="map-button" data-image="images/caprins.png" data-caption="Distribution spatiale des caprins au Bénin">
+              <img src="images/caprins.png" alt="Carte de la distribution des caprins au Bénin" loading="lazy">
+            </button>
+            <div class="map-info">
+              <span class="map-type">Agriculture et élevage</span>
+              <h3>Élevage caprin</h3>
+              <p>Répartition spatiale des effectifs caprins.</p>
+            </div>
+          </article>
+
+          <article class="map-card">
+            <button class="map-button" data-image="images/porcins.png" data-caption="Distribution spatiale des porcins au Bénin">
+              <img src="images/porcins.png" alt="Carte de la distribution des porcins au Bénin" loading="lazy">
+            </button>
+            <div class="map-info">
+              <span class="map-type">Agriculture et élevage</span>
+              <h3>Élevage porcin</h3>
+              <p>Distribution spatiale des effectifs porcins.</p>
+            </div>
+          </article>
+
+          <article class="map-card">
+            <button class="map-button" data-image="images/volaille.png" data-caption="Distribution spatiale de la volaille au Bénin">
+              <img src="images/volaille.png" alt="Carte de la distribution de la volaille au Bénin" loading="lazy">
+            </button>
+            <div class="map-info">
+              <span class="map-type">Agriculture et élevage</span>
+              <h3>Élevage de volailles</h3>
+              <p>Représentation de la distribution spatiale de la volaille.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="chapter-footer">
+          <span><strong>Cartothèque</strong> / Sélection de cartes</span>
+          <span>06</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 7 : EXPÉRIENCES -->
+
+    <section class="chapter" id="experiences">
+      <div class="chapter-inner">
+
+        <div class="chapter-meta">
+          <span class="chapter-number">06 / Expériences</span>
+          <span>Parcours professionnel</span>
+        </div>
+
+        <p class="eyebrow">Expériences et activités</p>
+
+        <h2 class="chapter-title">Des expériences au service des territoires.</h2>
+
+        <div class="timeline">
+
+          <article class="timeline-item">
+            <span class="timeline-date">PARCOURS UNIVERSITAIRE</span>
+            <h3>Assistant de recherche</h3>
+            <p>
+              Participation à des activités de recherche en écologie
+              appliquée, climatologie et gestion durable des ressources
+              naturelles. Intérêt particulier pour les enjeux d'adaptation
+              aux changements climatiques et l'exploitation des données
+              environnementales.
+            </p>
+            <span class="timeline-place">
+              Laboratoire d'Écologie Appliquée · Université d'Abomey-Calavi
+            </span>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-date">FORMATION ET PROJETS</span>
+            <h3>Travaux en géomatique et cartographie</h3>
+            <p>
+              Réalisation de travaux de traitement de données géographiques,
+              d'analyse spatiale et de cartographie thématique portant
+              notamment sur le climat, l'agriculture et l'environnement.
+            </p>
+            <span class="timeline-place">
+              Projets académiques et personnels
+            </span>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-date">2026</span>
+            <h3>Tutorat en cartographie</h3>
+            <p>
+              Accompagnement d'étudiants de Licence 1 dans le cadre
+              de permanences de tutorat en cartographie.
+            </p>
+            <span class="timeline-place">
+              Université Grenoble Alpes
+            </span>
+          </article>
+
+        </div>
+
+        <div class="chapter-footer">
+          <span><strong>Expériences</strong> / Parcours professionnel</span>
+          <span>07</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 8 : CONTACT -->
+
+    <section class="chapter" id="contact">
+      <div class="chapter-inner">
+
+        <div class="chapter-meta">
+          <span class="chapter-number">07 / Contact</span>
+          <span>Échanges professionnels</span>
+        </div>
+
+        <p class="eyebrow">Prendre contact</p>
+
+        <div class="contact-layout">
+
+          <div>
+            <h2 class="contact-heading">
+              Un projet à cartographier ?
+            </h2>
+
+            <p class="contact-description">
+              Pour échanger autour de la géomatique, de l'analyse spatiale,
+              de la cartographie environnementale ou d'une opportunité
+              professionnelle, vous pouvez me contacter par courriel.
+            </p>
+
+            <a class="contact-email" href="mailto:zyadtogonou@gmail.com">
+              zyadtogonou@gmail.com
+            </a>
+
+            <div class="contact-details">
+              <span>Domaines d'intérêt</span>
+              <p>
+                Géomatique, SIG, télédétection, climatologie,
+                analyse spatiale et environnement.
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-links">
+
+            <a class="contact-link" href="mailto:zyadtogonou@gmail.com">
+              <span>Courriel</span>
+              <span>↗</span>
+            </a>
+
+            <a class="contact-link" href="https://github.com/zyadtogonou" target="_blank" rel="noopener noreferrer">
+              <span>GitHub</span>
+              <span>↗</span>
+            </a>
+
+            <!-- Remplacer cette adresse par l'URL de ton profil LinkedIn -->
+            <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+              <span>LinkedIn</span>
+              <span>↗</span>
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="chapter-footer">
+          <span><strong>Carolus Zyad TOGONOU</strong></span>
+          <span>08</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="page-controls">
+    <button class="page-control" id="previousPage" disabled>
+      <span class="arrow">←</span>
+      <span>Précédent</span>
+    </button>
+
+    <div class="page-progress">
+      <span id="currentPage">01</span>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span>08</span>
+    </div>
+
+    <button class="page-control" id="nextPage">
+      <span>Suivant</span>
+      <span class="arrow">→</span>
+    </button>
+  </div>
+
+  <footer class="site-footer">
+    <span>© 2026 <strong>Carolus Zyad TOGONOU</strong></span>
+    <span>Géomatique · Environnement · Cartographie</span>
+    <span>Portfolio professionnel</span>
+  </footer>
+
+  <!-- Fenêtre d'agrandissement des cartes -->
+
+  <div class="modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Agrandissement de la carte">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Fermer">×</button>
+      <img class="modal-image" id="modalImage" src="" alt="">
+      <p class="modal-caption" id="modalCaption"></p>
+    </div>
+  </div>
+
+  <script>
+    const chapters = Array.from(document.querySelectorAll(".chapter"));
+    const navigationLinks = Array.from(document.querySelectorAll(".nav-link"));
+
+    const previousButton = document.getElementById("previousPage");
+    const nextButton = document.getElementById("nextPage");
+    const currentPage = document.getElementById("currentPage");
+    const progressFill = document.getElementById("progressFill");
+
+    const imageModal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalCaption = document.getElementById("modalCaption");
+    const modalClose = document.getElementById("modalClose");
+
+    let activeChapter = 0;
+
+    function updateNavigation() {
+      navigationLinks.forEach((link) => {
+        const active = Number(link.dataset.go) === activeChapter;
+
+        link.classList.toggle("active", active);
+
+        if (active) {
+          link.setAttribute("aria-current", "page");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+
+      currentPage.textContent = String(activeChapter + 1).padStart(2, "0");
+
+      progressFill.style.width =
+        ((activeChapter + 1) / chapters.length) * 100 + "%";
+
+      previousButton.disabled = activeChapter === 0;
+      nextButton.disabled = activeChapter === chapters.length - 1;
+
+      const title = chapters[activeChapter].querySelector(".chapter-title");
+
+      document.title = title
+        ? title.textContent.trim().replace(/\s+/g, " ") + " | Carolus Zyad TOGONOU"
+        : "Carolus Zyad TOGONOU | Portfolio";
+    }
+
+    function goToChapter(index) {
+      if (index < 0 || index >= chapters.length || index === activeChapter) {
+        return;
+      }
+
+      chapters[activeChapter].classList.remove("active");
+      activeChapter = index;
+      chapters[activeChapter].classList.add("active");
+
+      updateNavigation();
+
+      window.scrollTo({
+        top: 0,
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth"
+      });
+    }
+
+    navigationLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        goToChapter(Number(link.dataset.go));
+      });
+    });
+
+    document.querySelectorAll("[data-go]").forEach((element) => {
+      if (element.classList.contains("nav-link")) {
+        return;
+      }
+
+      element.addEventListener("click", (event) => {
+        event.preventDefault();
+        goToChapter(Number(element.dataset.go));
+      });
+    });
+
+    previousButton.addEventListener("click", () => {
+      goToChapter(activeChapter - 1);
+    });
+
+    nextButton.addEventListener("click", () => {
+      goToChapter(activeChapter + 1);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (imageModal.classList.contains("open")) {
+        if (event.key === "Escape") {
+          closeModal();
+        }
+        return;
+      }
+
+      if (event.key === "ArrowRight") {
+        goToChapter(activeChapter + 1);
+      }
+
+      if (event.key === "ArrowLeft") {
+        goToChapter(activeChapter - 1);
+      }
+    });
+
+    /* Agrandissement des cartes */
+
+    document.querySelectorAll(".map-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        modalImage.src = button.dataset.image;
+        modalImage.alt = button.dataset.caption;
+        modalCaption.textContent = button.dataset.caption;
+
+        imageModal.classList.add("open");
+        document.body.style.overflow = "hidden";
+        modalClose.focus();
+      });
+    });
+
+    function closeModal() {
+      imageModal.classList.remove("open");
+      document.body.style.overflow = "";
+      modalImage.src = "";
+    }
+
+    modalClose.addEventListener("click", closeModal);
+
+    imageModal.addEventListener("click", (event) => {
+      if (event.target === imageModal) {
+        closeModal();
+      }
+    });
+
+    updateNavigation();
+  </script>
+
+</body>
+</html>
