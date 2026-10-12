@@ -3,2514 +3,304 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#ffffff">
-<meta name="description" content="Portfolio de Carolus Zyad TOGONOU, géomaticien, environnementaliste et analyste de données climatiques et spatiales.">
+<meta name="theme-color" content="#111713">
+<meta name="description" content="Portfolio de Carolus Zyad TOGONOU : géomatique, environnement, climatologie et analyse de données spatiales.">
 <title>Carolus Zyad TOGONOU | Portfolio</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root {
-  --white: #ffffff;
-  --paper: #f8f8f6;
-  --black: #171717;
-  --gray: #62625e;
-  --light-gray: #deded9;
-  --accent: #747d68;
-  --serif: "Playfair Display", Georgia, serif;
-  --sans: "DM Sans", Arial, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: var(--white);
-  color: var(--black);
-  font-family: var(--sans);
-  font-size: 18px;
-  line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-body.modal-open {
-  overflow: hidden;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
-}
-
-button:focus-visible,
-a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
-}
-
-::selection {
-  background: var(--black);
-  color: var(--white);
-}
-
-/* Navigation */
-
-.site-header {
-  position: relative;
-  z-index: 20;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 25px 5.5%;
-  background: var(--white);
-  border-bottom: 1px solid var(--light-gray);
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-}
-
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border: 1px solid var(--black);
-  font-family: var(--serif);
-  font-size: 23px;
-  font-weight: 400;
-}
-
-.header-note {
-  color: var(--gray);
-  font-size: 13px;
-  letter-spacing: .08em;
-  text-align: right;
-  text-transform: uppercase;
-}
-
-.navigation {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0;
-  padding: 12px 3%;
-  background: rgba(255,255,255,.97);
-  border-bottom: 1px solid var(--light-gray);
-  backdrop-filter: blur(12px);
-}
-
-.nav-link {
-  padding: 12px 13px;
-  border: 0;
-  border-bottom: 1px solid transparent;
-  background: transparent;
-  color: var(--gray);
-  font-size: 13px;
-  letter-spacing: .035em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: color .2s, border-color .2s;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--black);
-  border-bottom-color: var(--black);
-}
-
-/* Structure des pages */
-
-.book {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.chapter {
-  display: none;
-  width: 100%;
-  background: var(--white);
-}
-
-.chapter.active {
-  display: block;
-  animation: pageAppear .35s ease;
-}
-
-.chapter.soft-page {
-  background: var(--paper);
-}
-
-@keyframes pageAppear {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.chapter-inner {
-  width: min(1380px, 100%);
-  margin: 0 auto;
-  padding: 85px 7%;
-}
-
-.chapter-meta {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 65px;
-  padding-bottom: 17px;
-  border-bottom: 1px solid var(--light-gray);
-  color: var(--gray);
-  font-size: 14px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-.chapter-number {
-  color: var(--black);
-}
-
-.eyebrow {
-  margin: 0 0 20px;
-  color: var(--gray);
-  font-size: 14px;
-  letter-spacing: .14em;
-  line-height: 1.8;
-  text-transform: uppercase;
-}
-
-.chapter-title {
-  max-width: 1050px;
-  margin: 0;
-  font-family: var(--serif);
-  font-size: clamp(48px, 6vw, 86px);
-  font-weight: 400;
-  letter-spacing: -.045em;
-  line-height: 1.15;
-  overflow-wrap: anywhere;
-}
-
-.chapter-description {
-  max-width: 850px;
-  margin-top: 30px;
-  color: var(--gray);
-  font-size: 20px;
-  line-height: 1.9;
-}
-
-.chapter-footer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 75px;
-  padding-top: 18px;
-  border-top: 1px solid var(--light-gray);
-  color: var(--gray);
-  font-size: 13px;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-}
-
-.chapter-footer strong {
-  color: var(--black);
-  font-weight: 600;
-}
-
-/* Couverture */
-
-.cover {
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  align-items: center;
-  gap: 5%;
-  min-height: min(800px, 88vh);
-  padding: 70px 7%;
-}
-
-.cover-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  min-width: 0;
-  padding: 30px 0;
-}
-
-.cover-label {
-  color: var(--gray);
-  font-size: 15px;
-  letter-spacing: .12em;
-  line-height: 2;
-  text-transform: uppercase;
-}
-
-.cover h1 {
-  margin: 60px 0 30px;
-  font-family: var(--serif);
-  font-size: clamp(64px, 8vw, 115px);
-  font-weight: 400;
-  letter-spacing: -.07em;
-  line-height: 1.05;
-  overflow-wrap: anywhere;
-}
-
-.cover h1 span {
-  display: block;
-}
-
-.cover-role {
-  max-width: 650px;
-  margin: 0;
-  color: #50504c;
-  font-size: 21px;
-  line-height: 1.9;
-}
-
-.cover-role strong {
-  color: var(--black);
-  font-weight: 600;
-}
-
-.cover-bottom {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 20px;
-  width: 100%;
-  margin-top: 60px;
-  padding-top: 18px;
-  border-top: 1px solid var(--black);
-  color: var(--gray);
-  font-size: 13px;
-  letter-spacing: .1em;
-  line-height: 2;
-  text-transform: uppercase;
-}
-
-.primary-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 30px;
-  margin-top: 35px;
-  padding: 20px 0;
-  border: 0;
-  border-bottom: 1px solid var(--black);
-  background: transparent;
-  color: var(--black);
-  font-size: 15px;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: gap .2s;
-}
-
-.primary-button:hover {
-  gap: 40px;
-}
-
-.primary-button span {
-  font-size: 27px;
-}
-
-.cover-visual {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 0;
-  min-height: 520px;
-  background: #eeeee9;
-  overflow: hidden;
-}
-
-.cover-visual svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 650px;
-}
-
-.cover-caption {
-  position: absolute;
-  right: 18px;
-  bottom: 18px;
-  left: 18px;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  color: #555950;
-  font-size: 13px;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-}
-
-/* Profil */
-
-.intro-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
-  gap: 12%;
-  margin-top: 60px;
-}
-
-.intro-text {
-  color: #50504c;
-  font-size: 20px;
-  line-height: 1.95;
-}
-
-.intro-text p {
-  margin: 0 0 28px;
-}
-
-.profile-note {
-  align-self: start;
-  padding-top: 20px;
-  border-top: 1px solid var(--black);
-}
-
-.profile-note h3 {
-  margin: 0 0 25px;
-  font-family: var(--serif);
-  font-size: 36px;
-  font-weight: 400;
-}
-
-.profile-row {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--light-gray);
-}
-
-.profile-row span:first-child {
-  color: var(--gray);
-  font-size: 13px;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-}
-
-.profile-row span:last-child {
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-.stat-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
-  gap: 30px;
-  margin-top: 60px;
-  padding-top: 28px;
-  border-top: 1px solid var(--light-gray);
-}
-
-.stat strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: clamp(32px, 3vw, 44px);
-  font-weight: 400;
-}
-
-.stat span {
-  display: block;
-  max-width: 280px;
-  margin-top: 14px;
-  color: var(--gray);
-  font-size: 17px;
-  line-height: 1.9;
-}
-
-/* Formation */
-
-.timeline {
-  margin-top: 60px;
-  border-top: 1px solid var(--light-gray);
-}
-
-.timeline-item {
-  display: grid;
-  grid-template-columns: 160px minmax(0,1fr);
-  gap: 35px;
-  padding: 35px 0;
-  border-bottom: 1px solid var(--light-gray);
-}
-
-.timeline-date {
-  padding-top: 8px;
-  color: var(--gray);
-  font-size: 15px;
-  line-height: 1.9;
-}
-
-.timeline-content h3 {
-  margin: 0 0 15px;
-  font-family: var(--serif);
-  font-size: clamp(29px, 2.8vw, 38px);
-  font-weight: 400;
-  line-height: 1.4;
-}
-
-.timeline-content p {
-  max-width: 850px;
-  margin: 0;
-  color: var(--gray);
-  font-size: 18px;
-  line-height: 1.95;
-}
-
-.timeline-place {
-  display: block;
-  margin-top: 15px;
-  color: var(--black);
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-.inline-link {
-  display: inline-block;
-  margin-top: 20px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid var(--black);
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-.inline-link:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-}
-
-.section-subtitle {
-  margin: 75px 0 35px;
-  font-family: var(--serif);
-  font-size: 42px;
-  font-weight: 400;
-}
-
-.certificates {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 40px;
-}
-
-.certificate {
-  padding-top: 20px;
-  border-top: 1px solid var(--black);
-}
-
-.certificate span {
-  color: var(--gray);
-  font-size: 14px;
-  letter-spacing: .07em;
-  line-height: 1.9;
-  text-transform: uppercase;
-}
-
-.certificate h3 {
-  margin: 20px 0;
-  font-family: var(--serif);
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 1.4;
-}
-
-.certificate p {
-  margin: 0;
-  color: var(--gray);
-  font-size: 18px;
-  line-height: 1.9;
-}
-
-/* Compétences */
-
-.skill-groups {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 50px 65px;
-  margin-top: 60px;
-}
-
-.skill-card {
-  min-width: 0;
-  padding-top: 20px;
-  border-top: 1px solid var(--black);
-}
-
-.skill-number {
-  color: var(--gray);
-  font-size: 14px;
-  letter-spacing: .1em;
-}
-
-.skill-card h3 {
-  margin: 20px 0;
-  font-family: var(--serif);
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 1.4;
-}
-
-.tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 18px;
-}
-
-.tag {
-  padding-bottom: 5px;
-  border-bottom: 1px solid var(--light-gray);
-  color: #555550;
-  font-size: 17px;
-  line-height: 1.8;
-}
-
-/* Projets */
-
-.project-list {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 65px 45px;
-  margin-top: 60px;
-}
-
-.project-card {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding-top: 20px;
-  border-top: 1px solid var(--black);
-}
-
-.project-index {
-  color: var(--gray);
-  font-size: 14px;
-  letter-spacing: .1em;
-}
-
-.project-card h3 {
-  margin: 20px 0;
-  font-family: var(--serif);
-  font-size: clamp(30px, 3vw, 40px);
-  font-weight: 400;
-  letter-spacing: -.025em;
-  line-height: 1.4;
-  overflow-wrap: anywhere;
-}
-
-.project-intro {
-  margin: 0;
-  color: #50504c;
-  font-size: 19px;
-  line-height: 1.9;
-}
-
-.project-detail {
-  margin-top: 30px;
-}
-
-.project-detail h4 {
-  margin: 0 0 13px;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-}
-
-.project-detail p {
-  margin: 0;
-  color: var(--gray);
-  font-size: 18px;
-  line-height: 1.95;
-}
-
-.project-tools {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 18px;
-  margin-top: 18px;
-}
-
-.project-tools span {
-  color: var(--accent);
-  font-size: 15px;
-  letter-spacing: .02em;
-}
-
-/* Cartes */
-
-.gallery-intro {
-  max-width: 850px;
-  margin-top: 30px;
-  color: var(--gray);
-  font-size: 20px;
-  line-height: 1.9;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 55px 35px;
-  margin-top: 50px;
-}
-
-.map-card {
-  min-width: 0;
-}
-
-.map-image-button {
-  display: block;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: #f0f0eb;
-  cursor: zoom-in;
-  overflow: hidden;
-}
-
-.map-image-button img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1.15 / 1;
-  object-fit: contain;
-  transition: transform .35s ease;
-}
-
-.map-image-button:hover img {
-  transform: scale(1.025);
-}
-
-.map-info {
-  padding-top: 22px;
-}
-
-.map-type {
-  display: block;
-  margin-bottom: 12px;
-  color: var(--gray);
-  font-size: 14px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.map-info h3 {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 35px;
-  font-weight: 400;
-  line-height: 1.4;
-}
-
-.map-info p {
-  max-width: 550px;
-  margin: 14px 0 0;
-  color: var(--gray);
-  font-size: 18px;
-  line-height: 1.9;
-}
-
-/* Expériences */
-
-.experience-list {
-  margin-top: 60px;
-  border-top: 1px solid var(--black);
-}
-
-.experience-item {
-  display: grid;
-  grid-template-columns: 200px minmax(0,1fr);
-  gap: 45px;
-  padding: 40px 0;
-  border-bottom: 1px solid var(--light-gray);
-}
-
-.experience-meta {
-  color: var(--gray);
-  font-size: 15px;
-  line-height: 2;
-}
-
-.experience-item h3 {
-  margin: 0 0 14px;
-  font-family: var(--serif);
-  font-size: clamp(30px, 3vw, 42px);
-  font-weight: 400;
-  line-height: 1.4;
-}
-
-.experience-place {
-  margin-bottom: 20px;
-  font-size: 15px;
-  line-height: 1.9;
-}
-
-.experience-item p,
-.experience-item li {
-  color: var(--gray);
-  font-size: 18px;
-  line-height: 1.95;
-}
-
-.experience-item ul {
-  margin: 15px 0 0;
-  padding-left: 23px;
-}
-
-.experience-item li {
-  padding-left: 5px;
-  margin-bottom: 14px;
-}
-
+:root{--bg:#111713;--panel:#171f19;--paper:#f1f2e9;--muted:#a3aca0;--line:rgba(241,242,233,.18);--lime:#d3fa70;--green:#829c62;--mono:"DM Mono",monospace;--sans:"Manrope",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--paper);font:16px/1.8 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}body.modal-open{overflow:hidden}a{color:inherit;text-decoration:none}button{font:inherit}button:focus-visible,a:focus-visible{outline:2px solid var(--lime);outline-offset:4px}::selection{background:var(--lime);color:var(--bg)}
+.grain{pointer-events:none;position:fixed;inset:0;z-index:30;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.site-header{position:relative;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:19px 5%;border-bottom:1px solid var(--line);background:var(--bg)}.brand{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.brand-mark{display:grid;place-items:center;width:38px;height:38px;border:1px solid var(--lime);color:var(--lime);font:22px Georgia,serif}.header-note{color:var(--muted);font:10px var(--mono);letter-spacing:.1em;text-align:right;text-transform:uppercase}
+.navigation{position:sticky;top:0;z-index:20;display:flex;justify-content:center;flex-wrap:wrap;padding:7px 2%;border-bottom:1px solid var(--line);background:rgba(17,23,19,.94);backdrop-filter:blur(16px)}.nav-link{padding:11px 12px;border:0;border-bottom:1px solid transparent;background:none;color:var(--muted);font:10px var(--mono);letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:.2s}.nav-link:hover,.nav-link.active{color:var(--lime);border-bottom-color:var(--lime)}
+.book{width:100%;margin:auto;position:relative;perspective:1800px;transform-style:preserve-3d}.chapter{display:none;width:100%;background:var(--bg);transform-origin:left center;backface-visibility:hidden;transform-style:preserve-3d}.chapter.active{display:block;animation:appear .45s cubic-bezier(.2,.7,.2,1)}.chapter.turn-forward,.chapter.turn-backward{display:block;position:absolute;inset:0;z-index:3;pointer-events:none;box-shadow:0 0 70px rgba(0,0,0,.28)}.chapter.turn-forward{animation:turnForward .64s cubic-bezier(.65,0,.35,1) forwards}.chapter.turn-backward{transform-origin:right center;animation:turnBackward .64s cubic-bezier(.65,0,.35,1) forwards}.chapter.soft-page{background:#151c16}@keyframes appear{from{opacity:0;transform:translateY(14px) rotateX(1deg)}to{opacity:1;transform:none}}@keyframes turnForward{0%{transform:rotateY(0);opacity:1}45%{box-shadow:18px 0 50px rgba(0,0,0,.28)}100%{transform:rotateY(-92deg);opacity:.12}}@keyframes turnBackward{0%{transform:rotateY(0);opacity:1}45%{box-shadow:-18px 0 50px rgba(0,0,0,.28)}100%{transform:rotateY(92deg);opacity:.12}}.chapter-inner{width:min(1500px,100%);margin:auto;padding:90px 7%}.chapter-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:58px;padding-bottom:15px;border-bottom:1px solid var(--line);color:var(--muted);font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}.chapter-number{color:var(--lime)}.eyebrow{margin:0 0 20px;color:var(--lime);font:11px/1.8 var(--mono);letter-spacing:.14em;text-transform:uppercase}.chapter-title{max-width:1100px;margin:0;font-size:clamp(43px,7vw,94px);font-weight:700;letter-spacing:-.085em;line-height:.99;overflow-wrap:anywhere}.chapter-title em{color:var(--lime);font-style:normal}.chapter-description{max-width:850px;margin-top:30px;color:#bac2b7;font-size:19px;line-height:1.9}.chapter-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:75px;padding-top:17px;border-top:1px solid var(--line);color:var(--muted);font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase}.chapter-footer strong{color:var(--paper);font-weight:500}
+/* Cover */
+.cover{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:6%;min-height:90vh;padding:70px 7%}.cover-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0;min-height:70vh;padding:25px 0}.cover-label{color:var(--muted);font:10px/2 var(--mono);letter-spacing:.12em;text-transform:uppercase}.cover h1{margin:48px 0 27px;font-size:clamp(58px,8vw,120px);font-weight:800;letter-spacing:-.1em;line-height:.88;overflow-wrap:anywhere}.cover h1 span{display:block;color:var(--lime)}.cover-role{max-width:650px;margin:0;color:#bbc4b8;font-size:clamp(17px,1.7vw,21px);line-height:1.85}.cover-role strong{color:var(--paper)}.cover-bottom{display:flex;flex-wrap:wrap;gap:8px 18px;width:100%;margin-top:45px;padding-top:15px;border-top:1px solid var(--line);color:var(--muted);font:10px/2 var(--mono);letter-spacing:.1em;text-transform:uppercase}.primary-button{display:inline-flex;align-items:center;gap:25px;margin-top:25px;padding:13px 0;border:0;border-bottom:1px solid var(--lime);background:none;color:var(--paper);font:11px var(--mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:gap .2s}.primary-button:hover{gap:36px}.primary-button span{color:var(--lime);font-size:24px}.cover-visual{position:relative;display:flex;justify-content:center;align-items:center;min-width:0;min-height:70vh;overflow:hidden;border:1px solid var(--line);background:radial-gradient(circle at 50% 45%,#29392c 0,#17231b 48%,#111713 80%)}.cover-visual:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(211,250,112,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(211,250,112,.06) 1px,transparent 1px);background-size:30px 30px;mask-image:linear-gradient(transparent,#000 15%,#000 85%,transparent)}.cover-visual svg{position:relative;z-index:1;width:100%;height:auto;max-height:720px}.cover-visual svg path{stroke-dasharray:900;stroke-dashoffset:900;animation:contourDraw 8s ease-in-out infinite alternate}.cover-visual svg path:nth-child(2n){animation-delay:-2s}.cover-visual svg path:nth-child(3n){animation-delay:-4s}.cover-visual svg circle{transform-box:fill-box;transform-origin:center;animation:mapPulse 3.4s ease-in-out infinite}@keyframes contourDraw{0%{stroke-dashoffset:900;opacity:.25}55%{opacity:.8}100%{stroke-dashoffset:0;opacity:.55}}@keyframes mapPulse{0%,100%{opacity:.45;transform:scale(.92)}50%{opacity:1;transform:scale(1.12)}}.cover-caption{position:absolute;z-index:2;right:18px;bottom:15px;left:18px;display:flex;justify-content:space-between;gap:10px;color:#aab6a5;font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+/* Profile */
+.intro-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(250px,.75fr);gap:10%;margin-top:55px}.intro-text{color:#c2c9bd;font-size:18px;line-height:1.95}.intro-text p{margin:0 0 25px}.profile-note{align-self:start;padding-top:18px;border-top:1px solid var(--lime)}.profile-note h3{margin:0 0 22px;font-size:26px;letter-spacing:-.04em}.profile-row{display:flex;flex-direction:column;gap:5px;padding:15px 0;border-bottom:1px solid var(--line)}.profile-row span:first-child{color:var(--muted);font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase}.profile-row span:last-child{font-size:15px;line-height:1.8}.stat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;margin-top:55px;padding-top:24px;border-top:1px solid var(--line)}.stat strong{display:block;color:var(--lime);font-size:clamp(27px,3vw,43px);letter-spacing:-.07em;line-height:1.2}.stat span{display:block;max-width:280px;margin-top:12px;color:var(--muted);font-size:14px;line-height:1.8}
+/* Education and certifications */
+.timeline{margin-top:55px;border-top:1px solid var(--line)}.timeline-item{display:grid;grid-template-columns:170px minmax(0,1fr);gap:35px;padding:32px 0;border-bottom:1px solid var(--line)}.timeline-date{padding-top:7px;color:var(--lime);font:11px/1.9 var(--mono)}.timeline-content h3{margin:0 0 12px;font-size:clamp(23px,2.6vw,35px);font-weight:600;letter-spacing:-.055em;line-height:1.25}.timeline-content p{max-width:900px;margin:0;color:#b9c2b6;font-size:16px;line-height:1.9}.timeline-place{display:block;margin-top:12px;color:var(--paper);font-size:13px}.inline-link{display:inline-block;margin-top:16px;padding-bottom:4px;border-bottom:1px solid var(--lime);color:var(--lime);font-size:13px}.inline-link:hover{color:white}.section-subtitle{margin:70px 0 30px;font-size:clamp(29px,4vw,43px);font-weight:700;letter-spacing:-.06em}.certificates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:35px}.certificate{padding:20px 0 0;border-top:1px solid var(--lime)}.certificate span{color:var(--lime);font:10px/1.9 var(--mono);letter-spacing:.08em;text-transform:uppercase}.certificate h3{margin:17px 0;font-size:24px;letter-spacing:-.04em;line-height:1.35}.certificate p{margin:0;color:#b9c2b6;font-size:15px;line-height:1.9}
+/* Skills */
+.skill-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 55px;margin-top:55px}.skill-card{min-width:0;padding-top:18px;border-top:1px solid var(--line)}.skill-number{color:var(--lime);font:10px var(--mono);letter-spacing:.1em}.skill-card h3{margin:16px 0 18px;font-size:27px;letter-spacing:-.05em;line-height:1.35}.tag-list{display:flex;flex-wrap:wrap;gap:8px}.tag{padding:7px 10px;border:1px solid var(--line);color:#c1c9bc;font-size:12px;line-height:1.5}.tag:hover{border-color:var(--lime);color:var(--lime)}
+/* Projects */
+.project-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 35px;margin-top:55px}.project-card{display:flex;flex-direction:column;min-width:0;padding-top:18px;border-top:1px solid var(--line)}.project-index{color:var(--lime);font:10px var(--mono);letter-spacing:.1em}.project-card h3{margin:17px 0;font-size:clamp(24px,3vw,37px);font-weight:700;letter-spacing:-.06em;line-height:1.15;overflow-wrap:anywhere}.project-intro{margin:0;color:#d1d6cc;font-size:16px;line-height:1.85}.project-detail{margin-top:24px}.project-detail h4{margin:0 0 8px;color:var(--lime);font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.project-detail p{margin:0;color:#aeb8ab;font-size:14px;line-height:1.9}.project-tools{display:flex;flex-wrap:wrap;gap:8px 15px;margin-top:15px}.project-tools span{color:#d0d8c8;font:10px var(--mono);letter-spacing:.03em}
+/* Map gallery */
+.gallery-intro{max-width:850px;margin-top:25px;color:#b9c2b6;font-size:18px;line-height:1.9}.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:45px 28px;margin-top:45px}.map-card{min-width:0}.map-image-button{display:block;width:100%;padding:0;border:1px solid var(--line);background:#e9e9e1;cursor:zoom-in;overflow:hidden}.map-image-button img{display:block;width:100%;height:auto;aspect-ratio:1.15/1;object-fit:contain;transition:transform .35s}.map-image-button:hover img{transform:scale(1.025)}.map-info{padding-top:17px}.map-type{display:block;margin-bottom:8px;color:var(--lime);font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.map-info h3{margin:0;font-size:24px;letter-spacing:-.04em;line-height:1.35}.map-info p{max-width:550px;margin:10px 0 0;color:#aeb8ab;font-size:14px;line-height:1.85}.map-missing{display:none;min-height:180px;place-items:center;padding:25px;color:#465040;background:#e9e9e1;font:11px var(--mono);text-align:center}
+/* Experiences */
+.experience-list{margin-top:55px;border-top:1px solid var(--line)}.experience-item{display:grid;grid-template-columns:190px minmax(0,1fr);gap:38px;padding:34px 0;border-bottom:1px solid var(--line)}.experience-meta{color:var(--lime);font:10px/2 var(--mono)}.experience-item h3{margin:0 0 10px;font-size:clamp(25px,3vw,39px);font-weight:700;letter-spacing:-.06em;line-height:1.2}.experience-place{margin-bottom:17px;color:var(--paper);font-size:13px}.experience-item p,.experience-item li{color:#b7c0b4;font-size:15px;line-height:1.9}.experience-item p{margin:0 0 15px}.experience-item h4{margin:22px 0 8px;color:var(--lime);font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.experience-item ul{margin:10px 0 0;padding-left:20px}.experience-item li{padding-left:5px;margin-bottom:8px}.experience-block{margin-top:18px;padding-top:15px;border-top:1px solid rgba(241,242,233,.1)}
 /* Contact */
-
-.contact-layout {
-  display: grid;
-  grid-template-columns: minmax(0,1fr) minmax(270px,.8fr);
-  gap: 12%;
-  margin-top: 60px;
-}
-
-.contact-heading {
-  max-width: 750px;
-  margin: 0;
-  font-family: var(--serif);
-  font-size: clamp(48px, 5.5vw, 78px);
-  font-weight: 400;
-  letter-spacing: -.04em;
-  line-height: 1.2;
-}
-
-.contact-description {
-  max-width: 650px;
-  margin-top: 30px;
-  color: var(--gray);
-  font-size: 20px;
-  line-height: 1.9;
-}
-
-.contact-details {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid var(--black);
-}
-
-.contact-details span {
-  display: block;
-  margin-bottom: 12px;
-  font-size: 14px;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-}
-
-.contact-details p {
-  margin: 0;
-  color: var(--gray);
-  font-size: 18px;
-  line-height: 1.9;
-}
-
-.contact-links {
-  align-self: start;
-  border-top: 1px solid var(--black);
-}
-
-.contact-link {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  padding: 25px 0;
-  border-bottom: 1px solid var(--light-gray);
-  font-size: 19px;
-  transition: padding .2s;
-}
-
-.contact-link:hover {
-  padding-right: 8px;
-  padding-left: 8px;
-}
-
-.contact-link span:last-child {
-  font-size: 25px;
-}
-
-/* Navigation entre les pages */
-
-.page-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  width: min(1380px,100%);
-  margin: 0 auto;
-  padding: 28px 7%;
-  border-top: 1px solid var(--light-gray);
-}
-
-.page-control {
-  display: inline-flex;
-  align-items: center;
-  gap: 13px;
-  padding: 6px 0;
-  border: 0;
-  background: transparent;
-  color: var(--black);
-  font-size: 14px;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.page-control .arrow {
-  font-size: 25px;
-  transition: transform .2s;
-}
-
-.page-control:hover .arrow {
-  transform: translateX(3px);
-}
-
-#previousPage:hover .arrow {
-  transform: translateX(-3px);
-}
-
-.page-control:disabled {
-  opacity: .25;
-  cursor: default;
-}
-
-.page-progress {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  color: var(--gray);
-  font-size: 14px;
-}
-
-.progress-track {
-  width: 85px;
-  height: 2px;
-  background: var(--light-gray);
-}
-
-.progress-fill {
-  width: 10%;
-  height: 100%;
-  background: var(--black);
-  transition: width .3s;
-}
-
-.site-footer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px 20px;
-  padding: 25px 7%;
-  border-top: 1px solid var(--light-gray);
-  color: var(--gray);
-  font-size: 13px;
-  letter-spacing: .05em;
-  line-height: 1.9;
-  text-transform: uppercase;
-}
-
-/* Agrandissement des cartes */
-
-.modal {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 25px;
-  background: rgba(255,255,255,.97);
-}
-
-.modal.open {
-  display: flex;
-}
-
-.modal-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: min(1100px,95vw);
-  max-height: 90vh;
-}
-
-.modal-image {
-  display: block;
-  max-width: 100%;
-  max-height: 78vh;
-  object-fit: contain;
-}
-
-.modal-caption {
-  margin: 18px 0 0;
-  color: var(--black);
-  font-size: 15px;
-  letter-spacing: .06em;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.modal-close {
-  position: absolute;
-  top: -45px;
-  right: 0;
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--black);
-  border-radius: 50%;
-  background: var(--white);
-  color: var(--black);
-  font-size: 27px;
-  cursor: pointer;
-}
-
-/* Tablettes */
-
-@media (max-width: 1000px) {
-  .cover {
-    grid-template-columns: 1.05fr .95fr;
-    gap: 30px;
-    padding-right: 5%;
-    padding-left: 5%;
-  }
-
-  .cover h1 {
-    font-size: clamp(55px,7vw,85px);
-  }
-
-  .cover-role {
-    font-size: 20px;
-  }
-
-  .intro-grid,
-  .contact-layout {
-    gap: 45px;
-  }
-
-  .experience-item {
-    grid-template-columns: 160px minmax(0,1fr);
-    gap: 30px;
-  }
-
-  .chapter-inner {
-    padding-right: 5%;
-    padding-left: 5%;
-  }
-
-  .nav-link {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-}
-
-/* Téléphones */
-
-@media (max-width: 700px) {
-  body {
-    font-size: 16px;
-  }
-
-  .site-header {
-    padding: 18px 5%;
-  }
-
-  .brand {
-    font-size: 10px;
-    letter-spacing: .05em;
-  }
-
-  .brand-mark {
-    width: 32px;
-    height: 32px;
-  }
-
-  .header-note {
-    max-width: 145px;
-    font-size: 11px;
-    line-height: 1.8;
-  }
-
-  .navigation {
-    position: relative;
-    justify-content: flex-start;
-    padding: 8px 3%;
-  }
-
-  .nav-link {
-    padding: 10px 9px;
-    font-size: 11px;
-  }
-
-  .chapter-inner {
-    padding: 48px 6%;
-  }
-
-  .chapter-meta {
-    margin-bottom: 42px;
-    font-size: 12px;
-  }
-
-  .chapter-title {
-    font-size: clamp(40px, 9vw, 58px);
-  }
-
-  .chapter-description {
-    font-size: 18px;
-  }
-
-  .cover {
-    grid-template-columns: 1fr;
-    gap: 35px;
-    min-height: auto;
-    padding: 40px 6% 50px;
-  }
-
-  .cover-copy {
-    padding: 10px 0;
-  }
-
-  .cover-label {
-    font-size: 13px;
-  }
-
-  .cover h1 {
-    margin-top: 50px;
-    font-size: clamp(55px, 12vw, 82px);
-  }
-
-  .cover-role {
-    font-size: 19px;
-    line-height: 1.9;
-  }
-
-  .primary-button {
-    font-size: 14px;
-  }
-
-  .cover-bottom {
-    margin-top: 45px;
-    font-size: 11px;
-  }
-
-  .cover-visual {
-    min-height: 320px;
-  }
-
-  .cover-visual svg {
-    max-height: 400px;
-  }
-
-  .cover-caption {
-    font-size: 11px;
-  }
-
-  .intro-grid,
-  .contact-layout {
-    grid-template-columns: 1fr;
-    gap: 38px;
-    margin-top: 40px;
-  }
-
-  .intro-text {
-    font-size: 18px;
-  }
-
-  .profile-note h3 {
-    font-size: 32px;
-  }
-
-  .profile-row span:last-child {
-    font-size: 17px;
-  }
-
-  .stat-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .stat {
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--light-gray);
-  }
-
-  .stat span {
-    font-size: 16px;
-  }
-
-  .timeline-item {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .timeline-date {
-    font-size: 14px;
-  }
-
-  .timeline-content h3 {
-    font-size: 30px;
-  }
-
-  .timeline-content p {
-    font-size: 17px;
-  }
-
-  .timeline-place,
-  .inline-link {
-    font-size: 14px;
-  }
-
-  .section-subtitle {
-    font-size: 35px;
-  }
-
-  .certificates,
-  .skill-groups,
-  .project-list,
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .certificates {
-    gap: 32px;
-  }
-
-  .certificate h3 {
-    font-size: 29px;
-  }
-
-  .certificate p {
-    font-size: 17px;
-  }
-
-  .skill-groups {
-    gap: 38px;
-  }
-
-  .skill-card h3 {
-    font-size: 31px;
-  }
-
-  .tag {
-    font-size: 16px;
-  }
-
-  .project-list {
-    gap: 45px;
-  }
-
-  .project-card h3 {
-    font-size: 32px;
-  }
-
-  .project-intro {
-    font-size: 18px;
-  }
-
-  .project-detail h4 {
-    font-size: 13px;
-  }
-
-  .project-detail p {
-    font-size: 17px;
-  }
-
-  .project-tools span {
-    font-size: 14px;
-  }
-
-  .gallery {
-    gap: 38px;
-  }
-
-  .gallery-intro {
-    font-size: 18px;
-  }
-
-  .map-type {
-    font-size: 12px;
-  }
-
-  .map-info h3 {
-    font-size: 30px;
-  }
-
-  .map-info p {
-    font-size: 17px;
-  }
-
-  .experience-item {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .experience-meta {
-    font-size: 14px;
-  }
-
-  .experience-item h3 {
-    font-size: 32px;
-  }
-
-  .experience-item p,
-  .experience-item li {
-    font-size: 17px;
-  }
-
-  .contact-heading {
-    font-size: clamp(42px, 10vw, 58px);
-  }
-
-  .contact-description {
-    font-size: 18px;
-  }
-
-  .contact-details p {
-    font-size: 17px;
-  }
-
-  .contact-link {
-    font-size: 18px;
-  }
-
-  .chapter-footer {
-    font-size: 11px;
-  }
-
-  .page-controls {
-    padding: 22px 5%;
-  }
-
-  .page-control {
-    gap: 7px;
-    font-size: 11px;
-  }
-
-  .page-progress {
-    gap: 7px;
-    font-size: 11px;
-  }
-
-  .progress-track {
-    width: 35px;
-  }
-
-  .site-footer {
-    padding: 22px 5%;
-    font-size: 11px;
-  }
-}
-
-@media (max-width: 380px) {
-  .brand {
-    font-size: 9px;
-  }
-
-  .header-note {
-    max-width: 110px;
-    font-size: 9px;
-  }
-
-  .nav-link {
-    padding: 9px 7px;
-    font-size: 9px;
-  }
-
-  .cover h1 {
-    font-size: 49px;
-  }
-
-  .chapter-title {
-    font-size: 37px;
-  }
-
-  .cover-role {
-    font-size: 17px;
-  }
-
-  .page-control {
-    font-size: 9px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-  }
-}
+.contact-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr);gap:10%;margin-top:55px}.contact-heading{max-width:780px;margin:0;font-size:clamp(42px,6vw,80px);font-weight:700;letter-spacing:-.085em;line-height:.98}.contact-heading em{color:var(--lime);font-style:normal}.contact-description{max-width:650px;margin-top:25px;color:#b9c2b6;font-size:17px;line-height:1.9}.contact-details{margin-top:30px;padding-top:17px;border-top:1px solid var(--line)}.contact-details span{display:block;margin-bottom:8px;color:var(--lime);font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.contact-details p{margin:0;color:#b9c2b6;font-size:15px;line-height:1.9}.contact-links{align-self:start;border-top:1px solid var(--line)}.contact-link{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:22px 0;border-bottom:1px solid var(--line);font-size:17px;transition:padding .2s}.contact-link:hover{padding-right:8px;padding-left:8px;color:var(--lime)}.contact-link span:last-child{color:var(--lime);font-size:23px}
+/* Page navigation and footer */
+.page-controls{display:flex;justify-content:space-between;align-items:center;gap:15px;width:min(1500px,100%);margin:auto;padding:24px 7%;border-top:1px solid var(--line)}.page-control{display:inline-flex;align-items:center;gap:12px;padding:5px 0;border:0;background:none;color:var(--paper);font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.page-control .arrow{color:var(--lime);font-size:22px;transition:transform .2s}.page-control:hover .arrow{transform:translateX(3px)}#previousPage:hover .arrow{transform:translateX(-3px)}.page-control:disabled{opacity:.25;cursor:default}.page-progress{display:flex;align-items:center;gap:12px;color:var(--muted);font:10px var(--mono)}.progress-track{width:85px;height:2px;background:var(--line)}.progress-fill{width:10%;height:100%;background:var(--lime);transition:width .3s}.site-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 20px;padding:22px 7%;border-top:1px solid var(--line);color:var(--muted);font:9px/1.9 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+/* Lightbox */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:25px;background:rgba(7,10,8,.96)}.modal.open{display:flex}.modal-content{position:relative;display:flex;flex-direction:column;align-items:center;width:min(1100px,95vw);max-height:90vh}.modal-image{display:block;max-width:100%;max-height:78vh;object-fit:contain;background:#eee}.modal-caption{margin:15px 0 0;color:var(--paper);font:10px var(--mono);letter-spacing:.08em;text-align:center;text-transform:uppercase}.modal-close{position:absolute;top:-45px;right:0;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:var(--bg);color:var(--paper);font-size:25px;cursor:pointer}
+@media(max-width:1000px){.cover{gap:25px;padding-right:5%;padding-left:5%}.cover h1{font-size:clamp(52px,7.4vw,90px)}.chapter-inner{padding-right:5%;padding-left:5%}.intro-grid,.contact-layout{gap:40px}.experience-item{grid-template-columns:150px 1fr;gap:25px}.nav-link{padding-right:8px;padding-left:8px}}
+@media(max-width:700px){.book{perspective:900px}.chapter.turn-forward,.chapter.turn-backward{position:absolute}.cover{min-height:auto}.cover-copy{min-height:auto}.cover-visual{min-height:350px}body{font-size:15px}.site-header{padding:16px 5%}.brand{font-size:9px}.brand-mark{width:32px;height:32px}.header-note{max-width:145px;font-size:9px;line-height:1.7}.navigation{position:relative;justify-content:flex-start;padding:6px 2%}.nav-link{padding:9px 8px;font-size:9px}.chapter-inner{padding:48px 6%}.chapter-meta{margin-bottom:40px;font-size:9px}.chapter-title{font-size:clamp(39px,9vw,60px)}.chapter-description,.gallery-intro{font-size:16px}.cover{grid-template-columns:1fr;gap:28px;min-height:auto;padding:40px 6% 45px}.cover h1{margin-top:35px;font-size:clamp(54px,12vw,82px)}.cover-role{font-size:17px}.cover-visual{min-height:350px}.cover-visual svg{max-height:420px}.cover-bottom{margin-top:35px;font-size:9px}.intro-grid,.contact-layout{grid-template-columns:1fr;gap:35px;margin-top:38px}.intro-text{font-size:16px}.stat-grid{grid-template-columns:1fr;gap:20px}.stat{padding-bottom:17px;border-bottom:1px solid var(--line)}.stat span{font-size:14px}.timeline-item{grid-template-columns:1fr;gap:8px;padding:25px 0}.timeline-content h3{font-size:26px}.timeline-content p{font-size:15px}.certificates,.skill-groups,.project-list,.gallery{grid-template-columns:1fr}.certificates{gap:30px}.certificate h3{font-size:22px}.certificate p{font-size:14px}.skill-groups{gap:30px}.skill-card h3{font-size:24px}.project-list{gap:38px}.project-card h3{font-size:28px}.project-intro{font-size:15px}.project-detail p{font-size:14px}.gallery{gap:32px}.map-info h3{font-size:23px}.map-info p{font-size:14px}.experience-item{grid-template-columns:1fr;gap:8px;padding:28px 0}.experience-item h3{font-size:28px}.experience-item p,.experience-item li{font-size:14px}.contact-heading{font-size:clamp(40px,10vw,60px)}.contact-description{font-size:16px}.page-controls{padding:20px 5%}.page-control{gap:6px;font-size:9px}.page-progress{gap:7px;font-size:9px}.progress-track{width:38px}.site-footer{padding:20px 5%;font-size:8px}}
+@media(prefers-reduced-motion:reduce){.chapter.active,.chapter.turn-forward,.chapter.turn-backward,.cover-visual svg path,.cover-visual svg circle{animation:none!important}.chapter.turn-forward,.chapter.turn-backward{transform:none!important;opacity:0!important}}
+@media(max-width:380px){.brand{font-size:8px}.header-note{max-width:105px;font-size:8px}.nav-link{padding:8px 6px;font-size:8px}.cover h1{font-size:48px}.chapter-title{font-size:36px}.page-control{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Renforcement de la profondeur 3D et des interactions */
+.book{isolation:isolate;transform-style:preserve-3d}
+.book:before{content:"";position:absolute;z-index:-1;top:1.5%;bottom:1.5%;left:0;width:12px;background:linear-gradient(90deg,#070b08,#354332 35%,#111713 78%);box-shadow:8px 0 22px rgba(0,0,0,.28);opacity:.65;pointer-events:none}
+.chapter{position:relative;transform-style:preserve-3d;will-change:transform;box-shadow:0 25px 65px rgba(0,0,0,.12)}
+.chapter:after{content:"";position:absolute;z-index:4;top:0;right:0;bottom:0;width:16px;pointer-events:none;background:linear-gradient(270deg,rgba(0,0,0,.16),transparent);opacity:.35}
+.chapter.active{animation:pageArrive .72s cubic-bezier(.2,.75,.2,1) both}
+@keyframes pageArrive{0%{opacity:.3;transform:perspective(1800px) rotateY(7deg) translateZ(-35px);filter:brightness(.82)}65%{opacity:1;transform:perspective(1800px) rotateY(-1deg) translateZ(5px);filter:brightness(1.04)}100%{opacity:1;transform:perspective(1800px) rotateY(0) translateZ(0);filter:brightness(1)}}
+.chapter.turn-forward{transform-origin:left center;animation:bookTurnForward .8s cubic-bezier(.65,0,.25,1) forwards}
+.chapter.turn-backward{transform-origin:right center;animation:bookTurnBackward .8s cubic-bezier(.65,0,.25,1) forwards}
+@keyframes bookTurnForward{0%{transform:perspective(1800px) rotateY(0) translateZ(0);opacity:1;filter:brightness(1);box-shadow:0 0 0 transparent}35%{box-shadow:22px 12px 45px rgba(0,0,0,.38);filter:brightness(.8)}65%{opacity:.9;filter:brightness(.62)}100%{transform:perspective(1800px) rotateY(-105deg) translateZ(70px);opacity:0;box-shadow:35px 15px 55px rgba(0,0,0,.35)}}
+@keyframes bookTurnBackward{0%{transform:perspective(1800px) rotateY(0) translateZ(0);opacity:1;filter:brightness(1)}35%{box-shadow:-22px 12px 45px rgba(0,0,0,.38);filter:brightness(.8)}65%{opacity:.9;filter:brightness(.62)}100%{transform:perspective(1800px) rotateY(105deg) translateZ(70px);opacity:0;box-shadow:-35px 15px 55px rgba(0,0,0,.35)}}
+.cover-visual{transform-style:preserve-3d;perspective:1100px;transition:box-shadow .35s,border-color .35s;box-shadow:18px 24px 0 -12px rgba(211,250,112,.13),28px 36px 0 -20px rgba(211,250,112,.09),0 30px 80px rgba(0,0,0,.22)}
+.cover-visual:after{content:"";position:absolute;inset:12px;border:1px solid rgba(211,250,112,.13);transform:translateZ(35px);pointer-events:none;transition:transform .2s}
+.cover-visual svg{transform:translateZ(45px);transform-style:preserve-3d;filter:drop-shadow(0 15px 12px rgba(0,0,0,.2));transition:transform .2s ease-out}
+.cover-caption{transform:translateZ(65px)}
+.cover-copy{transform-style:preserve-3d;transition:transform .25s ease-out}
+.cover-label,.cover h1,.cover-role,.cover-bottom{position:relative;transform:translateZ(14px)}
+.primary-button{transform:translateZ(28px)}
+.map-card,.skill-card,.project-card,.certificate,.timeline-item,.experience-item{transform-style:preserve-3d;transition:transform .25s ease,box-shadow .25s,border-color .25s;will-change:transform}
+.map-card{perspective:1000px}
+.map-image-button{position:relative;transform-style:preserve-3d;box-shadow:0 12px 0 -7px rgba(211,250,112,.14),0 22px 35px rgba(0,0,0,.14);transition:transform .22s ease,box-shadow .22s,border-color .22s}
+.map-image-button:after{content:"OUVRIR LA CARTE ↗";position:absolute;right:12px;bottom:12px;padding:7px 9px;background:rgba(17,23,19,.9);color:var(--lime);font:9px var(--mono);letter-spacing:.08em;opacity:0;transform:translateY(6px) translateZ(20px);transition:opacity .2s,transform .2s;pointer-events:none}
+.map-card:hover .map-image-button:after,.map-image-button:focus-visible:after{opacity:1;transform:translateY(0) translateZ(20px)}
+.map-info{transform:translateZ(15px)}
+.skill-card,.project-card,.certificate{transform:perspective(1000px) rotateX(0) translateZ(0);}
+.skill-card:hover,.project-card:hover,.certificate:hover{transform:perspective(1000px) rotateX(1.5deg) translateY(-5px) translateZ(12px);box-shadow:0 20px 30px rgba(0,0,0,.16)}
+.timeline-item:hover,.experience-item:hover{transform:translateX(5px) translateZ(8px)}
+.nav-link{transition:transform .2s,color .2s,border-color .2s,text-shadow .2s}
+.nav-link:hover{transform:translateY(-2px);text-shadow:0 0 14px rgba(211,250,112,.25)}
+.page-controls{position:relative;z-index:5;box-shadow:0 -12px 35px rgba(0,0,0,.12)}
+.page-control{transition:transform .2s,color .2s,border-color .2s}
+.page-control:not(:disabled):hover{transform:translateY(-3px);color:var(--lime)}
+@media(max-width:700px){.book:before{width:5px}.chapter:after{width:6px}.cover-visual{box-shadow:9px 13px 0 -7px rgba(211,250,112,.13),0 18px 35px rgba(0,0,0,.18)}.cover-visual:after{inset:7px}.chapter.active{animation:pageArriveMobile .45s ease both}@keyframes pageArriveMobile{from{opacity:.4;transform:perspective(900px) rotateY(3deg) translateY(8px)}to{opacity:1;transform:none}}}
+@media(prefers-reduced-motion:reduce){.chapter.active{animation:none!important}.cover-copy,.cover-visual,.cover-visual svg,.map-card,.map-image-button,.skill-card,.project-card,.certificate,.timeline-item,.experience-item,.nav-link,.page-control{transition:none!important}}
 </style>
 </head>
-
 <body>
-
+<div class="grain" aria-hidden="true"></div>
 <header class="site-header">
-  <a class="brand" href="#" data-go="0" aria-label="Retour à l'accueil">
-    <span class="brand-mark">Z</span>
-    <span>Carolus Zyad TOGONOU</span>
-  </a>
-
-  <div class="header-note">
-    Géomatique · Environnement · Climat
-  </div>
+  <a class="brand" href="#" data-go="0" aria-label="Retour à l'accueil"><span class="brand-mark">Z</span><span>Carolus Zyad TOGONOU</span></a>
+  <div class="header-note">Géomatique · Environnement · Climat</div>
 </header>
-
 <nav class="navigation" aria-label="Navigation principale">
-  <button class="nav-link active" data-go="0">Accueil</button>
-  <button class="nav-link" data-go="1">Profil</button>
-  <button class="nav-link" data-go="2">Formation</button>
-  <button class="nav-link" data-go="3">Compétences</button>
-  <button class="nav-link" data-go="4">Projets I</button>
-  <button class="nav-link" data-go="5">Projets II</button>
-  <button class="nav-link" data-go="6">Cartes I</button>
-  <button class="nav-link" data-go="7">Cartes II</button>
-  <button class="nav-link" data-go="8">Expériences</button>
-  <button class="nav-link" data-go="9">Contact</button>
+  <button class="nav-link active" data-go="0">Accueil</button><button class="nav-link" data-go="1">Profil</button><button class="nav-link" data-go="2">Formation</button><button class="nav-link" data-go="3">Compétences</button><button class="nav-link" data-go="4">Projets I</button><button class="nav-link" data-go="5">Projets II</button><button class="nav-link" data-go="6">Cartes I</button><button class="nav-link" data-go="7">Cartes II</button><button class="nav-link" data-go="8">Expériences</button><button class="nav-link" data-go="9">Contact</button>
 </nav>
-
 <main class="book">
+<section class="chapter active" id="accueil">
+ <div class="cover">
+  <div class="cover-copy">
+   <div class="cover-label">Portfolio professionnel<br>Grenoble, France<br>2026</div>
+   <div><p class="eyebrow">Territoires · Climat · Données</p><h1>Carolus Zyad <span>TOGONOU</span></h1><p class="cover-role">Géomaticien, environnementaliste et analyste de données. J'étudie les dynamiques environnementales et climatiques à travers les SIG, la télédétection, les statistiques et l'analyse spatiale.</p><button class="primary-button" data-go="1">Découvrir mon parcours <span>→</span></button></div>
+   <div class="cover-bottom"><span>Géomatique</span><span>Climatologie</span><span>Environnement</span><span>Statistiques</span></div>
+  </div>
+  <div class="cover-visual">
+   <svg viewBox="0 0 500 600" role="img" aria-label="Illustration de courbes topographiques"><g fill="none" stroke="#9bb28a" stroke-width="1">
+   <path d="M-40 70 C70 0 150 30 220 100 S390 160 550 70"/><path d="M-40 95 C65 25 150 55 215 125 S390 185 550 95"/><path d="M-40 120 C60 50 150 80 210 150 S390 210 550 120"/><path d="M-40 145 C60 75 150 105 205 175 S390 235 550 145"/><path d="M-40 170 C60 100 150 130 200 200 S390 260 550 170"/><path d="M-40 195 C60 125 150 155 195 225 S390 285 550 195"/><path d="M-40 220 C60 150 150 180 190 250 S390 310 550 220"/><path d="M-40 245 C60 175 150 205 185 275 S390 335 550 245"/><path d="M-40 270 C60 200 150 230 180 300 S390 360 550 270"/><path d="M-40 295 C60 225 150 255 175 325 S390 385 550 295"/><path d="M-40 320 C60 250 150 280 170 350 S390 410 550 320"/><path d="M-40 345 C60 275 150 305 165 375 S390 435 550 345"/><path d="M-40 370 C60 300 150 330 160 400 S390 460 550 370"/><path d="M-40 395 C60 325 150 355 155 425 S390 485 550 395"/><path d="M-40 420 C60 350 150 380 150 450 S390 510 550 420"/><path d="M-40 445 C60 375 150 405 145 475 S390 535 550 445"/><path d="M-40 470 C60 400 150 430 140 500 S390 560 550 470"/><path d="M-40 495 C60 425 150 455 135 525 S390 585 550 495"/></g><g fill="none" stroke="#d3fa70" stroke-width="1.2"><path d="M80 90 C150 45 225 80 240 140 S330 210 400 165 S465 140 500 155"/><path d="M75 115 C145 70 220 105 235 165 S325 235 395 190 S460 165 500 180"/><path d="M70 140 C140 95 215 130 230 190 S320 260 390 215 S455 190 500 205"/><path d="M65 165 C135 120 210 155 225 215 S315 285 385 240 S450 215 500 230"/><path d="M60 190 C130 145 205 180 220 240 S310 310 380 265 S445 240 500 255"/></g><circle cx="255" cy="260" r="4" fill="#d3fa70"/><circle cx="255" cy="260" r="12" fill="none" stroke="#d3fa70"/><circle cx="255" cy="260" r="23" fill="none" stroke="#d3fa70" stroke-width=".7"/></svg>
+   <div class="cover-caption"><span>Analyse spatiale</span><span>01 / 10</span></div>
+  </div>
+ </div>
+</section>
+<section class="chapter" id="profil"><div class="chapter-inner">
+ <div class="chapter-meta"><span class="chapter-number">01 / Présentation</span><span>Profil professionnel</span></div><p class="eyebrow">À propos</p><h2 class="chapter-title">Comprendre les territoires et leurs <em>dynamiques.</em></h2>
+ <div class="intro-grid"><div class="intro-text">
+  <p>Formé en sciences agronomiques, en aménagement et gestion des ressources naturelles, ainsi qu'en géographie et aménagement de l'environnement, j'ai développé une approche pluridisciplinaire des problématiques territoriales.</p>
+  <p>Mon parcours m'a conduit à travailler sur les risques climatiques, la vulnérabilité des écosystèmes, les systèmes d'élevage, la restauration des paysages forestiers et les relations entre changements climatiques et production agricole.</p>
+  <p>Je mobilise les systèmes d'information géographique, la télédétection, la programmation et les méthodes statistiques pour traiter les données, analyser les phénomènes environnementaux et produire des résultats utiles à la décision.</p>
+  <p>Je m'intéresse particulièrement à l'analyse hydroclimatique, à l'évaluation des risques, à la modélisation environnementale et à l'exploitation des données spatiales et statistiques.</p>
+ </div><aside class="profile-note"><h3>Repères</h3><div class="profile-row"><span>Localisation</span><span>Grenoble, France</span></div><div class="profile-row"><span>Formation actuelle</span><span>Master GEOÏDES</span></div><div class="profile-row"><span>Spécialités</span><span>Environnement et climat</span></div><div class="profile-row"><span>Méthodes</span><span>SIG et statistiques</span></div><div class="profile-row"><span>Langues</span><span>Français, anglais C1</span></div></aside></div>
+ <div class="stat-grid"><div class="stat"><strong>Climat</strong><span>Analyse hydroclimatique et évaluation des risques</span></div><div class="stat"><strong>Environnement</strong><span>Vulnérabilité des écosystèmes et ressources naturelles</span></div><div class="stat"><strong>Données</strong><span>Traitement statistique et analyse spatiale</span></div></div>
+ <div class="chapter-footer"><span><strong>Profil</strong> / Environnement et analyse de données</span><span>02</span></div>
+</div></section>
+<section class="chapter soft-page" id="formation"><div class="chapter-inner">
+ <div class="chapter-meta"><span class="chapter-number">02 / Parcours académique</span><span>Formation et certifications</span></div><p class="eyebrow">Formation</p><h2 class="chapter-title">Des sciences agronomiques à la géographie <em>environnementale.</em></h2>
+ <div class="timeline">
+  <article class="timeline-item"><div class="timeline-date">2026 - 2027</div><div class="timeline-content"><h3>Master GAED - parcours GEOÏDES</h3><p>Géographie, Information, Interfaces, Durabilité, Environnements. Formation centrée sur les données géographiques, les outils de la géomatique et les enjeux environnementaux et territoriaux.</p><span class="timeline-place">Université Grenoble Alpes · France</span><a class="inline-link" href="https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-geographie-amenagement-environnement-et-developpement-IAQKVMLV/parcours-geographie-information-interfaces-durabilite-environnements-geoides-IGVYAVR1.html" target="_blank" rel="noopener noreferrer">Consulter la présentation officielle du Master GEOÏDES ↗</a></div></article>
+  <article class="timeline-item"><div class="timeline-date">2025 - 2026</div><div class="timeline-content"><h3>Licence 3 - Géographie et Aménagement, parcours Environnement</h3><p>Formation en géographie et aménagement, avec une approche environnementale des territoires et de leurs transformations.</p><span class="timeline-place">Université Grenoble Alpes · Institut d'Urbanisme et de Géographie Alpine · France</span></div></article>
+  <article class="timeline-item"><div class="timeline-date">2022 - 2023</div><div class="timeline-content"><h3>Licence professionnelle en Sciences agronomiques</h3><p>Spécialité Aménagement et Gestion des Ressources Naturelles. Formation consacrée aux ressources naturelles, à leur gestion et à l'aménagement des territoires.</p><span class="timeline-place">Faculté des Sciences Agronomiques · Université d'Abomey-Calavi · Bénin</span></div></article>
+ </div>
+ <h3 class="section-subtitle">Certifications complémentaires</h3><div class="certificates">
+  <article class="certificate"><span>2024 · Université Senghor, Égypte</span><h3>Économie bleue durable et changement climatique</h3><p>Certification portant sur les enjeux de l'économie bleue durable et les problématiques liées aux changements climatiques.</p></article>
+  <article class="certificate"><span>2024 · TBC USA Africa</span><h3>Certification d'anglais - niveau C1</h3><p>Certification attestant d'un niveau C1 en anglais.</p></article>
+ </div><div class="chapter-footer"><span><strong>Formation</strong> / Diplômes et certifications</span><span>03</span></div>
+</div></section>
 
-  <!-- PAGE 1 : ACCUEIL -->
+<section class="chapter" id="competences"><div class="chapter-inner">
+ <div class="chapter-meta"><span class="chapter-number">03 / Savoir-faire</span><span>Outils et méthodes</span></div><p class="eyebrow">Compétences techniques</p><h2 class="chapter-title">Analyser les données pour éclairer les enjeux <em>environnementaux.</em></h2><p class="chapter-description">Une combinaison d'outils géomatiques, de méthodes statistiques, de traitement de données et d'analyse environnementale.</p>
+ <div class="skill-groups">
+  <article class="skill-card"><span class="skill-number">01</span><h3>Géomatique et analyse spatiale</h3><div class="tag-list"><span class="tag">QGIS</span><span class="tag">ArcGIS Pro</span><span class="tag">PostGIS</span><span class="tag">Analyse spatiale</span><span class="tag">Géotraitement</span><span class="tag">Cartographie thématique</span></div></article>
+  <article class="skill-card"><span class="skill-number">02</span><h3>Télédétection et environnement</h3><div class="tag-list"><span class="tag">ENVI</span><span class="tag">Landsat</span><span class="tag">Sentinel</span><span class="tag">Analyse d'images satellitaires</span><span class="tag">Occupation du sol</span><span class="tag">Vulnérabilité des écosystèmes</span></div></article>
+  <article class="skill-card"><span class="skill-number">03</span><h3>Statistiques et programmation</h3><div class="tag-list"><span class="tag">R</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">PostgreSQL</span><span class="tag">Analyse statistique</span><span class="tag">Traitement de données</span></div></article>
+  <article class="skill-card"><span class="skill-number">04</span><h3>Climatologie et risques</h3><div class="tag-list"><span class="tag">Analyse hydroclimatique</span><span class="tag">Hyfran Plus</span><span class="tag">RClimDex</span><span class="tag">Vulnérabilité climatique</span><span class="tag">Évaluation des risques</span><span class="tag">Modélisation climatique</span><span class="tag">MAGICC/SCENGEN</span><span class="tag">Maxent</span><span class="tag">SPSS</span></div></article>
+ </div><div class="chapter-footer"><span><strong>Compétences</strong> / Géomatique, climat et données</span><span>04</span></div>
+</div></section>
 
-  <section class="chapter active" id="accueil">
-    <div class="cover">
+<section class="chapter soft-page" id="projets1"><div class="chapter-inner">
+ <div class="chapter-meta"><span class="chapter-number">04 / Études de cas</span><span>Projets 01 à 03</span></div><p class="eyebrow">Projets environnementaux</p><h2 class="chapter-title">Risques climatiques, paysages et <em>ressources naturelles.</em></h2>
+ <div class="project-list">
+  <article class="project-card"><span class="project-index">PROJET 01</span><h3>Risques climatiques sur l'axe Bohicon - Dassa-Zoumé</h3><p class="project-intro">Étude des risques climatiques liés à un projet routier et contribution à la modélisation des émissions de gaz à effet de serre.</p><div class="project-detail"><h4>Contexte</h4><p>Les projets d'infrastructures routières interagissent avec leur environnement et peuvent être exposés à des aléas climatiques. L'évaluation des risques permet d'identifier les enjeux environnementaux à prendre en compte dans la planification.</p></div><div class="project-detail"><h4>Travail réalisé</h4><p>Évaluation des risques climatiques associés au projet routier Bohicon-Dassa-Zoumé et contribution à la modélisation des émissions de gaz à effet de serre associées à l'extension routière.</p></div><div class="project-detail"><h4>Compétences mobilisées</h4><p>Analyse des risques climatiques, étude environnementale, traitement de données, analyse spatiale et contribution à la modélisation des émissions.</p><div class="project-tools"><span>Climatologie</span><span>Risques</span><span>GES</span><span>SIG</span></div></div></article>
 
-      <div class="cover-copy">
-        <div class="cover-label">
-          Portfolio professionnel<br>
-          Grenoble, France<br>
-          2026
-        </div>
+  <article class="project-card"><span class="project-index">PROJET 02</span><h3>Vulnérabilité des écosystèmes et de l'élevage de ruminants</h3><p class="project-intro">Analyse des effets potentiels des changements climatiques sur les écosystèmes et les systèmes d'élevage.</p><div class="project-detail"><h4>Contexte</h4><p>Les changements climatiques peuvent modifier la disponibilité des ressources naturelles, les conditions écologiques et les conditions de production des systèmes d'élevage.</p></div><div class="project-detail"><h4>Travail réalisé</h4><p>Analyse de la vulnérabilité des écosystèmes et des systèmes d'élevage de ruminants face aux changements climatiques. Le projet articule les enjeux environnementaux et les moyens de subsistance dépendant des ressources naturelles.</p></div><div class="project-detail"><h4>Compétences mobilisées</h4><p>Analyse environnementale, étude de la vulnérabilité, interprétation des données climatiques et compréhension des interactions entre climat, écosystèmes et élevage.</p><div class="project-tools"><span>Vulnérabilité</span><span>Écosystèmes</span><span>Élevage</span><span>Climat</span></div></div></article>
 
-        <div>
-          <p class="eyebrow">Territoires · Climat · Données</p>
+  <article class="project-card"><span class="project-index">PROJET 03</span><h3>Restauration des paysages forestiers au Bénin</h3><p class="project-intro">Contribution à l'élaboration d'une méthodologie d'évaluation des opportunités de restauration des paysages forestiers.</p><div class="project-detail"><h4>Contexte</h4><p>La restauration des paysages forestiers répond aux enjeux de dégradation des terres, de conservation des écosystèmes et de gestion durable des ressources naturelles.</p></div><div class="project-detail"><h4>Travail réalisé</h4><p>Contribution à l'élaboration d'une méthodologie destinée à évaluer les opportunités de restauration des paysages forestiers au Bénin. Le travail s'inscrit dans une démarche d'aide à l'identification des possibilités de restauration.</p></div><div class="project-detail"><h4>Compétences mobilisées</h4><p>Gestion des ressources naturelles, analyse environnementale, structuration méthodologique, données spatiales et réflexion sur les possibilités de restauration.</p><div class="project-tools"><span>Forêts</span><span>Restauration</span><span>Environnement</span><span>SIG</span></div></div></article>
+ </div><div class="chapter-footer"><span><strong>Projets</strong> / Risques et ressources naturelles</span><span>05</span></div>
+</div></section>
 
-          <h1>
-            Carolus Zyad
-            <span>TOGONOU</span>
-          </h1>
+<section class="chapter" id="projets2"><div class="chapter-inner">
+ <div class="chapter-meta"><span class="chapter-number">05 / Études de cas</span><span>Projets 04 à 06</span></div><p class="eyebrow">Climat et données</p><h2 class="chapter-title">Des analyses au service de la décision <em>territoriale.</em></h2>
+ <div class="project-list">
+  <article class="project-card"><span class="project-index">PROJET 04</span><h3>Mise en œuvre locale de la CDN du Bénin</h3><p class="project-intro">Contribution à l'élaboration d'un plan local de mise en œuvre de la contribution déterminée au niveau national.</p><div class="project-detail"><h4>Contexte</h4><p>La contribution déterminée au niveau national constitue un cadre d'engagement climatique. Sa mise en œuvre locale doit tenir compte des particularités des communes et des enjeux d'adaptation et d'atténuation.</p></div><div class="project-detail"><h4>Travail réalisé</h4><p>Contribution à l'élaboration du plan local de mise en œuvre de la CDN du Bénin dans les communes d'Abomey-Calavi, Toffo et Bohicon.</p></div><div class="project-detail"><h4>Compétences mobilisées</h4><p>Analyse des enjeux climatiques locaux, compréhension des politiques climatiques, approche territoriale et contribution à la planification environnementale.</p><div class="project-tools"><span>CDN</span><span>Adaptation</span><span>Atténuation</span><span>Territoires</span></div></div></article>
 
-          <p class="cover-role">
-            Géomaticien, environnementaliste et analyste de données.
-            J'étudie les dynamiques environnementales et climatiques
-            à travers les SIG, la télédétection, les statistiques
-            et l'analyse spatiale.
-          </p>
+  <article class="project-card"><span class="project-index">PROJET 05</span><h3>Impacts socio-économiques du climat sur la production vivrière</h3><p class="project-intro">Analyse des conséquences des changements climatiques sur la production vivrière dans le sud du Bénin.</p><div class="project-detail"><h4>Contexte</h4><p>Les variations des précipitations et des températures peuvent affecter les conditions de production agricole, les revenus et la sécurité alimentaire des ménages.</p></div><div class="project-detail"><h4>Travail réalisé</h4><p>Analyse des impacts socio-économiques des changements climatiques sur la production vivrière dans le sud du Bénin. Le projet porte sur les liens entre conditions climatiques et activités agricoles.</p></div><div class="project-detail"><h4>Compétences mobilisées</h4><p>Analyse climatique, analyse socio-économique, interprétation des données et compréhension des relations entre climat et production agricole.</p><div class="project-tools"><span>Agriculture</span><span>Climat</span><span>Statistiques</span></div></div></article>
 
-          <button class="primary-button" data-go="1">
-            Découvrir mon parcours <span>→</span>
-          </button>
-        </div>
+  <article class="project-card"><span class="project-index">PROJET 06</span><h3>Cartographie des paysages du terrain des Aït Zekri</h3><p class="project-intro">Réalisation d'une carte des paysages du terrain de parcours de la tribu des Aït Zekri.</p><div class="project-detail"><h4>Contexte</h4><p>La représentation des paysages permet de décrire l'organisation spatiale d'un territoire et de communiquer des informations utiles à son étude géographique.</p></div><div class="project-detail"><h4>Travail réalisé</h4><p>Au laboratoire Pacte, réalisation d'une carte des paysages, traitement et organisation des données spatiales, puis production d'un support cartographique de synthèse sous ArcGIS Pro.</p></div><div class="project-detail"><h4>Compétences mobilisées</h4><p>Traitement des données spatiales, organisation de couches géographiques, analyse paysagère et production cartographique avec ArcGIS Pro.</p><div class="project-tools"><span>ArcGIS Pro</span><span>Paysages</span><span>Données spatiales</span></div></div></article>
+ </div><div class="chapter-footer"><span><strong>Projets</strong> / Climat, agriculture et paysages</span><span>06</span></div>
+</div></section>
 
-        <div class="cover-bottom">
-          <span>Géomatique</span>
-          <span>Climatologie</span>
-          <span>Environnement</span>
-          <span>Statistiques</span>
-        </div>
+<section class="chapter soft-page" id="cartes1"><div class="chapter-inner">
+ <div class="chapter-meta"><span class="chapter-number">06 / Cartothèque</span><span>Climat et températures</span></div><p class="eyebrow">Données climatiques</p><h2 class="chapter-title">Représenter les variations climatiques dans <em>l'espace.</em></h2><p class="gallery-intro">Ces cartes illustrent l'utilisation de données climatiques pour étudier leur distribution spatiale au Bénin.</p>
+ <div class="gallery">
+  <article class="map-card"><button class="map-image-button" data-image="images/Precipitations.png" data-title="Précipitations moyennes au Bénin"><img src="images/Precipitations.png" alt="Carte des précipitations moyennes au Bénin" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="map-missing">IMAGE À AJOUTER<br>images/Precipitations.png</span></button><div class="map-info"><span class="map-type">Climatologie</span><h3>Précipitations moyennes</h3><p>Représentation de la distribution spatiale des précipitations au Bénin.</p></div></article>
+  <article class="map-card"><button class="map-image-button" data-image="images/temp_2001_2025.png" data-title="Températures moyennes au Bénin, 2001-2025"><img src="images/temp_2001_2025.png" alt="Carte des températures moyennes au Bénin de 2001 à 2025" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="map-missing">IMAGE À AJOUTER<br>images/temp_2001_2025.png</span></button><div class="map-info"><span class="map-type">Climatologie</span><h3>Températures moyennes, 2001-2025</h3><p>Lecture spatiale des variations de température sur la période étudiée.</p></div></article>
+ </div><div class="chapter-footer"><span><strong>Cartothèque</strong> / Climatologie</span><span>07</span></div>
+</div></section>
+
+<section class="chapter" id="cartes2"><div class="chapter-inner">
+ <div class="chapter-meta"><span class="chapter-number">07 / Cartothèque</span><span>Agriculture et élevage</span></div><p class="eyebrow">Données agricoles</p><h2 class="chapter-title">Explorer la distribution spatiale de l'élevage <em>au Bénin.</em></h2><p class="gallery-intro">Une série de cartes consacrées à la répartition spatiale de différentes catégories d'élevage.</p>
+ <div class="gallery">
+  <article class="map-card"><button class="map-image-button" data-image="images/bovin.png" data-title="Distribution spatiale des bovins au Bénin"><img src="images/bovin.png" alt="Carte de la distribution des bovins au Bénin" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="map-missing">IMAGE À AJOUTER<br>images/bovin.png</span></button><div class="map-info"><span class="map-type">Élevage</span><h3>Élevage bovin</h3><p>Répartition spatiale des effectifs bovins.</p></div></article>
+  <article class="map-card"><button class="map-image-button" data-image="images/ovins.png" data-title="Distribution spatiale des ovins au Bénin"><img src="images/ovins.png" alt="Carte de la distribution des ovins au Bénin" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="map-missing">IMAGE À AJOUTER<br>images/ovins.png</span></button><div class="map-info"><span class="map-type">Élevage</span><h3>Élevage ovin</h3><p>Distribution spatiale des effectifs ovins.</p></div></article>
+  <article class="map-card"><button class="map-image-button" data-image="images/caprins.png" data-title="Distribution spatiale des caprins au Bénin"><img src="images/caprins.png" alt="Carte de la distribution des caprins au Bénin" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="map-missing">IMAGE À AJOUTER<br>images/caprins.png</span></button><div class="map-info"><span class="map-type">Élevage</span><h3>Élevage caprin</h3><p>Distribution spatiale des effectifs caprins.</p></div></article>
+  <article class="map-card"><button class="map-image-button" data-image="images/porcins.png" data-title="Distribution spatiale des porcins au Bénin"><img src="images/porcins.png" alt="Carte de la distribution des porcins au Bénin" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="map-missing">IMAGE À AJOUTER<br>images/porcins.png</span></button><div class="map-info"><span class="map-type">Élevage</span><h3>Élevage porcin</h3><p>Distribution spatiale des effectifs porcins.</p></div></article>
+  <article class="map-card"><button class="map-image-button" data-image="images/volaille.png" data-title="Distribution spatiale de la volaille au Bénin"><img src="images/volaille.png" alt="Carte de la distribution de la volaille au Bénin" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="map-missing">IMAGE À AJOUTER<br>images/volaille.png</span></button><div class="map-info"><span class="map-type">Élevage</span><h3>Élevage de volailles</h3><p>Répartition spatiale de la volaille.</p></div></article>
+ </div><div class="chapter-footer"><span><strong>Cartothèque</strong> / Agriculture et élevage</span><span>08</span></div>
+</div></section>
+<div class="chapter-meta"><span class="chapter-number">08 / Expériences</span><span>Parcours professionnel</span></div>
+<p class="eyebrow">Expériences professionnelles</p>
+<h2 class="chapter-title">Recherche, analyse environnementale et <em>transmission.</em></h2>
+
+<div class="experience-list">
+  <article class="experience-item">
+    <div class="experience-meta">2026<br>Université Grenoble Alpes<br>France</div>
+    <div>
+      <h3>Tuteur en cartographie</h3>
+      <div class="experience-place">Université Grenoble Alpes</div>
+      <p>Accompagnement pédagogique d'étudiants de Licence 1 dans l'apprentissage des méthodes cartographiques.</p>
+      <div class="experience-block">
+        <h4>Missions</h4>
+        <ul>
+          <li>Accompagner les étudiants dans l'apprentissage de la cartographie.</li>
+          <li>Apporter un appui à la prise en main des outils et méthodes cartographiques.</li>
+          <li>Accompagner la réalisation des exercices et répondre aux questions méthodologiques.</li>
+        </ul>
       </div>
-
-      <div class="cover-visual">
-        <svg viewBox="0 0 500 600" role="img" aria-label="Illustration de courbes topographiques">
-          <rect width="500" height="600" fill="#eeeee9"/>
-
-          <g fill="none" stroke="#8d9584" stroke-width="1">
-            <path d="M-40 70 C70 0 150 30 220 100 S390 160 550 70"/>
-            <path d="M-40 95 C65 25 150 55 215 125 S390 185 550 95"/>
-            <path d="M-40 120 C60 50 150 80 210 150 S390 210 550 120"/>
-            <path d="M-40 145 C60 75 150 105 205 175 S390 235 550 145"/>
-            <path d="M-40 170 C60 100 150 130 200 200 S390 260 550 170"/>
-            <path d="M-40 195 C60 125 150 155 195 225 S390 285 550 195"/>
-            <path d="M-40 220 C60 150 150 180 190 250 S390 310 550 220"/>
-            <path d="M-40 245 C60 175 150 205 185 275 S390 335 550 245"/>
-            <path d="M-40 270 C60 200 150 230 180 300 S390 360 550 270"/>
-            <path d="M-40 295 C60 225 150 255 175 325 S390 385 550 295"/>
-            <path d="M-40 320 C60 250 150 280 170 350 S390 410 550 320"/>
-            <path d="M-40 345 C60 275 150 305 165 375 S390 435 550 345"/>
-            <path d="M-40 370 C60 300 150 330 160 400 S390 460 550 370"/>
-            <path d="M-40 395 C60 325 150 355 155 425 S390 485 550 395"/>
-            <path d="M-40 420 C60 350 150 380 150 450 S390 510 550 420"/>
-            <path d="M-40 445 C60 375 150 405 145 475 S390 535 550 445"/>
-            <path d="M-40 470 C60 400 150 430 140 500 S390 560 550 470"/>
-            <path d="M-40 495 C60 425 150 455 135 525 S390 585 550 495"/>
-            <path d="M-40 520 C60 450 150 480 130 550 S390 610 550 520"/>
-          </g>
-
-          <g fill="none" stroke="#646e5c" stroke-width="1.3">
-            <path d="M80 90 C150 45 225 80 240 140 S330 210 400 165 S465 140 500 155"/>
-            <path d="M75 115 C145 70 220 105 235 165 S325 235 395 190 S460 165 500 180"/>
-            <path d="M70 140 C140 95 215 130 230 190 S320 260 390 215 S455 190 500 205"/>
-            <path d="M65 165 C135 120 210 155 225 215 S315 285 385 240 S450 215 500 230"/>
-            <path d="M60 190 C130 145 205 180 220 240 S310 310 380 265 S445 240 500 255"/>
-          </g>
-
-          <circle cx="255" cy="260" r="4" fill="#646e5c"/>
-          <circle cx="255" cy="260" r="12" fill="none" stroke="#646e5c" stroke-width="1"/>
-          <circle cx="255" cy="260" r="23" fill="none" stroke="#646e5c" stroke-width=".7"/>
-        </svg>
-
-        <div class="cover-caption">
-          <span>Analyse spatiale</span>
-          <span>01 / 10</span>
-        </div>
+      <div class="experience-block">
+        <h4>Compétences mobilisées</h4>
+        <p>Cartographie, pédagogie, explication des méthodes et accompagnement des étudiants.</p>
       </div>
-
     </div>
-  </section>
+  </article>
 
-  <!-- PAGE 2 : PROFIL -->
-
-  <section class="chapter" id="profil">
-    <div class="chapter-inner">
-
-      <div class="chapter-meta">
-        <span class="chapter-number">01 / Présentation</span>
-        <span>Profil professionnel</span>
+  <article class="experience-item">
+    <div class="experience-meta">2025<br>Laboratoire Pacte<br>France</div>
+    <div>
+      <h3>Appui cartographique - stage</h3>
+      <div class="experience-place">Laboratoire Pacte</div>
+      <p>Travaux de cartographie et de représentation de données spatiales.</p>
+      <div class="experience-block">
+        <h4>Missions et travaux</h4>
+        <ul>
+          <li>Réaliser une carte des paysages du terrain de parcours de la tribu des Aït Zekri.</li>
+          <li>Traiter et organiser les données spatiales nécessaires à la réalisation cartographique.</li>
+          <li>Produire un support cartographique de synthèse sous ArcGIS Pro.</li>
+        </ul>
       </div>
-
-      <p class="eyebrow">À propos</p>
-
-      <h2 class="chapter-title">
-        Comprendre les territoires et leurs dynamiques.
-      </h2>
-
-      <div class="intro-grid">
-        <div class="intro-text">
-          <p>
-            Formé en sciences agronomiques, en aménagement et gestion
-            des ressources naturelles, ainsi qu'en géographie et
-            aménagement de l'environnement, j'ai développé une approche
-            pluridisciplinaire des problématiques territoriales.
-          </p>
-
-          <p>
-            Mon parcours m'a conduit à travailler sur les risques
-            climatiques, la vulnérabilité des écosystèmes, les systèmes
-            d'élevage, la restauration des paysages forestiers et les
-            relations entre changements climatiques et production agricole.
-          </p>
-
-          <p>
-            Je mobilise les systèmes d'information géographique,
-            la télédétection, la programmation et les méthodes statistiques
-            pour traiter les données, analyser les phénomènes
-            environnementaux et produire des résultats utiles à la décision.
-          </p>
-
-          <p>
-            Je m'intéresse particulièrement à l'analyse hydroclimatique,
-            à l'évaluation des risques, à la modélisation environnementale
-            et à l'exploitation des données spatiales et statistiques.
-          </p>
-        </div>
-
-        <aside class="profile-note">
-          <h3>Repères</h3>
-
-          <div class="profile-row">
-            <span>Localisation</span>
-            <span>Grenoble, France</span>
-          </div>
-
-          <div class="profile-row">
-            <span>Formation actuelle</span>
-            <span>Master GEOÏDES</span>
-          </div>
-
-          <div class="profile-row">
-            <span>Spécialités</span>
-            <span>Environnement et climat</span>
-          </div>
-
-          <div class="profile-row">
-            <span>Méthodes</span>
-            <span>SIG et statistiques</span>
-          </div>
-
-          <div class="profile-row">
-            <span>Langues</span>
-            <span>Français, anglais C1</span>
-          </div>
-        </aside>
+      <div class="experience-block">
+        <h4>Compétences mobilisées</h4>
+        <p>ArcGIS Pro, organisation de données spatiales, cartographie thématique et représentation des paysages.</p>
       </div>
+    </div>
+  </article>
 
-      <div class="stat-grid">
-        <div class="stat">
-          <strong>Climat</strong>
-          <span>Analyse hydroclimatique et évaluation des risques</span>
-        </div>
+  <article class="experience-item">
+    <div class="experience-meta">2023 - 2025<br>Laboratoire d'Écologie Appliquée<br>Bénin</div>
+    <div>
+      <h3>Chargé d'études junior / Assistant de recherche</h3>
+      <div class="experience-place">Laboratoire d'Écologie Appliquée · Université d'Abomey-Calavi</div>
+      <p>Participation à des travaux de recherche et d'étude portant sur la climatologie, la gestion durable des ressources naturelles et l'adaptation aux changements climatiques.</p>
+      <div class="experience-block">
+        <h4>Études et contributions</h4>
+        <ul>
+          <li>Évaluer les risques climatiques liés au projet routier Bohicon-Dassa-Zoumé et contribuer à la modélisation des émissions de gaz à effet de serre associées à l'extension routière.</li>
+          <li>Analyser la vulnérabilité des écosystèmes et des systèmes d'élevage de ruminants face aux changements climatiques.</li>
+          <li>Contribuer à l'élaboration du plan local de mise en œuvre de la CDN du Bénin dans les communes d'Abomey-Calavi, Toffo et Bohicon.</li>
+          <li>Contribuer à l'élaboration d'une méthodologie d'évaluation des opportunités de restauration des paysages forestiers au Bénin.</li>
+          <li>Analyser les impacts socio-économiques des changements climatiques sur la production vivrière dans le sud du Bénin.</li>
+        </ul>
+      </div>
+      <div class="experience-block">
+        <h4>Compétences mobilisées</h4>
+        <p>Analyse climatique et environnementale, étude de la vulnérabilité, gestion des ressources naturelles, analyse de données et contribution à des démarches méthodologiques.</p>
+      </div>
+    </div>
+  </article>
+</div>
 
-        <div class="stat">
-          <strong>Environnement</strong>
-          <span>Vulnérabilité des écosystèmes et ressources naturelles</span>
-        </div>
+<div class="chapter-footer">
+  <span><strong>Expériences</strong> / Recherche et environnement</span>
+  <span>09</span>
+</div>
+</div>
+</section>
 
-        <div class="stat">
-          <strong>Données</strong>
-          <span>Traitement statistique et analyse spatiale</span>
+<section class="chapter" id="contact">
+  <div class="chapter-inner">
+    <div class="chapter-meta">
+      <span class="chapter-number">09 / Contact</span>
+      <span>Échanges professionnels</span>
+    </div>
+    <p class="eyebrow">Contact</p>
+
+    <div class="contact-layout">
+      <div>
+        <h2 class="contact-heading">Échanger autour d'un projet ou d'une <em>opportunité.</em></h2>
+        <p class="contact-description">Pour discuter de géomatique, d'analyse environnementale, de climatologie, de traitement statistique ou d'une collaboration professionnelle, vous pouvez me contacter par courriel ou consulter mon profil LinkedIn.</p>
+        <div class="contact-details">
+          <span>Domaines d'intérêt</span>
+          <p>Géomatique, télédétection, environnement, changements climatiques, analyse statistique et données spatiales.</p>
         </div>
       </div>
-
-      <div class="chapter-footer">
-        <span><strong>Profil</strong> / Environnement et analyse de données</span>
-        <span>02</span>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:zyadtogonou@gmail.com">
+          <span>Courriel</span><span>↗</span>
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/zyad-togonou/" target="_blank" rel="noopener noreferrer">
+          <span>LinkedIn</span><span>↗</span>
+        </a>
       </div>
-
     </div>
-  </section>
 
-  <!-- PAGE 3 : FORMATION ET CERTIFICATIONS -->
-
-  <section class="chapter soft-page" id="formation">
-    <div class="chapter-inner">
-
-      <div class="chapter-meta">
-        <span class="chapter-number">02 / Parcours académique</span>
-        <span>Formation et certifications</span>
-      </div>
-
-      <p class="eyebrow">Formation</p>
-
-      <h2 class="chapter-title">
-        Des sciences agronomiques à la géographie environnementale.
-      </h2>
-
-      <div class="timeline">
-
-        <article class="timeline-item">
-          <div class="timeline-date">2026 - 2027</div>
-
-          <div class="timeline-content">
-            <h3>Master GAED - parcours GEOÏDES</h3>
-
-            <p>
-              Géographie, Information, Interfaces, Durabilité, Environnements.
-              Formation centrée sur les données géographiques, les outils
-              de la géomatique et les enjeux environnementaux et territoriaux.
-            </p>
-
-            <span class="timeline-place">
-              Université Grenoble Alpes · France
-            </span>
-
-            <a
-              class="inline-link"
-              href="https://formations.univ-grenoble-alpes.fr/fr/catalogue-2021/master-XB/master-geographie-amenagement-environnement-et-developpement-IAQKVMLV/parcours-geographie-information-interfaces-durabilite-environnements-geoides-IGVYAVR1.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Consulter la présentation officielle du Master GEOÏDES ↗
-            </a>
-          </div>
-        </article>
-
-        <article class="timeline-item">
-          <div class="timeline-date">2025 - 2026</div>
-
-          <div class="timeline-content">
-            <h3>Licence en Géographie et Aménagement de l'Environnement</h3>
-
-            <p>
-              Formation en géographie et aménagement, avec une approche
-              environnementale des territoires et de leurs transformations.
-            </p>
-
-            <span class="timeline-place">
-              Université Grenoble Alpes · France
-            </span>
-          </div>
-        </article>
-
-        <article class="timeline-item">
-          <div class="timeline-date">2022 - 2023</div>
-
-          <div class="timeline-content">
-            <h3>Licence en Aménagement et Gestion des Ressources Naturelles</h3>
-
-            <p>
-              Formation en sciences agronomiques, gestion des ressources
-              naturelles et aménagement des territoires.
-            </p>
-
-            <span class="timeline-place">
-              Université d'Abomey-Calavi · Bénin
-            </span>
-          </div>
-        </article>
-
-      </div>
-
-      <h3 class="section-subtitle">Certifications complémentaires</h3>
-
-      <div class="certificates">
-
-        <article class="certificate">
-          <span>2024 · Université Senghor, Égypte</span>
-
-          <h3>Économie bleue durable et changement climatique</h3>
-
-          <p>
-            Certification portant sur les enjeux de l'économie bleue durable
-            et les problématiques liées aux changements climatiques.
-          </p>
-        </article>
-
-        <article class="certificate">
-          <span>2024 · TBC USA Africa</span>
-
-          <h3>Certificat de compétence en anglais</h3>
-
-          <p>
-            Maîtrise de l'anglais - niveau C1.
-          </p>
-        </article>
-
-      </div>
-
-      <div class="chapter-footer">
-        <span><strong>Formation</strong> / Diplômes et certifications</span>
-        <span>03</span>
-      </div>
-
+    <div class="chapter-footer">
+      <span><strong>Carolus Zyad TOGONOU</strong> / Portfolio professionnel</span>
+      <span>10</span>
     </div>
-  </section>
-
-  <!-- PAGE 4 : COMPÉTENCES -->
-
-  <section class="chapter" id="competences">
-    <div class="chapter-inner">
-
-      <div class="chapter-meta">
-        <span class="chapter-number">03 / Savoir-faire</span>
-        <span>Outils et méthodes</span>
-      </div>
-
-      <p class="eyebrow">Compétences techniques</p>
-
-      <h2 class="chapter-title">
-        Analyser les données pour éclairer les enjeux environnementaux.
-      </h2>
-
-      <p class="chapter-description">
-        Une combinaison d'outils géomatiques, de méthodes statistiques,
-        de traitement de données et d'analyse environnementale.
-      </p>
-
-      <div class="skill-groups">
-
-        <article class="skill-card">
-          <span class="skill-number">01</span>
-          <h3>Géomatique et analyse spatiale</h3>
-
-          <div class="tag-list">
-            <span class="tag">QGIS</span>
-            <span class="tag">ArcGIS Pro</span>
-            <span class="tag">PostGIS</span>
-            <span class="tag">Analyse spatiale</span>
-            <span class="tag">Géotraitement</span>
-            <span class="tag">Cartographie thématique</span>
-          </div>
-        </article>
-
-        <article class="skill-card">
-          <span class="skill-number">02</span>
-          <h3>Télédétection et environnement</h3>
-
-          <div class="tag-list">
-            <span class="tag">ENVI</span>
-            <span class="tag">Landsat</span>
-            <span class="tag">Sentinel</span>
-            <span class="tag">Analyse d'images satellitaires</span>
-            <span class="tag">Occupation du sol</span>
-            <span class="tag">Vulnérabilité des écosystèmes</span>
-          </div>
-        </article>
-
-        <article class="skill-card">
-          <span class="skill-number">03</span>
-          <h3>Statistiques et programmation</h3>
-
-          <div class="tag-list">
-            <span class="tag">R</span>
-            <span class="tag">Python</span>
-            <span class="tag">SQL</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Analyse statistique</span>
-            <span class="tag">Traitement de données</span>
-          </div>
-        </article>
-
-        <article class="skill-card">
-          <span class="skill-number">04</span>
-          <h3>Climatologie et risques</h3>
-
-          <div class="tag-list">
-            <span class="tag">Analyse hydroclimatique</span>
-            <span class="tag">HyfranPlus</span>
-            <span class="tag">RClimDex</span>
-            <span class="tag">Vulnérabilité climatique</span>
-            <span class="tag">Évaluation des risques</span>
-            <span class="tag">Modélisation climatique</span>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="chapter-footer">
-        <span><strong>Compétences</strong> / Géomatique, climat et données</span>
-        <span>04</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PAGE 5 : PROJETS I -->
-
-  <section class="chapter soft-page" id="projets1">
-    <div class="chapter-inner">
-
-      <div class="chapter-meta">
-        <span class="chapter-number">04 / Études de cas</span>
-        <span>Projets 01 à 03</span>
-      </div>
-
-      <p class="eyebrow">Projets environnementaux</p>
-
-      <h2 class="chapter-title">
-        Risques climatiques, paysages et ressources naturelles.
-      </h2>
-
-      <div class="project-list">
-
-        <article class="project-card">
-          <span class="project-index">PROJET 01</span>
-
-          <h3>Risques climatiques sur l'axe Bohicon - Dassa-Zoumé</h3>
-
-          <p class="project-intro">
-            Étude des risques climatiques liés à un projet routier et contribution
-            à la modélisation des émissions de gaz à effet de serre.
-          </p>
-
-          <div class="project-detail">
-            <h4>Contexte</h4>
-            <p>
-              Les projets d'infrastructures routières interagissent avec leur
-              environnement et peuvent être exposés à des aléas climatiques.
-              L'évaluation des risques permet d'identifier les enjeux
-              environnementaux à prendre en compte dans la planification.
-            </p>
-          </div>
-
-          <div class="project-detail">
-            <h4>Travail réalisé</h4>
-            <p>
-              Évaluation des risques climatiques associés au projet routier
-              Bohicon-Dassa-Zoumé et contribution à la modélisation des
-              émissions de gaz à effet de serre associées à l'extension routière.
-            </p>
-          </div>
-
-          <div class="project-detail">
-            <h4>Compétences mobilisées</h4>
-            <p>
-              Analyse des risques climatiques, étude environnementale,
-              traitement de données, analyse spatiale et contribution
-              à la modélisation des émissions.
-            </p>
-
-            <div class="project-tools">
-              <span>Climatologie</span>
-              <span>Risques</span>
-              <span>GES</span>
-              <span>SIG</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <span class="project-index">PROJET 02</span>
-
-          <h3>Vulnérabilité des écosystèmes et de l'élevage de ruminants</h3>
-
-          <p class="project-intro">
-            Analyse des effets potentiels des changements climatiques sur
-            les écosystèmes et les systèmes d'élevage.
-          </p>
-
-          <div class="project-detail">
-            <h4>Contexte</h4>
-            <p>
-              Les changements climatiques peuvent modifier la disponibilité
-              des ressources naturelles, les conditions écologiques et
-              les conditions de production des systèmes d'élevage.
-            </p>
-          </div>
-
-          <div class="project-detail">
-            <h4>Travail réalisé</h4>
-            <p>
-              Analyse de la vulnérabilité des écosystèmes et des systèmes
-              d'élevage de ruminants face aux changements climatiques.
-              Le projet articule les enjeux environnementaux et les
-              moyens de subsistance dépendant des ressources naturelles.
-            </p>
-          </div>
-
-          <div class="project-detail">
-            <h4>Compétences mobilisées</h4>
-            <p>
-              Analyse environnementale, étude de la vulnérabilité,
-              interprétation des données climatiques et compréhension
-              des interactions entre climat, écosystèmes et élevage.
-            </p>
-
-            <div class="project-tools">
-              <span>Vulnérabilité</span>
-              <span>Écosystèmes</span>
-              <span>Élevage</span>
-              <span>Climat</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <span class="project-index">PROJET 03</span>
-
-          <h3>Restauration des paysages forestiers au Bénin</h3>
-
-          <p class="project-intro">
-            Contribution à l'élaboration d'une méthodologie d'évaluation
-            des opportunités de restauration des paysages forestiers.
-          </p>
-
-          <div class="project-detail">
-            <h4>Contexte</h4>
-            <p>
-              La restauration des paysages forestiers répond aux enjeux
-              de dégradation des terres, de conservation des écosystèmes
-              et de gestion durable des ressources naturelles.
-            </p>
-          </div>
-
-          <div class="project-detail">
-            <h4>Travail réalisé</h4>
-            <p>
-              Contribution à l'élaboration d'une méthodologie destinée
-              à évaluer les opportunités de restauration des paysages
-              forestiers au Bénin. Le travail s'inscrit dans une démarche
-              d'aide à l'identification des possibilités de restauration.
-            </p>
-          </div>
-
-          <div class="project-detail">
-            <h4>Compétences mobilisées</h4>
-            <p>
-              Gestion des ressources naturelles, analyse environnementale,
-              structuration méthodologique, données spatiales et réflexion
-              sur les possibilités de restauration.
-            </p>
-
-            <div class="project-tools">
-              <span>Forêts</span>
-              <span>Restauration</span>
-              <span>Environnement</span>
-              <span>SIG</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="chapter-footer">
-        <span><strong>Projets</strong> / Risques et ressources naturelles</span>
-        <span>05</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PAGE 6 : PROJETS II -->
-
-  <section class="chapter" id="projets2">
-    <div class="chapter-inner">
-
-      <div class="chapter-meta">
-        <span class="chapter-number">05 / Études de cas</span>
-        <span>Projets 04 à 06</span>
-      </div>
-
-      <p class="eyebrow">Climat et données</p>
-
-      <h2 class="chapter-title">
-        Des analyses au service de la décision territoriale.
-      </h2>
-
-      <div class="project-list">
-
-        <article class="project-card">
-          <span class="project-index">PROJET 04</span>
-
-          <h3>Mise en œuvre locale de la CDN du Bénin</h3>
-
-          <p class="project-intro">
-            Contribution à l'élaboration d'un plan local de mise en œuvre
-            de la contribution déterminée au niveau national.
-          </p>
-
-          <div class="project-detail">
-            <h4>Contexte</h4>
-            <p>
-              La contribution déterminée au niveau national constitue
-              un cadre d'engagement climatique. Sa mise en œuvre locale
-              doit tenir compte des particularités des communes et des
-              enjeux d'adaptation et d'atténuation.
-            </p>
-          </div>
-
-          <div class="project-detail">
-            <h4>Travail réalisé</h4>
-            <p>
-              Contribution à l'élaboration du plan local de mise en œuvre
-              de la CDN du Bénin dans les communes d'Abomey-Calavi,
-              Toffo et Bohicon.
-            </p>
-          </div>
-
-          <div class="project-detail">
-            <h4>Compétences mobilisées</h4>
-            <p>
-              Analyse des enjeux climatiques locaux, compréhension des
-              politiques climatiques, approche territoriale et contribution
-              à la planification environnementale.
-            </p>
-
-            <div class="project-tools">
-              <span>CDN</span>
-              <span>Adaptation</span>
-              <span>Atténuation</span>
-              <span>Territoires</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <span class="project-index">PROJET 05</span>
-
-          <h3>Impacts socio-économiques du climat sur la production vivrière</h3>
-
-          <p class="project-intro">
-            Analyse des conséquences des changements climatiques sur
-            la production vivrière dans le sud du Bénin.
-          </p>
-
-          <div class="project-detail">
-            <h4>Contexte</h4>
-            <p>
-              Les variations des précipitations et des températures
-              peuvent affecter les conditions de production agricole,
-              les revenus et la sécurité alimentaire des ménages.
-            </p>
-          </div>
-
-          <div class="project-detail">
-            <h4>Travail réalisé</h4>
-            <p>
-              Analyse des impacts socio-économiques des changements
-              climatiques sur la production vivrière dans le sud du Bénin.
-              Le projet porte sur les liens entre conditions climatiques
-              et activités agricoles.
-            </p>
-          </div>
-
-          <div class="project-detail">
-            <h4>Compétences mobilisées</h4>
-            <p>
-              Analyse climatique, analyse socio-économique, interprétation
-              des données et compréhension des relations entre climat
-              et production agricole.
-            </p>
-
-            <div class="project-tools">
-              <span>Agriculture</span>
-              <span>Climat</span>
-              <span>Statistiques</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <span class="project-index">PROJET 06</span>
-
-          <h3>Cartographie des paysages du terrain des Aït Zekri</h3>
-
-          <p class="project-intro">
-            Réalisation d'une carte des paysages du terrain de parcours
-            de la tribu des Aït Zekri.
-          </p>
-
-          <div class="project-detail">
-            <h4>Contexte</h4>
-            <p>
-              La représentation des paysages permet de décrire l'organisation
-              spatiale d'un territoire et de communiquer des informations
-              utiles à son étude géographique.
-            </p>
-          </div>
-
-          <div class="project-detail">
-            <h4>Travail réalisé</h4>
-            <p>
-              Au laboratoire Pacte, réalisation d'une carte des paysages,
-              traitement et organisation des données spatiales, puis
-              production d'un support cartographique de synthèse sous ArcGIS Pro.
-            </p>
-          </div>
-
-          <div class="project-detail">
-            <h4>Compétences mobilisées</h4>
-            <p>
-              Traitement des données spatiales, organisation de couches
-              géographiques, analyse paysagère et production cartographique
-              avec ArcGIS Pro.
-            </p>
-
-            <div class="project-tools">
-              <span>ArcGIS Pro</span>
-              <span>Paysages</span>
-              <span>Données spatiales</span>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="chapter-footer">
-        <span><strong>Projets</strong> / Climat, agriculture et paysages</span>
-        <span>06</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PAGE 7 : CARTES I -->
-
-  <section class="chapter soft-page" id="cartes1">
-    <div class="chapter-inner">
-
-      <div class="chapter-meta">
-        <span class="chapter-number">06 / Cartothèque</span>
-        <span>Climat et températures</span>
-      </div>
-
-      <p class="eyebrow">Données climatiques</p>
-
-      <h2 class="chapter-title">
-        Représenter les variations climatiques dans l'espace.
-      </h2>
-
-      <p class="gallery-intro">
-        Ces cartes illustrent l'utilisation de données climatiques
-        pour étudier leur distribution spatiale au Bénin.
-      </p>
-
-      <div class="gallery">
-
-        <article class="map-card">
-          <button
-            class="map-image-button"
-            data-image="images/Precipitations.png"
-            data-title="Précipitations moyennes au Bénin"
-          >
-            <img
-              src="images/Precipitations.png"
-              alt="Carte des précipitations moyennes au Bénin"
-              loading="lazy"
-            >
-          </button>
-
-          <div class="map-info">
-            <span class="map-type">Climatologie</span>
-            <h3>Précipitations moyennes</h3>
-            <p>
-              Représentation de la distribution spatiale des précipitations au Bénin.
-            </p>
-          </div>
-        </article>
-
-        <article class="map-card">
-          <button
-            class="map-image-button"
-            data-image="images/temp_2001_2025.png"
-            data-title="Températures moyennes au Bénin, 2001-2025"
-          >
-            <img
-              src="images/temp_2001_2025.png"
-              alt="Carte des températures moyennes au Bénin de 2001 à 2025"
-              loading="lazy"
-            >
-          </button>
-
-          <div class="map-info">
-            <span class="map-type">Climatologie</span>
-            <h3>Températures moyennes, 2001-2025</h3>
-            <p>
-              Lecture spatiale des variations de température sur la période étudiée.
-            </p>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="chapter-footer">
-        <span><strong>Cartothèque</strong> / Climatologie</span>
-        <span>07</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PAGE 8 : CARTES II -->
-
-  <section class="chapter" id="cartes2">
-    <div class="chapter-inner">
-
-      <div class="chapter-meta">
-        <span class="chapter-number">07 / Cartothèque</span>
-        <span>Agriculture et élevage</span>
-      </div>
-
-      <p class="eyebrow">Données agricoles</p>
-
-      <h2 class="chapter-title">
-        Explorer la distribution spatiale de l'élevage au Bénin.
-      </h2>
-
-      <p class="gallery-intro">
-        Une série de cartes consacrées à la répartition spatiale
-        de différentes catégories d'élevage.
-      </p>
-
-      <div class="gallery">
-
-        <article class="map-card">
-          <button class="map-image-button" data-image="images/bovin.png" data-title="Distribution spatiale des bovins au Bénin">
-            <img src="images/bovin.png" alt="Carte de la distribution des bovins au Bénin" loading="lazy">
-          </button>
-
-          <div class="map-info">
-            <span class="map-type">Élevage</span>
-            <h3>Élevage bovin</h3>
-            <p>Répartition spatiale des effectifs bovins.</p>
-          </div>
-        </article>
-
-        <article class="map-card">
-          <button class="map-image-button" data-image="images/ovins.png" data-title="Distribution spatiale des ovins au Bénin">
-            <img src="images/ovins.png" alt="Carte de la distribution des ovins au Bénin" loading="lazy">
-          </button>
-
-          <div class="map-info">
-            <span class="map-type">Élevage</span>
-            <h3>Élevage ovin</h3>
-            <p>Distribution spatiale des effectifs ovins.</p>
-          </div>
-        </article>
-
-        <article class="map-card">
-          <button class="map-image-button" data-image="images/caprins.png" data-title="Distribution spatiale des caprins au Bénin">
-            <img src="images/caprins.png" alt="Carte de la distribution des caprins au Bénin" loading="lazy">
-          </button>
-
-          <div class="map-info">
-            <span class="map-type">Élevage</span>
-            <h3>Élevage caprin</h3>
-            <p>Distribution spatiale des effectifs caprins.</p>
-          </div>
-        </article>
-
-        <article class="map-card">
-          <button class="map-image-button" data-image="images/porcins.png" data-title="Distribution spatiale des porcins au Bénin">
-            <img src="images/porcins.png" alt="Carte de la distribution des porcins au Bénin" loading="lazy">
-          </button>
-
-          <div class="map-info">
-            <span class="map-type">Élevage</span>
-            <h3>Élevage porcin</h3>
-            <p>Distribution spatiale des effectifs porcins.</p>
-          </div>
-        </article>
-
-        <article class="map-card">
-          <button class="map-image-button" data-image="images/volaille.png" data-title="Distribution spatiale de la volaille au Bénin">
-            <img src="images/volaille.png" alt="Carte de la distribution de la volaille au Bénin" loading="lazy">
-          </button>
-
-          <div class="map-info">
-            <span class="map-type">Élevage</span>
-            <h3>Élevage de volailles</h3>
-            <p>Répartition spatiale de la volaille.</p>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="chapter-footer">
-        <span><strong>Cartothèque</strong> / Agriculture et élevage</span>
-        <span>08</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PAGE 9 : EXPÉRIENCES -->
-
-  <section class="chapter soft-page" id="experiences">
-    <div class="chapter-inner">
-
-      <div class="chapter-meta">
-        <span class="chapter-number">08 / Expériences</span>
-        <span>Parcours professionnel</span>
-      </div>
-
-      <p class="eyebrow">Expériences professionnelles</p>
-
-      <h2 class="chapter-title">
-        Recherche, analyse environnementale et transmission.
-      </h2>
-
-      <div class="experience-list">
-
-        <article class="experience-item">
-          <div class="experience-meta">
-            2026<br>
-            Université Grenoble Alpes<br>
-            France
-          </div>
-
-          <div>
-            <h3>Tuteur en cartographie</h3>
-
-            <div class="experience-place">
-              Université Grenoble Alpes
-            </div>
-
-            <ul>
-              <li>
-                Accompagnement des étudiants de Licence 1 dans l'apprentissage de la cartographie.
-              </li>
-              <li>
-                Appui à la prise en main des outils SIG.
-              </li>
-              <li>
-                Accompagnement méthodologique dans les exercices cartographiques.
-              </li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="experience-item">
-          <div class="experience-meta">
-            2025<br>
-            Laboratoire Pacte<br>
-            France
-          </div>
-
-          <div>
-            <h3>Appui cartographique - stage</h3>
-
-            <div class="experience-place">
-              Laboratoire Pacte
-            </div>
-
-            <ul>
-              <li>
-                Réalisation d'une carte des paysages du terrain de parcours de la tribu des Aït Zekri.
-              </li>
-              <li>
-                Traitement et organisation de données spatiales.
-              </li>
-              <li>
-                Production d'un support cartographique de synthèse sous ArcGIS Pro.
-              </li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="experience-item">
-          <div class="experience-meta">
-            2023 - 2025<br>
-            Laboratoire d'Écologie Appliquée<br>
-            Bénin
-          </div>
-
-          <div>
-            <h3>Chargé d'études junior</h3>
-
-            <div class="experience-place">
-              Laboratoire d'Écologie Appliquée · Université d'Abomey-Calavi
-            </div>
-
-            <ul>
-              <li>
-                Évaluation des risques climatiques liés au projet routier Bohicon-Dassa-Zoumé et contribution à la modélisation des émissions de gaz à effet de serre associées à l'extension routière.
-              </li>
-              <li>
-                Analyse de la vulnérabilité des écosystèmes et des systèmes d'élevage de ruminants face aux changements climatiques.
-              </li>
-              <li>
-                Contribution à l'élaboration du plan local de mise en œuvre de la CDN du Bénin dans les communes d'Abomey-Calavi, Toffo et Bohicon.
-              </li>
-              <li>
-                Contribution à l'élaboration d'une méthodologie d'évaluation des opportunités de restauration des paysages forestiers au Bénin.
-              </li>
-              <li>
-                Analyse des impacts socio-économiques des changements climatiques sur la production vivrière dans le sud du Bénin.
-              </li>
-            </ul>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="chapter-footer">
-        <span><strong>Expériences</strong> / Recherche et environnement</span>
-        <span>09</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PAGE 10 : CONTACT -->
-
-  <section class="chapter" id="contact">
-    <div class="chapter-inner">
-
-      <div class="chapter-meta">
-        <span class="chapter-number">09 / Contact</span>
-        <span>Échanges professionnels</span>
-      </div>
-
-      <p class="eyebrow">Contact</p>
-
-      <div class="contact-layout">
-
-        <div>
-          <h2 class="contact-heading">
-            Échanger autour d'un projet ou d'une opportunité.
-          </h2>
-
-          <p class="contact-description">
-            Pour discuter de géomatique, d'analyse environnementale,
-            de climatologie, de traitement statistique ou d'une
-            collaboration professionnelle, vous pouvez me contacter
-            par courriel ou consulter mon profil LinkedIn.
-          </p>
-
-          <div class="contact-details">
-            <span>Domaines d'intérêt</span>
-
-            <p>
-              Géomatique, télédétection, environnement, changements
-              climatiques, analyse statistique et données spatiales.
-            </p>
-          </div>
-        </div>
-
-        <div class="contact-links">
-
-          <a class="contact-link" href="mailto:zyadtogonou@gmail.com">
-            <span>Courriel</span>
-            <span>↗</span>
-          </a>
-
-          <a
-            class="contact-link"
-            href="https://www.linkedin.com/in/zyad-togonou/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>LinkedIn</span>
-            <span>↗</span>
-          </a>
-
-        </div>
-
-      </div>
-
-      <div class="chapter-footer">
-        <span><strong>Carolus Zyad TOGONOU</strong> / Portfolio professionnel</span>
-        <span>10</span>
-      </div>
-
-    </div>
-  </section>
-
+  </div>
+</section>
 </main>
 
-<!-- Navigation entre les pages -->
-
 <div class="page-controls">
-
   <button class="page-control" id="previousPage" disabled>
-    <span class="arrow">←</span>
-    <span>Précédent</span>
+    <span class="arrow">←</span><span>Précédent</span>
   </button>
-
   <div class="page-progress">
     <span id="currentPage">01</span>
-
-    <div class="progress-track">
-      <div class="progress-fill" id="progressFill"></div>
-    </div>
-
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
     <span>10</span>
   </div>
-
   <button class="page-control" id="nextPage">
-    <span>Suivant</span>
-    <span class="arrow">→</span>
+    <span>Suivant</span><span class="arrow">→</span>
   </button>
-
 </div>
 
 <footer class="site-footer">
@@ -2519,33 +309,17 @@ a:focus-visible {
   <span>Portfolio professionnel</span>
 </footer>
 
-<!-- Agrandissement des cartes -->
-
-<div
-  class="modal"
-  id="imageModal"
-  role="dialog"
-  aria-modal="true"
-  aria-label="Agrandissement de la carte"
->
+<div class="modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Agrandissement de la carte">
   <div class="modal-content">
-
-    <button
-      class="modal-close"
-      id="modalClose"
-      aria-label="Fermer"
-    >×</button>
-
+    <button class="modal-close" id="modalClose" aria-label="Fermer">×</button>
     <img class="modal-image" id="modalImage" src="" alt="">
-
     <p class="modal-caption" id="modalCaption"></p>
-
   </div>
 </div>
 
 <script>
-const chapters = Array.from(document.querySelectorAll(".chapter"));
-const navigationLinks = Array.from(document.querySelectorAll(".nav-link"));
+const chapters = [...document.querySelectorAll(".chapter")];
+const navLinks = [...document.querySelectorAll(".nav-link")];
 
 const previousButton = document.getElementById("previousPage");
 const nextButton = document.getElementById("nextPage");
@@ -2559,14 +333,17 @@ const modalClose = document.getElementById("modalClose");
 
 let activeChapter = 0;
 let modalReturnFocus = null;
+let isTurning = false;
+let turnTimeout = null;
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function updateNavigation() {
-  navigationLinks.forEach((link) => {
-    const isActive = Number(link.dataset.go) === activeChapter;
+  navLinks.forEach(link => {
+    const active = Number(link.dataset.go) === activeChapter;
+    link.classList.toggle("active", active);
 
-    link.classList.toggle("active", isActive);
-
-    if (isActive) {
+    if (active) {
       link.setAttribute("aria-current", "page");
     } else {
       link.removeAttribute("aria-current");
@@ -2574,18 +351,14 @@ function updateNavigation() {
   });
 
   currentPage.textContent = String(activeChapter + 1).padStart(2, "0");
-
-  progressFill.style.width =
-    ((activeChapter + 1) / chapters.length) * 100 + "%";
-
+  progressFill.style.width = ((activeChapter + 1) / chapters.length * 100) + "%";
   previousButton.disabled = activeChapter === 0;
   nextButton.disabled = activeChapter === chapters.length - 1;
 
   const title = chapters[activeChapter].querySelector(".chapter-title");
 
   document.title = title
-    ? title.textContent.trim().replace(/\s+/g, " ") +
-      " | Carolus Zyad TOGONOU"
+    ? title.textContent.trim().replace(/\s+/g, " ") + " | Carolus Zyad TOGONOU"
     : "Carolus Zyad TOGONOU | Portfolio";
 }
 
@@ -2593,85 +366,76 @@ function goToChapter(index) {
   if (
     index < 0 ||
     index >= chapters.length ||
-    index === activeChapter
+    index === activeChapter ||
+    isTurning
   ) {
     return;
   }
 
-  chapters[activeChapter].classList.remove("active");
-  activeChapter = index;
-  chapters[activeChapter].classList.add("active");
+  const oldChapter = chapters[activeChapter];
+  const newChapter = chapters[index];
 
-  updateNavigation();
-
-  window.scrollTo({
-    top: 0,
-    behavior: window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches ? "auto" : "smooth"
-  });
-}
-
-navigationLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    goToChapter(Number(link.dataset.go));
-  });
-});
-
-document.querySelectorAll("[data-go]").forEach((element) => {
-  if (element.classList.contains("nav-link")) {
+  if (reduceMotion.matches) {
+    oldChapter.classList.remove("active");
+    newChapter.classList.add("active");
+    activeChapter = index;
+    updateNavigation();
+    window.scrollTo({ top: 0, behavior: "auto" });
     return;
   }
 
-  element.addEventListener("click", (event) => {
+  isTurning = true;
+
+  oldChapter.classList.remove("turn-forward", "turn-backward");
+  oldChapter.classList.add(index > activeChapter ? "turn-forward" : "turn-backward");
+
+  window.clearTimeout(turnTimeout);
+
+  turnTimeout = window.setTimeout(() => {
+    oldChapter.classList.remove("active", "turn-forward", "turn-backward");
+    newChapter.classList.add("active");
+
+    activeChapter = index;
+    updateNavigation();
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    turnTimeout = window.setTimeout(() => {
+      isTurning = false;
+    }, 420);
+  }, 320);
+}
+
+document.querySelectorAll("[data-go]").forEach(element => {
+  element.addEventListener("click", event => {
     event.preventDefault();
     goToChapter(Number(element.dataset.go));
   });
 });
 
-previousButton.addEventListener("click", () => {
-  goToChapter(activeChapter - 1);
-});
+previousButton.addEventListener("click", () => goToChapter(activeChapter - 1));
+nextButton.addEventListener("click", () => goToChapter(activeChapter + 1));
 
-nextButton.addEventListener("click", () => {
-  goToChapter(activeChapter + 1);
-});
-
-/* Navigation au clavier */
-
-document.addEventListener("keydown", (event) => {
+document.addEventListener("keydown", event => {
   if (imageModal.classList.contains("open")) {
-    if (event.key === "Escape") {
-      closeImageModal();
-    }
-
+    if (event.key === "Escape") closeImageModal();
     return;
   }
 
-  if (event.altKey || event.ctrlKey || event.metaKey) {
-    return;
-  }
+  if (event.altKey || event.ctrlKey || event.metaKey) return;
 
-  if (event.key === "ArrowRight") {
-    goToChapter(activeChapter + 1);
-  }
-
-  if (event.key === "ArrowLeft") {
-    goToChapter(activeChapter - 1);
-  }
+  if (event.key === "ArrowRight") goToChapter(activeChapter + 1);
+  if (event.key === "ArrowLeft") goToChapter(activeChapter - 1);
 });
 
-/* Agrandissement des cartes */
-
-function openImageModal(imagePath, title, sourceButton) {
-  modalReturnFocus = sourceButton;
-  modalImage.src = imagePath;
+function openImageModal(src, title, button) {
+  modalReturnFocus = button;
+  modalImage.src = src;
   modalImage.alt = title;
   modalCaption.textContent = title;
 
   imageModal.classList.add("open");
   document.body.classList.add("modal-open");
-
   modalClose.focus();
 }
 
@@ -2680,31 +444,85 @@ function closeImageModal() {
   document.body.classList.remove("modal-open");
   modalImage.src = "";
 
-  if (modalReturnFocus) {
-    modalReturnFocus.focus();
-  }
+  if (modalReturnFocus) modalReturnFocus.focus();
 }
 
-document.querySelectorAll(".map-image-button").forEach((button) => {
+document.querySelectorAll(".map-image-button").forEach(button => {
   button.addEventListener("click", () => {
-    openImageModal(
-      button.dataset.image,
-      button.dataset.title,
-      button
-    );
+    openImageModal(button.dataset.image, button.dataset.title, button);
   });
 });
 
 modalClose.addEventListener("click", closeImageModal);
 
-imageModal.addEventListener("click", (event) => {
-  if (event.target === imageModal) {
-    closeImageModal();
-  }
+imageModal.addEventListener("click", event => {
+  if (event.target === imageModal) closeImageModal();
 });
 
 updateNavigation();
-</script>
 
+// Effets de profondeur pilotés par la souris ou le tactile
+const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+if (finePointer && !reduceMotion.matches) {
+  const visual = document.querySelector(".cover-visual");
+  const svg = visual?.querySelector("svg");
+  const copy = document.querySelector(".cover-copy");
+
+  if (visual) {
+    visual.addEventListener("pointermove", event => {
+      const rect = visual.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+      visual.style.transform = `rotateY(${x * 9}deg) rotateX(${-y * 8}deg)`;
+      visual.style.borderColor = "rgba(211,250,112,.48)";
+
+      if (svg) {
+        svg.style.transform = `translateZ(45px) translateX(${x * -13}px) translateY(${y * -13}px) rotateY(${x * 3}deg)`;
+      }
+    });
+
+    visual.addEventListener("pointerleave", () => {
+      visual.style.transform = "";
+      visual.style.borderColor = "";
+      if (svg) svg.style.transform = "";
+    });
+  }
+
+  if (copy) {
+    copy.addEventListener("pointermove", event => {
+      const rect = copy.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+      copy.style.transform = `perspective(1000px) rotateY(${x * 2.8}deg) rotateX(${-y * 1.8}deg)`;
+    });
+
+    copy.addEventListener("pointerleave", () => {
+      copy.style.transform = "";
+    });
+  }
+
+  document.querySelectorAll(".map-card").forEach(card => {
+    const button = card.querySelector(".map-image-button");
+    if (!button) return;
+
+    card.addEventListener("pointermove", event => {
+      const rect = card.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+      button.style.transform = `perspective(900px) rotateY(${x * 7}deg) rotateX(${-y * 6}deg) translateZ(8px)`;
+      button.style.boxShadow = `${-x * 18}px ${12 - y * 12}px 28px rgba(0,0,0,.24)`;
+    });
+
+    card.addEventListener("pointerleave", () => {
+      button.style.transform = "";
+      button.style.boxShadow = "";
+    });
+  });
+}
+</script>
 </body>
 </html>
