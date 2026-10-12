@@ -285,6 +285,14 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--teal);outline-offse
 @media(max-width:700px){.figures{gap:22px}.figure-item strong{font-size:56px}}
 @media(prefers-reduced-motion:reduce){.rv,.rv-side{opacity:1}.chapter.active .chapter-title{animation:none}}
 
+/* ===== Correctif : fond uni pour la lecture, la 3D passe dans un bandeau par page ===== */
+.chapter{background:var(--bg)}
+.chapter.soft-page{background:var(--soft)}
+#bg3d{display:none}
+.banner3d{position:relative;height:clamp(170px,23vw,280px);margin:0 0 46px;overflow:hidden;border-radius:4px;background:#08202D;box-shadow:0 36px 70px -34px rgba(8,32,45,.6),0 0 0 1px rgba(8,32,45,.35)}
+.banner3d:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(8,32,45,.28),transparent 35%,transparent 65%,rgba(8,32,45,.4))}
+.banner3d canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+@media(max-width:700px){.banner3d{height:170px;margin-bottom:34px}}
 </style>
 </head>
 <body>
@@ -312,7 +320,6 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--teal);outline-offse
 <section class="chapter" id="profil"><div class="chapter-inner">
 <div class="chapter-meta"><span class="chapter-number">01 / Présentation</span><span>Profil professionnel</span></div><p class="eyebrow">À propos</p><h2 class="chapter-title">Comprendre les territoires et leurs <em>dynamiques.</em></h2>
 <div class="intro-grid"><div class="intro-text"><p>Mon parcours relie l’aménagement, la gestion des ressources naturelles, la géographie et l’analyse environnementale. Formé d’abord à l’Université d’Abomey-Calavi, je poursuis aujourd’hui mes études à l’Université Grenoble Alpes, dans le Master GEOÏDES.</p><p>Au Laboratoire d’Écologie Appliquée, j’ai travaillé sur le changement climatique, la gestion durable des ressources naturelles et l’adaptation : risques climatiques d’un projet routier, vulnérabilité des écosystèmes, plan local de mise en œuvre de la CDN, restauration des paysages forestiers.</p><p>Je développe aujourd’hui mes compétences en géomatique, télédétection, analyse spatiale et traitement de données pour produire des connaissances utiles à la décision, avec un souci constant de méthodes lisibles et de résultats que l’on peut expliquer.</p></div><aside class="profile-note"><h3>Repères</h3><div class="profile-row"><span>Localisation</span><span>Grenoble, France</span></div><div class="profile-row"><span>Formation actuelle</span><span>Master GEOÏDES</span></div><div class="profile-row"><span>Spécialités</span><span>Environnement et climat</span></div><div class="profile-row"><span>Méthodes</span><span>SIG et statistiques</span></div><div class="profile-row"><span>Langues</span><span>Français, anglais C1</span></div></aside></div>
-<div class="figures"><div class="figure-item"><strong><span class="count" data-to="6">6</span></strong><p>projets d’étude et de recherche</p></div><div class="figure-item"><strong><span class="count" data-to="7">7</span></strong><p>cartes thématiques présentées</p></div><div class="figure-item"><strong><span class="count" data-to="3">3</span></strong><p>communes béninoises dans le plan local de la CDN</p></div><div class="figure-item"><strong>C1</strong><p>anglais, certification obtenue en 2024</p></div></div>
 <div class="domains-block"><h3 class="section-subtitle">Domaines d’intérêt</h3><ul class="domains-list"><li>Géomatique et analyse spatiale</li><li>Télédétection et observation de la Terre</li><li>Risques et changements climatiques</li><li>Environnement et gestion des ressources naturelles</li><li>Analyse de données géographiques</li></ul></div>
 <h3 class="section-subtitle">Ce que j’apporte</h3>
 <div class="stat-grid"><div class="stat"><strong>Climat</strong><span>Analyse hydroclimatique et évaluation des risques</span></div><div class="stat"><strong>Environnement</strong><span>Vulnérabilité des écosystèmes et ressources naturelles</span></div><div class="stat"><strong>Données</strong><span>Traitement statistique et analyse spatiale</span></div></div>
@@ -567,35 +574,41 @@ modalClose.addEventListener("click",closeImageModal);imageModal.addEventListener
 
 </script>
 <script>
-/* Relief 3D en arrière-plan de toutes les pages : la caméra se déplace à chaque changement de chapitre */
+/* Bandeau 3D en tête de chaque page : un seul rendu WebGL qui se déplace d'un chapitre à l'autre.
+   La caméra survole le relief et change d'angle à chaque page. Le texte reste sur fond uni. */
 (function(){
  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
- let idx=0;window.addEventListener("chapter-change",e=>{idx=e.detail});
+ let idx=0;
  function start(){
   const THREE=window.THREE;if(!THREE)return;
-  const canvas=document.createElement("canvas");canvas.id="bg3d";canvas.setAttribute("aria-hidden","true");
+  const canvas=document.createElement("canvas");canvas.setAttribute("aria-hidden","true");
   let renderer;try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true})}catch(e){return}
-  document.body.prepend(canvas);renderer.setClearColor(0x000000,0);
-  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(40,1,.1,80),group=new THREE.Group();scene.add(group);
-  const S=28,N=innerWidth<700?70:140,geo=new THREE.PlaneGeometry(S,S,N,N),pos=geo.attributes.position,hs=new Float32Array(pos.count);
+  const slots=[];
+  document.querySelectorAll(".chapter").forEach((ch,i)=>{if(i===0)return;const meta=ch.querySelector(".chapter-meta");if(!meta)return;const d=document.createElement("div");d.className="banner3d";d.setAttribute("aria-hidden","true");meta.after(d);slots[i]=d});
+  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(38,3,.1,60),group=new THREE.Group();scene.add(group);
+  const S=18,N=innerWidth<700?80:140,geo=new THREE.PlaneGeometry(S,S,N,N),pos=geo.attributes.position,hs=new Float32Array(pos.count);
   const hash=(x,y)=>{const s=Math.sin(x*127.1+y*311.7)*43758.5453;return s-Math.floor(s)};
   const vn=(x,y)=>{const xi=Math.floor(x),yi=Math.floor(y),xf=x-xi,yf=y-yi,u=xf*xf*(3-2*xf),v=yf*yf*(3-2*yf);return hash(xi,yi)*(1-u)*(1-v)+hash(xi+1,yi)*u*(1-v)+hash(xi,yi+1)*(1-u)*v+hash(xi+1,yi+1)*u*v};
   const fbm=(x,y)=>{let a=.5,f=1,t=0;for(let i=0;i<5;i++){t+=a*vn(x*f,y*f);f*=2;a*=.5}return t};
-  for(let i=0;i<pos.count;i++){const x=pos.getX(i),y=pos.getY(i);const n=fbm(x*.17+5.3,y*.17+2.1),r=1-Math.abs(2*fbm(x*.13+11,y*.13+7)-1);hs[i]=(.55*n+.45*Math.pow(r,1.8))*1.25}
+  for(let i=0;i<pos.count;i++){const x=pos.getX(i),y=pos.getY(i);const n=fbm(x*.3+4.2,y*.3+1.3),r=1-Math.abs(2*fbm(x*.24+9.1,y*.24+6.4)-1);hs[i]=(.55*n+.45*Math.pow(r,1.7))*1.05}
   geo.setAttribute("aH",new THREE.BufferAttribute(hs,1));
-  const mat=new THREE.ShaderMaterial({extensions:{derivatives:true},transparent:true,depthWrite:false,side:THREE.DoubleSide,
-   vertexShader:"attribute float aH;varying float vH;varying float vD;void main(){vH=aH;vec3 p=position;p.z=aH*4.4;vec4 mv=modelViewMatrix*vec4(p,1.);vD=-mv.z;gl_Position=projectionMatrix*mv;}",
-   fragmentShader:"precision highp float;varying float vH;varying float vD;void main(){float h=vH;float k=h*24.;float mi=1.-min(abs(fract(k-.5)-.5)/(fwidth(k)+1e-4),1.);float k2=h*6.;float ma=1.-min(abs(fract(k2-.5)-.5)/(fwidth(k2)+1e-4),1.);vec3 col=mix(vec3(.06,.38,.41),vec3(.75,.46,.09),smoothstep(.5,.95,h));float a=(mi*.15+ma*.3)*(1.-smoothstep(16.,38.,vD));gl_FragColor=vec4(col,a);}"});
+  const mat=new THREE.ShaderMaterial({extensions:{derivatives:true},side:THREE.DoubleSide,uniforms:{uTime:{value:0},uLevel:{value:.2}},
+   vertexShader:"attribute float aH;varying float vH;varying float vD;void main(){vH=aH;vec3 p=position;p.z=aH*2.4;vec4 mv=modelViewMatrix*vec4(p,1.);vD=-mv.z;gl_Position=projectionMatrix*mv;}",
+   fragmentShader:"precision highp float;varying float vH;varying float vD;uniform float uTime;uniform float uLevel;void main(){float h=vH;float lvl=uLevel+.03*sin(uTime*.4);vec3 c0=vec3(.04,.19,.24),c1=vec3(.10,.40,.43),c2=vec3(.62,.79,.83),c3=vec3(.89,.85,.66),c4=vec3(.75,.46,.09);vec3 col=mix(c0,c1,smoothstep(0.,.25,h));col=mix(col,c2,smoothstep(.2,.45,h));col=mix(col,c3,smoothstep(.4,.62,h));col=mix(col,c4,smoothstep(.6,.9,h));float k=h*16.;float mi=1.-min(abs(fract(k-.5)-.5)/(fwidth(k)+1e-4),1.);float k2=h*4.;float ma=1.-min(abs(fract(k2-.5)-.5)/(fwidth(k2)+1e-4),1.);col=mix(col,vec3(.93,.97,.96),mi*.3+ma*.4);if(h<lvl){col=mix(vec3(.03,.12,.17),vec3(.10,.34,.40),h/lvl);}float sh=1.-smoothstep(0.,.012,abs(h-lvl));col=mix(col,vec3(.85,.95,.97),sh*.9);col=mix(col,vec3(.031,.125,.176),smoothstep(6.,14.,vD));gl_FragColor=vec4(col,1.);}"});
   const mesh=new THREE.Mesh(geo,mat);mesh.rotation.x=-Math.PI/2;group.add(mesh);
-  const poses=[[0,11,15,0],[-5,8,12,.45],[5,7,11,-.5],[0,5.5,9,1],[7,9,9,1.6],[-3,12,7,2.1],[3,6,12,2.6],[-7,7,10,3.1],[0,10,11,3.6],[0,14,8,4.2]];
-  const target=new THREE.Vector3();
-  function size(){renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.setSize(innerWidth,innerHeight,false);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix()}
-  size();addEventListener("resize",size);
-  function pose(snap){const p=poses[idx]||poses[0];target.set(p[0],p[1],p[2]);const k=snap?1:.035;camera.position.lerp(target,k);group.rotation.y+=(p[3]-group.rotation.y)*k;group.position.y=-scrollY*.0025;camera.lookAt(0,0,0)}
-  if(reduce){pose(true);renderer.render(scene,camera);addEventListener("chapter-change",()=>{pose(true);renderer.render(scene,camera)});return}
-  camera.position.set(0,11,15);
-  (function frame(){requestAnimationFrame(frame);if(document.hidden)return;pose(false);group.rotation.y+=.0006;renderer.render(scene,camera)})();
+  /* [x, y, z de la caméra, rotation, niveau de la mer] par chapitre */
+  const poses=[[0,3,8,0,.2],[0,2.2,6.5,.3,.18],[3,2.8,6,1.2,.26],[-3,2,6.5,2.1,.2],[2,3.4,5.5,2.9,.3],[-2,2.4,7,3.7,.16],[4,2.6,6,4.5,.24],[0,3.6,5,5.3,.3],[-4,2.2,6.5,6,.2],[0,4.2,6,.8,.28]];
+  const cur=new THREE.Vector3(0,3,8),tgt=new THREE.Vector3();let rot=0,lvl=.2,px=0,tx=0,slot=null,w=0,h=0;
+  function attach(){const s=slots[idx];if(s===slot)return;slot=s||null;if(slot){slot.appendChild(canvas);w=0}else if(canvas.parentNode)canvas.parentNode.removeChild(canvas)}
+  function fit(){if(!slot)return;const nw=slot.clientWidth,nh=slot.clientHeight;if(!nw||!nh||(nw===w&&nh===h))return;w=nw;h=nh;renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
+  window.addEventListener("chapter-change",e=>{idx=e.detail;attach();if(reduce)draw(true)});
+  if(!reduce)addEventListener("pointermove",e=>{tx=e.clientX/innerWidth-.5});
+  function draw(snap){if(!slot)return;fit();const p=poses[idx]||poses[1],k=snap?1:.045;tgt.set(p[0],p[1],p[2]);cur.lerp(tgt,k);rot+=(p[3]-rot)*k;lvl+=(p[4]-lvl)*k;px+=(tx-px)*.05;camera.position.copy(cur);camera.lookAt(0,.5,0);group.rotation.y=rot+px*.35;mat.uniforms.uLevel.value=lvl;mat.uniforms.uTime.value=reduce?0:performance.now()/1000;renderer.render(scene,camera)}
+  attach();
+  if(reduce){draw(true);return}
+  (function frame(){requestAnimationFrame(frame);if(document.hidden)return;group.rotation.y+=0;draw(false)})();
  }
+ window.addEventListener("chapter-change",e=>{idx=e.detail});
  if(window.THREE)start();else window.addEventListener("three-ready",start);
 })();
 
