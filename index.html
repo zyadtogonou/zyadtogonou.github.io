@@ -36,8 +36,8 @@ body {
   background: var(--white);
   color: var(--black);
   font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 18px;
+  line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -84,7 +84,7 @@ a:focus-visible {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: .07em;
   text-transform: uppercase;
@@ -93,17 +93,17 @@ a:focus-visible {
 .brand-mark {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border: 1px solid var(--black);
   font-family: var(--serif);
-  font-size: 21px;
+  font-size: 23px;
   font-weight: 400;
 }
 
 .header-note {
   color: var(--gray);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: .08em;
   text-align: right;
   text-transform: uppercase;
@@ -129,7 +129,7 @@ a:focus-visible {
   border-bottom: 1px solid transparent;
   background: transparent;
   color: var(--gray);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: .035em;
   text-transform: uppercase;
   cursor: pointer;
@@ -142,7 +142,7 @@ a:focus-visible {
   border-bottom-color: var(--black);
 }
 
-/* Pages */
+/* Structure des pages */
 
 .book {
   width: 100%;
@@ -191,7 +191,7 @@ a:focus-visible {
   padding-bottom: 17px;
   border-bottom: 1px solid var(--light-gray);
   color: var(--gray);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
@@ -203,29 +203,29 @@ a:focus-visible {
 .eyebrow {
   margin: 0 0 20px;
   color: var(--gray);
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: .14em;
   line-height: 1.8;
   text-transform: uppercase;
 }
 
 .chapter-title {
-  max-width: 1000px;
+  max-width: 1050px;
   margin: 0;
   font-family: var(--serif);
   font-size: clamp(48px, 6vw, 86px);
   font-weight: 400;
   letter-spacing: -.045em;
-  line-height: 1.12;
+  line-height: 1.15;
   overflow-wrap: anywhere;
 }
 
 .chapter-description {
-  max-width: 780px;
-  margin-top: 28px;
+  max-width: 850px;
+  margin-top: 30px;
   color: var(--gray);
-  font-size: 17px;
-  line-height: 2;
+  font-size: 20px;
+  line-height: 1.9;
 }
 
 .chapter-footer {
@@ -237,7 +237,7 @@ a:focus-visible {
   padding-top: 18px;
   border-top: 1px solid var(--light-gray);
   color: var(--gray);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: .07em;
   text-transform: uppercase;
 }
@@ -269,19 +269,19 @@ a:focus-visible {
 
 .cover-label {
   color: var(--gray);
-  font-size: 12px;
+  font-size: 15px;
   letter-spacing: .12em;
   line-height: 2;
   text-transform: uppercase;
 }
 
 .cover h1 {
-  margin: 70px 0 25px;
+  margin: 60px 0 30px;
   font-family: var(--serif);
   font-size: clamp(64px, 8vw, 115px);
   font-weight: 400;
   letter-spacing: -.07em;
-  line-height: 1;
+  line-height: 1.05;
   overflow-wrap: anywhere;
 }
 
@@ -290,11 +290,11 @@ a:focus-visible {
 }
 
 .cover-role {
-  max-width: 520px;
+  max-width: 650px;
   margin: 0;
   color: #50504c;
-  font-size: 17px;
-  line-height: 2;
+  font-size: 21px;
+  line-height: 1.9;
 }
 
 .cover-role strong {
@@ -307,26 +307,27 @@ a:focus-visible {
   flex-wrap: wrap;
   gap: 10px 20px;
   width: 100%;
-  margin-top: 65px;
+  margin-top: 60px;
   padding-top: 18px;
   border-top: 1px solid var(--black);
   color: var(--gray);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: .1em;
+  line-height: 2;
   text-transform: uppercase;
 }
 
 .primary-button {
   display: inline-flex;
   align-items: center;
-  gap: 25px;
-  margin-top: 30px;
-  padding: 15px 0;
+  gap: 30px;
+  margin-top: 35px;
+  padding: 20px 0;
   border: 0;
   border-bottom: 1px solid var(--black);
   background: transparent;
   color: var(--black);
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: .07em;
   text-transform: uppercase;
   cursor: pointer;
@@ -334,11 +335,11 @@ a:focus-visible {
 }
 
 .primary-button:hover {
-  gap: 35px;
+  gap: 40px;
 }
 
 .primary-button span {
-  font-size: 21px;
+  font-size: 27px;
 }
 
 .cover-visual {
@@ -368,7 +369,7 @@ a:focus-visible {
   justify-content: space-between;
   gap: 10px;
   color: #555950;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: .07em;
   text-transform: uppercase;
 }
@@ -384,12 +385,12 @@ a:focus-visible {
 
 .intro-text {
   color: #50504c;
-  font-size: 17px;
-  line-height: 2.05;
+  font-size: 20px;
+  line-height: 1.95;
 }
 
 .intro-text p {
-  margin: 0 0 26px;
+  margin: 0 0 28px;
 }
 
 .profile-note {
@@ -401,27 +402,27 @@ a:focus-visible {
 .profile-note h3 {
   margin: 0 0 25px;
   font-family: var(--serif);
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 400;
 }
 
 .profile-row {
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  padding: 17px 0;
+  gap: 8px;
+  padding: 18px 0;
   border-bottom: 1px solid var(--light-gray);
 }
 
 .profile-row span:first-child {
   color: var(--gray);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: .07em;
   text-transform: uppercase;
 }
 
 .profile-row span:last-child {
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.8;
 }
 
@@ -437,16 +438,16 @@ a:focus-visible {
 .stat strong {
   display: block;
   font-family: var(--serif);
-  font-size: clamp(28px, 3vw, 40px);
+  font-size: clamp(32px, 3vw, 44px);
   font-weight: 400;
 }
 
 .stat span {
   display: block;
-  max-width: 260px;
+  max-width: 280px;
   margin-top: 14px;
   color: var(--gray);
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.9;
 }
 
@@ -461,47 +462,47 @@ a:focus-visible {
   display: grid;
   grid-template-columns: 160px minmax(0,1fr);
   gap: 35px;
-  padding: 32px 0;
+  padding: 35px 0;
   border-bottom: 1px solid var(--light-gray);
 }
 
 .timeline-date {
   padding-top: 8px;
   color: var(--gray);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.9;
 }
 
 .timeline-content h3 {
-  margin: 0 0 14px;
+  margin: 0 0 15px;
   font-family: var(--serif);
-  font-size: clamp(27px, 2.8vw, 36px);
+  font-size: clamp(29px, 2.8vw, 38px);
   font-weight: 400;
   line-height: 1.4;
 }
 
 .timeline-content p {
-  max-width: 800px;
+  max-width: 850px;
   margin: 0;
   color: var(--gray);
-  font-size: 16px;
-  line-height: 2;
+  font-size: 18px;
+  line-height: 1.95;
 }
 
 .timeline-place {
   display: block;
-  margin-top: 14px;
+  margin-top: 15px;
   color: var(--black);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.8;
 }
 
 .inline-link {
   display: inline-block;
-  margin-top: 17px;
+  margin-top: 20px;
   padding-bottom: 5px;
   border-bottom: 1px solid var(--black);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.8;
 }
 
@@ -511,9 +512,9 @@ a:focus-visible {
 }
 
 .section-subtitle {
-  margin: 70px 0 30px;
+  margin: 75px 0 35px;
   font-family: var(--serif);
-  font-size: 38px;
+  font-size: 42px;
   font-weight: 400;
 }
 
@@ -530,16 +531,16 @@ a:focus-visible {
 
 .certificate span {
   color: var(--gray);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: .07em;
   line-height: 1.9;
   text-transform: uppercase;
 }
 
 .certificate h3 {
-  margin: 18px 0;
+  margin: 20px 0;
   font-family: var(--serif);
-  font-size: 29px;
+  font-size: 32px;
   font-weight: 400;
   line-height: 1.4;
 }
@@ -547,8 +548,8 @@ a:focus-visible {
 .certificate p {
   margin: 0;
   color: var(--gray);
-  font-size: 15px;
-  line-height: 2;
+  font-size: 18px;
+  line-height: 1.9;
 }
 
 /* Compétences */
@@ -568,14 +569,14 @@ a:focus-visible {
 
 .skill-number {
   color: var(--gray);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: .1em;
 }
 
 .skill-card h3 {
   margin: 20px 0;
   font-family: var(--serif);
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 400;
   line-height: 1.4;
 }
@@ -583,14 +584,14 @@ a:focus-visible {
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 17px;
+  gap: 12px 18px;
 }
 
 .tag {
   padding-bottom: 5px;
   border-bottom: 1px solid var(--light-gray);
   color: #555550;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.8;
 }
 
@@ -599,7 +600,7 @@ a:focus-visible {
 .project-list {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 60px 45px;
+  gap: 65px 45px;
   margin-top: 60px;
 }
 
@@ -613,34 +614,34 @@ a:focus-visible {
 
 .project-index {
   color: var(--gray);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: .1em;
 }
 
 .project-card h3 {
   margin: 20px 0;
   font-family: var(--serif);
-  font-size: clamp(29px, 3vw, 39px);
+  font-size: clamp(30px, 3vw, 40px);
   font-weight: 400;
   letter-spacing: -.025em;
-  line-height: 1.35;
+  line-height: 1.4;
   overflow-wrap: anywhere;
 }
 
 .project-intro {
   margin: 0;
   color: #50504c;
-  font-size: 16px;
-  line-height: 2;
+  font-size: 19px;
+  line-height: 1.9;
 }
 
 .project-detail {
-  margin-top: 27px;
+  margin-top: 30px;
 }
 
 .project-detail h4 {
-  margin: 0 0 12px;
-  font-size: 12px;
+  margin: 0 0 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: .09em;
   text-transform: uppercase;
@@ -649,37 +650,37 @@ a:focus-visible {
 .project-detail p {
   margin: 0;
   color: var(--gray);
-  font-size: 15px;
-  line-height: 2;
+  font-size: 18px;
+  line-height: 1.95;
 }
 
 .project-tools {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px 16px;
-  margin-top: 16px;
+  gap: 10px 18px;
+  margin-top: 18px;
 }
 
 .project-tools span {
   color: var(--accent);
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: .02em;
 }
 
 /* Cartes */
 
 .gallery-intro {
-  max-width: 800px;
-  margin-top: 28px;
+  max-width: 850px;
+  margin-top: 30px;
   color: var(--gray);
-  font-size: 17px;
-  line-height: 2;
+  font-size: 20px;
+  line-height: 1.9;
 }
 
 .gallery {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 50px 35px;
+  gap: 55px 35px;
   margin-top: 50px;
 }
 
@@ -711,14 +712,14 @@ a:focus-visible {
 }
 
 .map-info {
-  padding-top: 20px;
+  padding-top: 22px;
 }
 
 .map-type {
   display: block;
   margin-bottom: 12px;
   color: var(--gray);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: .1em;
   text-transform: uppercase;
 }
@@ -726,17 +727,17 @@ a:focus-visible {
 .map-info h3 {
   margin: 0;
   font-family: var(--serif);
-  font-size: 32px;
+  font-size: 35px;
   font-weight: 400;
   line-height: 1.4;
 }
 
 .map-info p {
-  max-width: 500px;
-  margin: 12px 0 0;
+  max-width: 550px;
+  margin: 14px 0 0;
   color: var(--gray);
-  font-size: 15px;
-  line-height: 2;
+  font-size: 18px;
+  line-height: 1.9;
 }
 
 /* Expériences */
@@ -750,45 +751,45 @@ a:focus-visible {
   display: grid;
   grid-template-columns: 200px minmax(0,1fr);
   gap: 45px;
-  padding: 35px 0;
+  padding: 40px 0;
   border-bottom: 1px solid var(--light-gray);
 }
 
 .experience-meta {
   color: var(--gray);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 2;
 }
 
 .experience-item h3 {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   font-family: var(--serif);
-  font-size: clamp(29px, 3vw, 40px);
+  font-size: clamp(30px, 3vw, 42px);
   font-weight: 400;
   line-height: 1.4;
 }
 
 .experience-place {
   margin-bottom: 20px;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.9;
 }
 
 .experience-item p,
 .experience-item li {
   color: var(--gray);
-  font-size: 15px;
-  line-height: 2;
+  font-size: 18px;
+  line-height: 1.95;
 }
 
 .experience-item ul {
   margin: 15px 0 0;
-  padding-left: 20px;
+  padding-left: 23px;
 }
 
 .experience-item li {
   padding-left: 5px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 /* Contact */
@@ -801,21 +802,21 @@ a:focus-visible {
 }
 
 .contact-heading {
-  max-width: 700px;
+  max-width: 750px;
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(46px, 5.5vw, 76px);
+  font-size: clamp(48px, 5.5vw, 78px);
   font-weight: 400;
   letter-spacing: -.04em;
   line-height: 1.2;
 }
 
 .contact-description {
-  max-width: 580px;
+  max-width: 650px;
   margin-top: 30px;
   color: var(--gray);
-  font-size: 17px;
-  line-height: 2;
+  font-size: 20px;
+  line-height: 1.9;
 }
 
 .contact-details {
@@ -827,7 +828,7 @@ a:focus-visible {
 .contact-details span {
   display: block;
   margin-bottom: 12px;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: .09em;
   text-transform: uppercase;
 }
@@ -835,8 +836,8 @@ a:focus-visible {
 .contact-details p {
   margin: 0;
   color: var(--gray);
-  font-size: 15px;
-  line-height: 2;
+  font-size: 18px;
+  line-height: 1.9;
 }
 
 .contact-links {
@@ -849,9 +850,9 @@ a:focus-visible {
   justify-content: space-between;
   align-items: center;
   gap: 15px;
-  padding: 23px 0;
+  padding: 25px 0;
   border-bottom: 1px solid var(--light-gray);
-  font-size: 16px;
+  font-size: 19px;
   transition: padding .2s;
 }
 
@@ -861,10 +862,10 @@ a:focus-visible {
 }
 
 .contact-link span:last-child {
-  font-size: 22px;
+  font-size: 25px;
 }
 
-/* Navigation entre pages */
+/* Navigation entre les pages */
 
 .page-controls {
   display: flex;
@@ -885,14 +886,14 @@ a:focus-visible {
   border: 0;
   background: transparent;
   color: var(--black);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: .07em;
   text-transform: uppercase;
   cursor: pointer;
 }
 
 .page-control .arrow {
-  font-size: 22px;
+  font-size: 25px;
   transition: transform .2s;
 }
 
@@ -914,7 +915,7 @@ a:focus-visible {
   align-items: center;
   gap: 13px;
   color: var(--gray);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .progress-track {
@@ -938,7 +939,7 @@ a:focus-visible {
   padding: 25px 7%;
   border-top: 1px solid var(--light-gray);
   color: var(--gray);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: .05em;
   line-height: 1.9;
   text-transform: uppercase;
@@ -980,7 +981,7 @@ a:focus-visible {
 .modal-caption {
   margin: 18px 0 0;
   color: var(--black);
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: .06em;
   text-align: center;
   text-transform: uppercase;
@@ -990,27 +991,21 @@ a:focus-visible {
   position: absolute;
   top: -45px;
   right: 0;
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border: 1px solid var(--black);
   border-radius: 50%;
   background: var(--white);
   color: var(--black);
-  font-size: 24px;
+  font-size: 27px;
   cursor: pointer;
 }
 
-/* Responsive */
-
-@media (min-width: 1500px) {
-  .cover {
-    min-height: 850px;
-  }
-}
+/* Tablettes */
 
 @media (max-width: 1000px) {
   .cover {
-    grid-template-columns: 1fr .8fr;
+    grid-template-columns: 1.05fr .95fr;
     gap: 30px;
     padding-right: 5%;
     padding-left: 5%;
@@ -1018,6 +1013,10 @@ a:focus-visible {
 
   .cover h1 {
     font-size: clamp(55px,7vw,85px);
+  }
+
+  .cover-role {
+    font-size: 20px;
   }
 
   .intro-grid,
@@ -1041,7 +1040,13 @@ a:focus-visible {
   }
 }
 
+/* Téléphones */
+
 @media (max-width: 700px) {
+  body {
+    font-size: 16px;
+  }
+
   .site-header {
     padding: 18px 5%;
   }
@@ -1058,7 +1063,7 @@ a:focus-visible {
 
   .header-note {
     max-width: 145px;
-    font-size: 10px;
+    font-size: 11px;
     line-height: 1.8;
   }
 
@@ -1070,7 +1075,7 @@ a:focus-visible {
 
   .nav-link {
     padding: 10px 9px;
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .chapter-inner {
@@ -1079,11 +1084,15 @@ a:focus-visible {
 
   .chapter-meta {
     margin-bottom: 42px;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .chapter-title {
     font-size: clamp(40px, 9vw, 58px);
+  }
+
+  .chapter-description {
+    font-size: 18px;
   }
 
   .cover {
@@ -1097,18 +1106,27 @@ a:focus-visible {
     padding: 10px 0;
   }
 
+  .cover-label {
+    font-size: 13px;
+  }
+
   .cover h1 {
     margin-top: 50px;
     font-size: clamp(55px, 12vw, 82px);
   }
 
   .cover-role {
-    font-size: 16px;
+    font-size: 19px;
+    line-height: 1.9;
+  }
+
+  .primary-button {
+    font-size: 14px;
   }
 
   .cover-bottom {
     margin-top: 45px;
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .cover-visual {
@@ -1119,6 +1137,10 @@ a:focus-visible {
     max-height: 400px;
   }
 
+  .cover-caption {
+    font-size: 11px;
+  }
+
   .intro-grid,
   .contact-layout {
     grid-template-columns: 1fr;
@@ -1127,7 +1149,15 @@ a:focus-visible {
   }
 
   .intro-text {
-    font-size: 16px;
+    font-size: 18px;
+  }
+
+  .profile-note h3 {
+    font-size: 32px;
+  }
+
+  .profile-row span:last-child {
+    font-size: 17px;
   }
 
   .stat-grid {
@@ -1140,13 +1170,34 @@ a:focus-visible {
     border-bottom: 1px solid var(--light-gray);
   }
 
+  .stat span {
+    font-size: 16px;
+  }
+
   .timeline-item {
     grid-template-columns: 1fr;
     gap: 12px;
   }
 
+  .timeline-date {
+    font-size: 14px;
+  }
+
   .timeline-content h3 {
-    font-size: 29px;
+    font-size: 30px;
+  }
+
+  .timeline-content p {
+    font-size: 17px;
+  }
+
+  .timeline-place,
+  .inline-link {
+    font-size: 14px;
+  }
+
+  .section-subtitle {
+    font-size: 35px;
   }
 
   .certificates,
@@ -1160,8 +1211,24 @@ a:focus-visible {
     gap: 32px;
   }
 
+  .certificate h3 {
+    font-size: 29px;
+  }
+
+  .certificate p {
+    font-size: 17px;
+  }
+
   .skill-groups {
     gap: 38px;
+  }
+
+  .skill-card h3 {
+    font-size: 31px;
+  }
+
+  .tag {
+    font-size: 16px;
   }
 
   .project-list {
@@ -1169,15 +1236,43 @@ a:focus-visible {
   }
 
   .project-card h3 {
-    font-size: 31px;
+    font-size: 32px;
+  }
+
+  .project-intro {
+    font-size: 18px;
+  }
+
+  .project-detail h4 {
+    font-size: 13px;
+  }
+
+  .project-detail p {
+    font-size: 17px;
+  }
+
+  .project-tools span {
+    font-size: 14px;
   }
 
   .gallery {
     gap: 38px;
   }
 
+  .gallery-intro {
+    font-size: 18px;
+  }
+
+  .map-type {
+    font-size: 12px;
+  }
+
   .map-info h3 {
-    font-size: 29px;
+    font-size: 30px;
+  }
+
+  .map-info p {
+    font-size: 17px;
   }
 
   .experience-item {
@@ -1185,12 +1280,37 @@ a:focus-visible {
     gap: 12px;
   }
 
+  .experience-meta {
+    font-size: 14px;
+  }
+
   .experience-item h3 {
-    font-size: 31px;
+    font-size: 32px;
+  }
+
+  .experience-item p,
+  .experience-item li {
+    font-size: 17px;
   }
 
   .contact-heading {
     font-size: clamp(42px, 10vw, 58px);
+  }
+
+  .contact-description {
+    font-size: 18px;
+  }
+
+  .contact-details p {
+    font-size: 17px;
+  }
+
+  .contact-link {
+    font-size: 18px;
+  }
+
+  .chapter-footer {
+    font-size: 11px;
   }
 
   .page-controls {
@@ -1199,12 +1319,12 @@ a:focus-visible {
 
   .page-control {
     gap: 7px;
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .page-progress {
     gap: 7px;
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .progress-track {
@@ -1213,7 +1333,7 @@ a:focus-visible {
 
   .site-footer {
     padding: 22px 5%;
-    font-size: 10px;
+    font-size: 11px;
   }
 }
 
@@ -1238,6 +1358,10 @@ a:focus-visible {
 
   .chapter-title {
     font-size: 37px;
+  }
+
+  .cover-role {
+    font-size: 17px;
   }
 
   .page-control {
