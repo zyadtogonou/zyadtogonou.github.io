@@ -16,7 +16,7 @@
   --white: #ffffff;
   --paper: #f8f8f6;
   --black: #171717;
-  --gray: #6e6e6a;
+  --gray: #62625e;
   --light-gray: #deded9;
   --accent: #747d68;
   --serif: "Playfair Display", Georgia, serif;
@@ -36,7 +36,8 @@ body {
   background: var(--white);
   color: var(--black);
   font-family: var(--sans);
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -83,27 +84,27 @@ a:focus-visible {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: .11em;
+  letter-spacing: .07em;
   text-transform: uppercase;
 }
 
 .brand-mark {
   display: grid;
   place-items: center;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   border: 1px solid var(--black);
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 21px;
   font-weight: 400;
 }
 
 .header-note {
   color: var(--gray);
-  font-size: 9px;
-  letter-spacing: .12em;
+  font-size: 12px;
+  letter-spacing: .08em;
   text-align: right;
   text-transform: uppercase;
 }
@@ -116,20 +117,20 @@ a:focus-visible {
   justify-content: center;
   flex-wrap: wrap;
   gap: 0;
-  padding: 11px 3%;
-  background: rgba(255,255,255,.96);
+  padding: 12px 3%;
+  background: rgba(255,255,255,.97);
   border-bottom: 1px solid var(--light-gray);
   backdrop-filter: blur(12px);
 }
 
 .nav-link {
-  padding: 10px 12px;
+  padding: 12px 13px;
   border: 0;
   border-bottom: 1px solid transparent;
   background: transparent;
   color: var(--gray);
-  font-size: 9px;
-  letter-spacing: .06em;
+  font-size: 12px;
+  letter-spacing: .035em;
   text-transform: uppercase;
   cursor: pointer;
   transition: color .2s, border-color .2s;
@@ -176,9 +177,9 @@ a:focus-visible {
 }
 
 .chapter-inner {
-  width: min(1280px, 100%);
+  width: min(1380px, 100%);
   margin: 0 auto;
-  padding: 75px 7%;
+  padding: 85px 7%;
 }
 
 .chapter-meta {
@@ -187,11 +188,11 @@ a:focus-visible {
   flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 65px;
-  padding-bottom: 15px;
+  padding-bottom: 17px;
   border-bottom: 1px solid var(--light-gray);
   color: var(--gray);
-  font-size: 9px;
-  letter-spacing: .1em;
+  font-size: 12px;
+  letter-spacing: .08em;
   text-transform: uppercase;
 }
 
@@ -200,30 +201,30 @@ a:focus-visible {
 }
 
 .eyebrow {
-  margin: 0 0 18px;
+  margin: 0 0 20px;
   color: var(--gray);
-  font-size: 10px;
-  letter-spacing: .17em;
+  font-size: 13px;
+  letter-spacing: .14em;
   line-height: 1.8;
   text-transform: uppercase;
 }
 
 .chapter-title {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(38px, 5.5vw, 76px);
+  font-size: clamp(48px, 6vw, 86px);
   font-weight: 400;
-  letter-spacing: -.055em;
-  line-height: 1.08;
+  letter-spacing: -.045em;
+  line-height: 1.12;
   overflow-wrap: anywhere;
 }
 
 .chapter-description {
-  max-width: 680px;
-  margin-top: 24px;
+  max-width: 780px;
+  margin-top: 28px;
   color: var(--gray);
-  font-size: 13px;
+  font-size: 17px;
   line-height: 2;
 }
 
@@ -232,18 +233,18 @@ a:focus-visible {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 70px;
-  padding-top: 16px;
+  margin-top: 75px;
+  padding-top: 18px;
   border-top: 1px solid var(--light-gray);
   color: var(--gray);
-  font-size: 9px;
-  letter-spacing: .08em;
+  font-size: 11px;
+  letter-spacing: .07em;
   text-transform: uppercase;
 }
 
 .chapter-footer strong {
   color: var(--black);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* Couverture */
@@ -253,8 +254,8 @@ a:focus-visible {
   grid-template-columns: 1.05fr .95fr;
   align-items: center;
   gap: 5%;
-  min-height: min(740px, 85vh);
-  padding: 65px 7%;
+  min-height: min(800px, 88vh);
+  padding: 70px 7%;
 }
 
 .cover-copy {
@@ -268,19 +269,19 @@ a:focus-visible {
 
 .cover-label {
   color: var(--gray);
-  font-size: 9px;
-  letter-spacing: .15em;
+  font-size: 12px;
+  letter-spacing: .12em;
   line-height: 2;
   text-transform: uppercase;
 }
 
 .cover h1 {
-  margin: 75px 0 20px;
+  margin: 70px 0 25px;
   font-family: var(--serif);
-  font-size: clamp(48px, 7.2vw, 100px);
+  font-size: clamp(64px, 8vw, 115px);
   font-weight: 400;
-  letter-spacing: -.075em;
-  line-height: .97;
+  letter-spacing: -.07em;
+  line-height: 1;
   overflow-wrap: anywhere;
 }
 
@@ -289,11 +290,11 @@ a:focus-visible {
 }
 
 .cover-role {
-  max-width: 450px;
+  max-width: 520px;
   margin: 0;
-  color: #555550;
-  font-size: 13px;
-  line-height: 1.9;
+  color: #50504c;
+  font-size: 17px;
+  line-height: 2;
 }
 
 .cover-role strong {
@@ -304,14 +305,14 @@ a:focus-visible {
 .cover-bottom {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px 17px;
+  gap: 10px 20px;
   width: 100%;
   margin-top: 65px;
-  padding-top: 16px;
+  padding-top: 18px;
   border-top: 1px solid var(--black);
   color: var(--gray);
-  font-size: 8px;
-  letter-spacing: .14em;
+  font-size: 11px;
+  letter-spacing: .1em;
   text-transform: uppercase;
 }
 
@@ -319,14 +320,14 @@ a:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 25px;
-  margin-top: 28px;
-  padding: 13px 0;
+  margin-top: 30px;
+  padding: 15px 0;
   border: 0;
   border-bottom: 1px solid var(--black);
   background: transparent;
   color: var(--black);
-  font-size: 10px;
-  letter-spacing: .09em;
+  font-size: 13px;
+  letter-spacing: .07em;
   text-transform: uppercase;
   cursor: pointer;
   transition: gap .2s;
@@ -337,7 +338,7 @@ a:focus-visible {
 }
 
 .primary-button span {
-  font-size: 16px;
+  font-size: 21px;
 }
 
 .cover-visual {
@@ -346,7 +347,7 @@ a:focus-visible {
   justify-content: center;
   align-items: center;
   min-width: 0;
-  min-height: 480px;
+  min-height: 520px;
   background: #eeeee9;
   overflow: hidden;
 }
@@ -355,20 +356,20 @@ a:focus-visible {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 600px;
+  max-height: 650px;
 }
 
 .cover-caption {
   position: absolute;
-  right: 15px;
-  bottom: 15px;
-  left: 15px;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
   display: flex;
   justify-content: space-between;
   gap: 10px;
   color: #555950;
-  font-size: 8px;
-  letter-spacing: .08em;
+  font-size: 11px;
+  letter-spacing: .07em;
   text-transform: uppercase;
 }
 
@@ -376,131 +377,131 @@ a:focus-visible {
 
 .intro-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(240px, .75fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
   gap: 12%;
-  margin-top: 55px;
+  margin-top: 60px;
 }
 
 .intro-text {
   color: #50504c;
-  font-size: 13px;
-  line-height: 2.1;
+  font-size: 17px;
+  line-height: 2.05;
 }
 
 .intro-text p {
-  margin: 0 0 24px;
+  margin: 0 0 26px;
 }
 
 .profile-note {
   align-self: start;
-  padding-top: 18px;
+  padding-top: 20px;
   border-top: 1px solid var(--black);
 }
 
 .profile-note h3 {
   margin: 0 0 25px;
   font-family: var(--serif);
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 400;
 }
 
 .profile-row {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 14px 0;
+  gap: 7px;
+  padding: 17px 0;
   border-bottom: 1px solid var(--light-gray);
 }
 
 .profile-row span:first-child {
   color: var(--gray);
-  font-size: 9px;
-  letter-spacing: .09em;
+  font-size: 12px;
+  letter-spacing: .07em;
   text-transform: uppercase;
 }
 
 .profile-row span:last-child {
-  font-size: 12px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.8;
 }
 
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0,1fr));
   gap: 30px;
-  margin-top: 55px;
-  padding-top: 25px;
+  margin-top: 60px;
+  padding-top: 28px;
   border-top: 1px solid var(--light-gray);
 }
 
 .stat strong {
   display: block;
   font-family: var(--serif);
-  font-size: clamp(22px, 3vw, 35px);
+  font-size: clamp(28px, 3vw, 40px);
   font-weight: 400;
 }
 
 .stat span {
   display: block;
-  max-width: 230px;
-  margin-top: 12px;
+  max-width: 260px;
+  margin-top: 14px;
   color: var(--gray);
-  font-size: 11px;
-  line-height: 1.8;
+  font-size: 15px;
+  line-height: 1.9;
 }
 
 /* Formation */
 
 .timeline {
-  margin-top: 55px;
+  margin-top: 60px;
   border-top: 1px solid var(--light-gray);
 }
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 140px minmax(0,1fr);
-  gap: 30px;
-  padding: 28px 0;
+  grid-template-columns: 160px minmax(0,1fr);
+  gap: 35px;
+  padding: 32px 0;
   border-bottom: 1px solid var(--light-gray);
 }
 
 .timeline-date {
-  padding-top: 7px;
+  padding-top: 8px;
   color: var(--gray);
-  font-size: 10px;
-  line-height: 1.8;
+  font-size: 13px;
+  line-height: 1.9;
 }
 
 .timeline-content h3 {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   font-family: var(--serif);
-  font-size: clamp(21px, 2.5vw, 30px);
+  font-size: clamp(27px, 2.8vw, 36px);
   font-weight: 400;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .timeline-content p {
-  max-width: 720px;
+  max-width: 800px;
   margin: 0;
   color: var(--gray);
-  font-size: 12px;
-  line-height: 1.9;
+  font-size: 16px;
+  line-height: 2;
 }
 
 .timeline-place {
   display: block;
-  margin-top: 12px;
+  margin-top: 14px;
   color: var(--black);
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.8;
 }
 
 .inline-link {
   display: inline-block;
-  margin-top: 14px;
+  margin-top: 17px;
   padding-bottom: 5px;
   border-bottom: 1px solid var(--black);
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.8;
 }
 
@@ -510,35 +511,35 @@ a:focus-visible {
 }
 
 .section-subtitle {
-  margin: 65px 0 25px;
+  margin: 70px 0 30px;
   font-family: var(--serif);
-  font-size: 32px;
+  font-size: 38px;
   font-weight: 400;
 }
 
 .certificates {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 35px;
+  gap: 40px;
 }
 
 .certificate {
-  padding-top: 18px;
+  padding-top: 20px;
   border-top: 1px solid var(--black);
 }
 
 .certificate span {
   color: var(--gray);
-  font-size: 9px;
-  letter-spacing: .08em;
-  line-height: 1.8;
+  font-size: 12px;
+  letter-spacing: .07em;
+  line-height: 1.9;
   text-transform: uppercase;
 }
 
 .certificate h3 {
-  margin: 15px 0;
+  margin: 18px 0;
   font-family: var(--serif);
-  font-size: 23px;
+  font-size: 29px;
   font-weight: 400;
   line-height: 1.4;
 }
@@ -546,8 +547,8 @@ a:focus-visible {
 .certificate p {
   margin: 0;
   color: var(--gray);
-  font-size: 12px;
-  line-height: 1.9;
+  font-size: 15px;
+  line-height: 2;
 }
 
 /* Compétences */
@@ -555,42 +556,42 @@ a:focus-visible {
 .skill-groups {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 45px 60px;
-  margin-top: 55px;
+  gap: 50px 65px;
+  margin-top: 60px;
 }
 
 .skill-card {
   min-width: 0;
-  padding-top: 18px;
+  padding-top: 20px;
   border-top: 1px solid var(--black);
 }
 
 .skill-number {
   color: var(--gray);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: .1em;
 }
 
 .skill-card h3 {
-  margin: 18px 0;
+  margin: 20px 0;
   font-family: var(--serif);
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 400;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px 14px;
+  gap: 10px 17px;
 }
 
 .tag {
-  padding-bottom: 4px;
+  padding-bottom: 5px;
   border-bottom: 1px solid var(--light-gray);
   color: #555550;
-  font-size: 11px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.8;
 }
 
 /* Projets */
@@ -598,88 +599,88 @@ a:focus-visible {
 .project-list {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 55px 45px;
-  margin-top: 55px;
+  gap: 60px 45px;
+  margin-top: 60px;
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding-top: 17px;
+  padding-top: 20px;
   border-top: 1px solid var(--black);
 }
 
 .project-index {
   color: var(--gray);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: .1em;
 }
 
 .project-card h3 {
-  margin: 17px 0;
+  margin: 20px 0;
   font-family: var(--serif);
-  font-size: clamp(24px, 2.7vw, 34px);
+  font-size: clamp(29px, 3vw, 39px);
   font-weight: 400;
   letter-spacing: -.025em;
-  line-height: 1.3;
+  line-height: 1.35;
   overflow-wrap: anywhere;
 }
 
 .project-intro {
   margin: 0;
-  color: #555550;
-  font-size: 12px;
-  line-height: 1.9;
+  color: #50504c;
+  font-size: 16px;
+  line-height: 2;
 }
 
 .project-detail {
-  margin-top: 24px;
+  margin-top: 27px;
 }
 
 .project-detail h4 {
-  margin: 0 0 9px;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: .11em;
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .09em;
   text-transform: uppercase;
 }
 
 .project-detail p {
   margin: 0;
   color: var(--gray);
-  font-size: 11px;
-  line-height: 1.95;
+  font-size: 15px;
+  line-height: 2;
 }
 
 .project-tools {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 13px;
-  margin-top: 13px;
+  gap: 9px 16px;
+  margin-top: 16px;
 }
 
 .project-tools span {
   color: var(--accent);
-  font-size: 9px;
-  letter-spacing: .03em;
+  font-size: 13px;
+  letter-spacing: .02em;
 }
 
 /* Cartes */
 
 .gallery-intro {
-  max-width: 700px;
-  margin-top: 24px;
+  max-width: 800px;
+  margin-top: 28px;
   color: var(--gray);
-  font-size: 13px;
+  font-size: 17px;
   line-height: 2;
 }
 
 .gallery {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 45px 35px;
-  margin-top: 45px;
+  gap: 50px 35px;
+  margin-top: 50px;
 }
 
 .map-card {
@@ -710,132 +711,132 @@ a:focus-visible {
 }
 
 .map-info {
-  padding-top: 18px;
+  padding-top: 20px;
 }
 
 .map-type {
   display: block;
-  margin-bottom: 9px;
+  margin-bottom: 12px;
   color: var(--gray);
-  font-size: 9px;
-  letter-spacing: .12em;
+  font-size: 12px;
+  letter-spacing: .1em;
   text-transform: uppercase;
 }
 
 .map-info h3 {
   margin: 0;
   font-family: var(--serif);
-  font-size: 25px;
+  font-size: 32px;
   font-weight: 400;
   line-height: 1.4;
 }
 
 .map-info p {
-  max-width: 450px;
-  margin: 10px 0 0;
+  max-width: 500px;
+  margin: 12px 0 0;
   color: var(--gray);
-  font-size: 11px;
-  line-height: 1.9;
+  font-size: 15px;
+  line-height: 2;
 }
 
 /* Expériences */
 
 .experience-list {
-  margin-top: 55px;
+  margin-top: 60px;
   border-top: 1px solid var(--black);
 }
 
 .experience-item {
   display: grid;
-  grid-template-columns: 190px minmax(0,1fr);
+  grid-template-columns: 200px minmax(0,1fr);
   gap: 45px;
-  padding: 30px 0;
+  padding: 35px 0;
   border-bottom: 1px solid var(--light-gray);
 }
 
 .experience-meta {
   color: var(--gray);
-  font-size: 10px;
-  line-height: 1.9;
+  font-size: 13px;
+  line-height: 2;
 }
 
 .experience-item h3 {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   font-family: var(--serif);
-  font-size: clamp(23px, 2.8vw, 34px);
+  font-size: clamp(29px, 3vw, 40px);
   font-weight: 400;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .experience-place {
-  margin-bottom: 17px;
-  font-size: 10px;
-  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 13px;
+  line-height: 1.9;
 }
 
 .experience-item p,
 .experience-item li {
   color: var(--gray);
-  font-size: 12px;
-  line-height: 1.9;
+  font-size: 15px;
+  line-height: 2;
 }
 
 .experience-item ul {
-  margin: 12px 0 0;
-  padding-left: 17px;
+  margin: 15px 0 0;
+  padding-left: 20px;
 }
 
 .experience-item li {
-  padding-left: 4px;
-  margin-bottom: 8px;
+  padding-left: 5px;
+  margin-bottom: 12px;
 }
 
 /* Contact */
 
 .contact-layout {
   display: grid;
-  grid-template-columns: minmax(0,1fr) minmax(250px,.8fr);
+  grid-template-columns: minmax(0,1fr) minmax(270px,.8fr);
   gap: 12%;
-  margin-top: 55px;
+  margin-top: 60px;
 }
 
 .contact-heading {
-  max-width: 650px;
+  max-width: 700px;
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(38px,5vw,65px);
+  font-size: clamp(46px, 5.5vw, 76px);
   font-weight: 400;
-  letter-spacing: -.045em;
-  line-height: 1.13;
+  letter-spacing: -.04em;
+  line-height: 1.2;
 }
 
 .contact-description {
-  max-width: 530px;
-  margin-top: 25px;
+  max-width: 580px;
+  margin-top: 30px;
   color: var(--gray);
-  font-size: 13px;
+  font-size: 17px;
   line-height: 2;
 }
 
 .contact-details {
-  margin-top: 35px;
-  padding-top: 18px;
+  margin-top: 40px;
+  padding-top: 20px;
   border-top: 1px solid var(--black);
 }
 
 .contact-details span {
   display: block;
-  margin-bottom: 10px;
-  font-size: 9px;
-  letter-spacing: .1em;
+  margin-bottom: 12px;
+  font-size: 12px;
+  letter-spacing: .09em;
   text-transform: uppercase;
 }
 
 .contact-details p {
   margin: 0;
   color: var(--gray);
-  font-size: 12px;
-  line-height: 1.9;
+  font-size: 15px;
+  line-height: 2;
 }
 
 .contact-links {
@@ -848,9 +849,9 @@ a:focus-visible {
   justify-content: space-between;
   align-items: center;
   gap: 15px;
-  padding: 20px 0;
+  padding: 23px 0;
   border-bottom: 1px solid var(--light-gray);
-  font-size: 12px;
+  font-size: 16px;
   transition: padding .2s;
 }
 
@@ -860,7 +861,7 @@ a:focus-visible {
 }
 
 .contact-link span:last-child {
-  font-size: 17px;
+  font-size: 22px;
 }
 
 /* Navigation entre pages */
@@ -870,28 +871,28 @@ a:focus-visible {
   justify-content: space-between;
   align-items: center;
   gap: 15px;
-  width: min(1280px,100%);
+  width: min(1380px,100%);
   margin: 0 auto;
-  padding: 25px 7%;
+  padding: 28px 7%;
   border-top: 1px solid var(--light-gray);
 }
 
 .page-control {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 5px 0;
+  gap: 13px;
+  padding: 6px 0;
   border: 0;
   background: transparent;
   color: var(--black);
-  font-size: 9px;
-  letter-spacing: .1em;
+  font-size: 12px;
+  letter-spacing: .07em;
   text-transform: uppercase;
   cursor: pointer;
 }
 
 .page-control .arrow {
-  font-size: 18px;
+  font-size: 22px;
   transition: transform .2s;
 }
 
@@ -911,14 +912,14 @@ a:focus-visible {
 .page-progress {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 13px;
   color: var(--gray);
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .progress-track {
-  width: 75px;
-  height: 1px;
+  width: 85px;
+  height: 2px;
   background: var(--light-gray);
 }
 
@@ -934,12 +935,12 @@ a:focus-visible {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px 20px;
-  padding: 23px 7%;
+  padding: 25px 7%;
   border-top: 1px solid var(--light-gray);
   color: var(--gray);
-  font-size: 9px;
-  letter-spacing: .08em;
-  line-height: 1.8;
+  font-size: 12px;
+  letter-spacing: .05em;
+  line-height: 1.9;
   text-transform: uppercase;
 }
 
@@ -977,25 +978,25 @@ a:focus-visible {
 }
 
 .modal-caption {
-  margin: 15px 0 0;
+  margin: 18px 0 0;
   color: var(--black);
-  font-size: 10px;
-  letter-spacing: .08em;
+  font-size: 13px;
+  letter-spacing: .06em;
   text-align: center;
   text-transform: uppercase;
 }
 
 .modal-close {
   position: absolute;
-  top: -42px;
+  top: -45px;
   right: 0;
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   border: 1px solid var(--black);
   border-radius: 50%;
   background: var(--white);
   color: var(--black);
-  font-size: 20px;
+  font-size: 24px;
   cursor: pointer;
 }
 
@@ -1003,51 +1004,61 @@ a:focus-visible {
 
 @media (min-width: 1500px) {
   .cover {
-    min-height: 800px;
+    min-height: 850px;
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1000px) {
   .cover {
     grid-template-columns: 1fr .8fr;
-    gap: 25px;
+    gap: 30px;
     padding-right: 5%;
     padding-left: 5%;
   }
 
   .cover h1 {
-    font-size: clamp(45px,7vw,70px);
+    font-size: clamp(55px,7vw,85px);
   }
 
   .intro-grid,
   .contact-layout {
-    gap: 40px;
+    gap: 45px;
   }
 
   .experience-item {
-    grid-template-columns: 140px minmax(0,1fr);
-    gap: 25px;
+    grid-template-columns: 160px minmax(0,1fr);
+    gap: 30px;
   }
 
   .chapter-inner {
     padding-right: 5%;
     padding-left: 5%;
   }
+
+  .nav-link {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 700px) {
   .site-header {
-    padding: 17px 5%;
+    padding: 18px 5%;
   }
 
   .brand {
-    font-size: 8px;
-    letter-spacing: .07em;
+    font-size: 10px;
+    letter-spacing: .05em;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
   }
 
   .header-note {
-    max-width: 130px;
-    font-size: 8px;
+    max-width: 145px;
+    font-size: 10px;
     line-height: 1.8;
   }
 
@@ -1058,28 +1069,28 @@ a:focus-visible {
   }
 
   .nav-link {
-    padding: 9px 8px;
-    font-size: 8px;
+    padding: 10px 9px;
+    font-size: 10px;
   }
 
   .chapter-inner {
-    padding: 42px 6%;
+    padding: 48px 6%;
   }
 
   .chapter-meta {
-    margin-bottom: 40px;
-    font-size: 8px;
+    margin-bottom: 42px;
+    font-size: 10px;
   }
 
   .chapter-title {
-    font-size: clamp(37px,10vw,55px);
+    font-size: clamp(40px, 9vw, 58px);
   }
 
   .cover {
     grid-template-columns: 1fr;
     gap: 35px;
     min-height: auto;
-    padding: 35px 6% 45px;
+    padding: 40px 6% 50px;
   }
 
   .cover-copy {
@@ -1087,27 +1098,36 @@ a:focus-visible {
   }
 
   .cover h1 {
-    margin-top: 55px;
-    font-size: clamp(48px,12vw,76px);
+    margin-top: 50px;
+    font-size: clamp(55px, 12vw, 82px);
+  }
+
+  .cover-role {
+    font-size: 16px;
   }
 
   .cover-bottom {
     margin-top: 45px;
+    font-size: 10px;
   }
 
   .cover-visual {
-    min-height: 300px;
+    min-height: 320px;
   }
 
   .cover-visual svg {
-    max-height: 380px;
+    max-height: 400px;
   }
 
   .intro-grid,
   .contact-layout {
     grid-template-columns: 1fr;
-    gap: 35px;
-    margin-top: 35px;
+    gap: 38px;
+    margin-top: 40px;
+  }
+
+  .intro-text {
+    font-size: 16px;
   }
 
   .stat-grid {
@@ -1116,13 +1136,17 @@ a:focus-visible {
   }
 
   .stat {
-    padding-bottom: 18px;
+    padding-bottom: 20px;
     border-bottom: 1px solid var(--light-gray);
   }
 
   .timeline-item {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 12px;
+  }
+
+  .timeline-content h3 {
+    font-size: 29px;
   }
 
   .certificates,
@@ -1133,19 +1157,27 @@ a:focus-visible {
   }
 
   .certificates {
-    gap: 28px;
+    gap: 32px;
   }
 
   .skill-groups {
-    gap: 35px;
+    gap: 38px;
   }
 
   .project-list {
-    gap: 40px;
+    gap: 45px;
+  }
+
+  .project-card h3 {
+    font-size: 31px;
   }
 
   .gallery {
-    gap: 35px;
+    gap: 38px;
+  }
+
+  .map-info h3 {
+    font-size: 29px;
   }
 
   .experience-item {
@@ -1153,27 +1185,63 @@ a:focus-visible {
     gap: 12px;
   }
 
+  .experience-item h3 {
+    font-size: 31px;
+  }
+
+  .contact-heading {
+    font-size: clamp(42px, 10vw, 58px);
+  }
+
   .page-controls {
-    padding: 20px 5%;
+    padding: 22px 5%;
   }
 
   .page-control {
-    gap: 6px;
-    font-size: 8px;
+    gap: 7px;
+    font-size: 10px;
   }
 
   .page-progress {
-    gap: 6px;
-    font-size: 8px;
+    gap: 7px;
+    font-size: 10px;
   }
 
   .progress-track {
-    width: 30px;
+    width: 35px;
   }
 
   .site-footer {
-    padding: 20px 5%;
-    font-size: 8px;
+    padding: 22px 5%;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand {
+    font-size: 9px;
+  }
+
+  .header-note {
+    max-width: 110px;
+    font-size: 9px;
+  }
+
+  .nav-link {
+    padding: 9px 7px;
+    font-size: 9px;
+  }
+
+  .cover h1 {
+    font-size: 49px;
+  }
+
+  .chapter-title {
+    font-size: 37px;
+  }
+
+  .page-control {
+    font-size: 9px;
   }
 }
 
@@ -2041,16 +2109,8 @@ a:focus-visible {
       <div class="gallery">
 
         <article class="map-card">
-          <button
-            class="map-image-button"
-            data-image="images/bovin.png"
-            data-title="Distribution spatiale des bovins au Bénin"
-          >
-            <img
-              src="images/bovin.png"
-              alt="Carte de la distribution des bovins au Bénin"
-              loading="lazy"
-            >
+          <button class="map-image-button" data-image="images/bovin.png" data-title="Distribution spatiale des bovins au Bénin">
+            <img src="images/bovin.png" alt="Carte de la distribution des bovins au Bénin" loading="lazy">
           </button>
 
           <div class="map-info">
@@ -2061,16 +2121,8 @@ a:focus-visible {
         </article>
 
         <article class="map-card">
-          <button
-            class="map-image-button"
-            data-image="images/ovins.png"
-            data-title="Distribution spatiale des ovins au Bénin"
-          >
-            <img
-              src="images/ovins.png"
-              alt="Carte de la distribution des ovins au Bénin"
-              loading="lazy"
-            >
+          <button class="map-image-button" data-image="images/ovins.png" data-title="Distribution spatiale des ovins au Bénin">
+            <img src="images/ovins.png" alt="Carte de la distribution des ovins au Bénin" loading="lazy">
           </button>
 
           <div class="map-info">
@@ -2081,16 +2133,8 @@ a:focus-visible {
         </article>
 
         <article class="map-card">
-          <button
-            class="map-image-button"
-            data-image="images/caprins.png"
-            data-title="Distribution spatiale des caprins au Bénin"
-          >
-            <img
-              src="images/caprins.png"
-              alt="Carte de la distribution des caprins au Bénin"
-              loading="lazy"
-            >
+          <button class="map-image-button" data-image="images/caprins.png" data-title="Distribution spatiale des caprins au Bénin">
+            <img src="images/caprins.png" alt="Carte de la distribution des caprins au Bénin" loading="lazy">
           </button>
 
           <div class="map-info">
@@ -2101,16 +2145,8 @@ a:focus-visible {
         </article>
 
         <article class="map-card">
-          <button
-            class="map-image-button"
-            data-image="images/porcins.png"
-            data-title="Distribution spatiale des porcins au Bénin"
-          >
-            <img
-              src="images/porcins.png"
-              alt="Carte de la distribution des porcins au Bénin"
-              loading="lazy"
-            >
+          <button class="map-image-button" data-image="images/porcins.png" data-title="Distribution spatiale des porcins au Bénin">
+            <img src="images/porcins.png" alt="Carte de la distribution des porcins au Bénin" loading="lazy">
           </button>
 
           <div class="map-info">
@@ -2121,16 +2157,8 @@ a:focus-visible {
         </article>
 
         <article class="map-card">
-          <button
-            class="map-image-button"
-            data-image="images/volaille.png"
-            data-title="Distribution spatiale de la volaille au Bénin"
-          >
-            <img
-              src="images/volaille.png"
-              alt="Carte de la distribution de la volaille au Bénin"
-              loading="lazy"
-            >
+          <button class="map-image-button" data-image="images/volaille.png" data-title="Distribution spatiale de la volaille au Bénin">
+            <img src="images/volaille.png" alt="Carte de la distribution de la volaille au Bénin" loading="lazy">
           </button>
 
           <div class="map-info">
@@ -2429,9 +2457,7 @@ function updateNavigation() {
   previousButton.disabled = activeChapter === 0;
   nextButton.disabled = activeChapter === chapters.length - 1;
 
-  const title = chapters[activeChapter].querySelector(
-    ".chapter-title"
-  );
+  const title = chapters[activeChapter].querySelector(".chapter-title");
 
   document.title = title
     ? title.textContent.trim().replace(/\s+/g, " ") +
@@ -2449,9 +2475,7 @@ function goToChapter(index) {
   }
 
   chapters[activeChapter].classList.remove("active");
-
   activeChapter = index;
-
   chapters[activeChapter].classList.add("active");
 
   updateNavigation();
@@ -2517,7 +2541,6 @@ document.addEventListener("keydown", (event) => {
 
 function openImageModal(imagePath, title, sourceButton) {
   modalReturnFocus = sourceButton;
-
   modalImage.src = imagePath;
   modalImage.alt = title;
   modalCaption.textContent = title;
@@ -2531,7 +2554,6 @@ function openImageModal(imagePath, title, sourceButton) {
 function closeImageModal() {
   imageModal.classList.remove("open");
   document.body.classList.remove("modal-open");
-
   modalImage.src = "";
 
   if (modalReturnFocus) {
